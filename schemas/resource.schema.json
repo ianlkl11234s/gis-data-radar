@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GIS Data Radar resource",
+  "type": "object",
+  "required": ["id", "title", "primary_type", "secondary_types", "regions", "topics", "scope", "summary", "source_url", "published_at", "source_updated_at", "discovered_at", "last_verified_at", "evidence", "integration"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 1},
+    "primary_type": {"$ref": "#/$defs/resourceType"},
+    "secondary_types": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/resourceType"}},
+    "regions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "topics": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "scope": {"type": "string"},
+    "summary": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "published_at": {"$ref": "#/$defs/nullableDate"},
+    "source_updated_at": {"$ref": "#/$defs/nullableDate"},
+    "discovered_at": {"type": "string", "format": "date"},
+    "last_verified_at": {"type": "string", "format": "date"},
+    "data_details": {
+      "type": ["object", "null"],
+      "properties": {
+        "update_frequency": {"type": ["string", "null"]},
+        "formats": {"type": "array", "items": {"type": "string"}},
+        "access": {"type": "string"},
+        "api": {"type": ["string", "null"]},
+        "license": {"type": ["string", "null"]},
+        "license_url": {"type": ["string", "null"], "format": "uri"}
+      },
+      "required": ["update_frequency", "formats", "access", "api", "license", "license_url"]
+    },
+    "use_cases": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "implementation_sources": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["url", "supports"], "properties": {"url": {"type": "string", "format": "uri"}, "supports": {"type": "string"}}}},
+    "integration": {"type": "object", "required": ["status", "checked_scope", "notes"], "properties": {"status": {"enum": ["candidate", "evaluating", "integrated", "rejected", "unknown"]}, "checked_scope": {"type": "string"}, "notes": {"type": "string"}}}
+  },
+  "allOf": [{"if": {"properties": {"primary_type": {"enum": ["dataset", "data_platform"]}}}, "then": {"required": ["data_details"], "properties": {"data_details": {"type": "object"}}}}, {"if": {"properties": {"primary_type": {"enum": ["analysis_method", "model_tool"]}}}, "then": {"required": ["use_cases", "limitations", "implementation_sources"]}}],
+  "$defs": {
+    "resourceType": {"enum": ["dataset", "data_platform", "analysis_method", "showcase", "model_tool"]},
+    "nullableDate": {"type": ["string", "null"], "format": "date"}
+  }
+}
