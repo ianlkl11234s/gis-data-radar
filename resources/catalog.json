@@ -1,0 +1,350 @@
+[
+  {
+    "id": "overture-maps",
+    "title": "Overture Maps 2026 年 9 月版",
+    "primary_type": "data_platform",
+    "secondary_types": [],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "transport",
+      "地址",
+      "POI",
+      "建物",
+      "版本相容性"
+    ],
+    "scope": "全球向量；台日各地覆蓋與定位品質不一致，無統一公尺精度保證",
+    "summary": "本週更新：9/23 版本新增台灣三縣市地址來源（發布說明未列名稱）；目前有 2026-09-23.1 修正版。Schema v2 移除 places.categories，改用 taxonomy 或 basic_category。",
+    "source_url": "https://docs.overturemaps.org/blog/2026/09/23/release-notes/",
+    "published_at": "2026-09-23",
+    "source_updated_at": null,
+    "discovered_at": "2026-09-30",
+    "last_verified_at": "2026-09-30",
+    "data_details": {
+      "update_frequency": "每月；另有不定期修補",
+      "formats": [
+        "GeoParquet",
+        "GeoJSON",
+        "PMTiles",
+        "STAC"
+      ],
+      "access": "雲端公開讀取；Explorer 無須帳號，可下載視窗範圍 GeoJSON",
+      "api": "https://docs.overturemaps.org/getting-data/",
+      "license": "依 theme／來源不同；Places 列 CDLA Permissive 2.0，地址需逐來源核對顯名與條件，不可當成統一授權",
+      "license_url": "https://docs.overturemaps.org/attribution/"
+    },
+    "use_cases": [
+      "試驗台日 POI 缺口與地址定位覆蓋",
+      "先以一縣市／城市裁切，與現有官方設施資料比較"
+    ],
+    "limitations": [
+      "Addresses 仍是 alpha",
+      "2026-09-23.1 修正 base 和 building_parts GERS ID；補丁發布日期未單獨確認",
+      "schema breaking changes 需處理",
+      "未抽樣驗證台日實際覆蓋與下載檔"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.overturemaps.org/blog/2026/09/23/release-notes/",
+        "supports": "9 月發布、台灣三縣市地址來源、schema v2 與修正版"
+      },
+      {
+        "url": "https://docs.overturemaps.org/release-calendar/",
+        "supports": "最新版本 2026-09-23.1、每月發布與保留政策"
+      },
+      {
+        "url": "https://docs.overturemaps.org/getting-data/",
+        "supports": "GeoParquet、bbox 裁切、GeoJSON、STAC 介接"
+      },
+      {
+        "url": "https://docs.overturemaps.org/attribution/",
+        "supports": "各主題與來源授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
+      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。整合成本估計中：分類映射、同址去重、權利核對及版本釘選。"
+    }
+  },
+  {
+    "id": "taiwan-debris-landslide",
+    "title": "115 年土石流與大規模崩塌潛勢",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "hazards",
+      "坡地災害",
+      "土石流",
+      "崩塌",
+      "災害潛勢"
+    ],
+    "scope": "台灣列管 1,753 條土石流潛勢溪流及 94 處大規模崩塌潛勢區；線、集水區、影響範圍面，非全台連續風險評分",
+    "summary": "今年資料精選：可補坡地風險底圖，並與現有道路、橋梁、避難及降雨資料套疊。",
+    "source_url": "https://data.gov.tw/news/31852",
+    "published_at": "2026-01-22",
+    "source_updated_at": null,
+    "discovered_at": "2026-09-30",
+    "last_verified_at": "2026-09-30",
+    "data_details": {
+      "update_frequency": "115 年度；不定期更新",
+      "formats": [
+        "SHP"
+      ],
+      "access": "官方資料頁提供下載；TWD97，實作前核對 .prj。此複合條目發布日為公告日；兩個子資料集均於 2026-01-13 上架。",
+      "api": null,
+      "license": "政府資料開放授權條款第 1 版；可作產品／服務，須顯名",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "設施與公告影響範圍套疊",
+      "先做單一縣市，驗收後擴全台"
+    ],
+    "limitations": [
+      "不是即時災情；未圈選不代表安全",
+      "頁面未給統一測繪精度",
+      "土石流影響範圍詮釋資料更新日 2026-02-24；崩塌影響範圍 2026-01-14，故不合併為單一更新日",
+      "已核對資料頁，未成功驗證 SHP 二進位下載",
+      "原始資料含保全住戶地址，建議公開圖層不暴露逐戶地址"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.gov.tw/news/31852",
+        "supports": "2026-01-22 公告、涵蓋數量與資料用途"
+      },
+      {
+        "url": "https://data.gov.tw/dataset/176526",
+        "supports": "土石流 SHP、欄位、年度、上架及更新時間、授權"
+      },
+      {
+        "url": "https://data.gov.tw/dataset/176528",
+        "supports": "崩塌 SHP、欄位、年度、上架及更新時間、授權"
+      },
+      {
+        "url": "https://data.gov.tw/license",
+        "supports": "顯名與衍生產品服務使用條件"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
+      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。首選；成本低至中：核對 CRS、轉 WGS84、簡化切 PMTiles，保留年度與風險級別。"
+    }
+  },
+  {
+    "id": "nasa-firms-viirs",
+    "title": "NASA FIRMS 衛星熱異常",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "environment",
+      "熱異常",
+      "森林火災",
+      "近即時",
+      "衛星"
+    ],
+    "scope": "全球 VIIRS 375m、MODIS 1km，包含台日；解析度為感測像元，非火場邊界或定位誤差",
+    "summary": "既有資料精選：為歷史消防火災紀錄增加近即時衛星觀測，兩者需分開命名與呈現。",
+    "source_url": "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-09-30",
+    "last_verified_at": "2026-09-30",
+    "data_details": {
+      "update_frequency": "隨衛星過境產出；全球 NRT 一般過境後 3 小時內可用，非每處每 3 小時掃描",
+      "formats": [
+        "CSV",
+        "SHP",
+        "KML",
+        "WMS",
+        "WFS"
+      ],
+      "access": "bbox CSV API 需免費 MAP_KEY；每次 1–5 天，5,000 transactions／10 分鐘。未申請 key 或測試實際回傳。",
+      "api": "https://firms2.modaps.eosdis.nasa.gov/api/area/",
+      "license": "NASA 官方支持開放使用，須正確引用並遵守免責說明；所讀頁未見限非商用條件",
+      "license_url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5184"
+    },
+    "use_cases": [
+      "台日 24–48h 衛星熱異常時間圖層",
+      "與森林、AQI 和消防歷史資料比較"
+    ],
+    "limitations": [
+      "熱異常可能是工業等固定熱源，不等於火災通報",
+      "雲遮及過境限制可漏測",
+      "美加超即時能力不能套用台日",
+      "近即時資料與後續標準科學產品可能不同"
+    ],
+    "evidence": [
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/active_fire/",
+        "supports": "解析度、下載格式及時間範圍"
+      },
+      {
+        "url": "https://www.earthdata.nasa.gov/s3fs-public/2023-03/FIRMS_OnePager_2022_Prnt-Web.pdf",
+        "supports": "全球 NRT 延遲與美加時效差異"
+      },
+      {
+        "url": "https://firms2.modaps.eosdis.nasa.gov/api/area/",
+        "supports": "bbox API、天數、MAP_KEY 限額"
+      },
+      {
+        "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5184",
+        "supports": "NASA 使用與引用說明"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
+      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。第二順位；成本低至中：後端快取、去重、信心值與觀測時間、延遲顯示。"
+    }
+  },
+  {
+    "id": "jaxa-gcomc-sst",
+    "title": "JAXA GCOM-C 海表溫度",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "environment",
+      "海溫",
+      "海洋",
+      "衛星",
+      "珊瑚環境"
+    ],
+    "scope": "全球約 250m，含台灣、日本及近岸；雲造成缺值",
+    "summary": "既有資料精選：與珊瑚、船舶圖層搭配顯示海洋環境。日、半月、月及日夜產品已列入官方 STAC。",
+    "source_url": "https://data.earth.jaxa.jp/en/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-09-30",
+    "last_verified_at": "2026-09-30",
+    "data_details": {
+      "update_frequency": "日、半月及月產品；未驗證最新影像日期或實際發布延遲",
+      "formats": [
+        "COG",
+        "GeoTIFF",
+        "STAC"
+      ],
+      "access": "Earth API 無須註冊或 key；JS／Python，支援按區域解析度取資料。",
+      "api": "https://data.earth.jaxa.jp/api/javascript/v2.0.1/en/docs/",
+      "license": "API 可免費使用；資料授權逐 collection 核對。適用 Research Data Terms 的資料可商用，需註明 API 使用。具體 SST collection 授權仍待核驗。",
+      "license_url": "https://data.earth.jaxa.jp/en/"
+    },
+    "use_cases": [
+      "台灣海域至琉球、日本海溫背景",
+      "與珊瑚及船舶活動套疊"
+    ],
+    "limitations": [
+      "collection 外部端點未能開啟，具體授權、最新日期及延遲未驗證",
+      "不能直接稱為海洋熱浪或珊瑚白化警報",
+      "須保留雲遮與 nodata，避免插值造成不存在的觀測"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.earth.jaxa.jp/en/",
+        "supports": "全球約 250m、雲遮、COG/STAC、API 授權概則"
+      },
+      {
+        "url": "https://data.earth.jaxa.jp/stac/cog/v1/catalog.json",
+        "supports": "SST 日／半月／月、日夜 collection 存在"
+      },
+      {
+        "url": "https://data.earth.jaxa.jp/api/javascript/v2.0.1/en/docs/",
+        "supports": "免註冊 key、MapLibre 範例與 API 能力"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
+      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。成本中：日期、nodata、固定色階、範圍查詢，避免全球 raster 主執行緒解碼。"
+    }
+  },
+  {
+    "id": "jaxa-japan-hrlulc",
+    "title": "JAXA 日本 10m 土地覆蓋 v25.04",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "environment",
+      "土地覆蓋",
+      "土地利用",
+      "變遷",
+      "太陽能",
+      "濕地"
+    ],
+    "scope": "日本 2020、2022、2024 三期，約 10m、15 類；WGS84、1°×1° GeoTIFF",
+    "summary": "既有資料精選：2025 年 4 月發布，可比較都市、農地、森林、太陽能板、濕地與岩礁／潮間帶；非 2026 新影像。",
+    "source_url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc/lulc_v2504_e.htm",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-09-30",
+    "last_verified_at": "2026-09-30",
+    "data_details": {
+      "update_frequency": "三期相隔兩年；未確認未來固定發布頻率。發布時間只知 2025-04，故 published_at 留 null。",
+      "formats": [
+        "GeoTIFF",
+        "COG",
+        "STAC"
+      ],
+      "access": "原下載站需註冊；Earth API STAC 已列 HRLULC.v25.04_japan，可評估免 key COG 路線，未驗證實際 collection 回傳。",
+      "api": "https://data.earth.jaxa.jp/stac/cog/v1/catalog.json",
+      "license": "待釐清：Earth-graphy 入口標免費可商用，原始產品頁仍寫商用請先聯絡；須核對具體 collection 條款。",
+      "license_url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm"
+    },
+    "use_cases": [
+      "與 PLATEAU、日本水系及觀光圖層套疊",
+      "三期太陽能／濕地／城鄉土地覆蓋比較"
+    ],
+    "limitations": [
+      "入口與原產品商用說明不一致，不能只採較寬鬆標籤",
+      "分類差異不一定是真實土地變化",
+      "分類 raster 要 nearest/mode 重採樣，不能連續值插值",
+      "非台灣土地覆蓋資料"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc/lulc_v2504_e.htm",
+        "supports": "2025-04 發布、三期、15 類、10m 與座標格式"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm",
+        "supports": "註冊下載及商用先聯絡的文字"
+      },
+      {
+        "url": "https://earth.jaxa.jp/en/data/2562/index.html",
+        "supports": "入口標示免費可商用"
+      },
+      {
+        "url": "https://data.earth.jaxa.jp/stac/cog/v1/catalog.json",
+        "supports": "HRLULC.v25.04_japan collection 已列入"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
+      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。成本中：先裁切一區、三期 raster tiles、統一分類與授權核驗。"
+    }
+  }
+]
