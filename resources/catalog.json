@@ -1155,5 +1155,270 @@
       "checked_scope": "本輪核對官方資料頁、文件、原始碼／模型卡與授權；展示網站另以雲端瀏覽器驗證指定互動。未重新查閱 mini-taiwan-pulse 程式、資料檔或部署，因此不宣稱專案尚未使用。",
       "notes": "可供評估的資源與工作流；本次沒有下載完整資料、執行分析／模型推論或接入產品。整合成本為未實作的工程估計，詳細前提見 integration_notes。"
     }
+  },
+  {
+    "secondary_types": [],
+    "discovered_at": "2026-10-01",
+    "last_verified_at": "2026-10-01",
+    "id": "taiwan-village-single-age-population",
+    "title": "台灣村里每月單齡人口與戶數",
+    "primary_type": "dataset",
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "urban",
+      "hazards",
+      "population",
+      "年齡結構",
+      "服務可及性"
+    ],
+    "scope": "全國村里；2018 年起按月、性別與單一年齡統計；無內附邊界幾何",
+    "summary": "既有資料首次收錄。已下載並解析 2026-08 CSV：7,781 筆、210 欄，年月均為 11508。適合把既有人口背景細化為年齡別需求。",
+    "source_url": "https://data.gov.tw/dataset/77132",
+    "published_at": "2018-02-27",
+    "source_updated_at": "2026-09-10",
+    "data_details": {
+      "update_frequency": "描述為每月資料；入口更新頻率欄標不定期。最新實際核對月份為 2026-08，9/10 是詮釋資料更新日。",
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "access": "免費公開下載；已解析 11508 CSV。JSON 文件公開，但本次未驗證月份 API 回傳。",
+      "api": "https://www.ris.gov.tw/rs-opendata/api/Main/docs/v1",
+      "license": "政府資料開放授權條款第 1 版；允許再利用，需顯名並保留來源與變更說明",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "計算 65 歲以上人口的村里需求底圖，供醫療、避難服務分析",
+      "以同月份、同版邊界比較年齡結構；不把戶籍人口當即時在場人口"
+    ],
+    "limitations": [
+      "11 字元區域碼須以字串保存前導零；邊界改制需版本對照",
+      "官方入口的 JSON 範例仍指向 10701，不能當最新月份",
+      "區碼唯一、非空與各列性別／年齡加總已通過；尚未驗證邊界 join。戶籍人口不等於常住或日間人口"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.gov.tw/dataset/77132",
+        "supports": "資料範圍、欄位、2018-02-27 上架、2026-09-10 詮釋更新及授權"
+      },
+      {
+        "url": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/2C7688CB-B505-4D00-B11C-66C4D31B024F/resource/13E3DE59-5186-4A45-8EAC-8D95B841734A/download",
+        "supports": "本次實際解析 11508 CSV：4,410,382 bytes、UTF-8 BOM、7,781 資料列與 210 欄；區碼唯一非空，性別與單齡加總逐列通過"
+      },
+      {
+        "url": "https://www.ris.gov.tw/rs-opendata/api/Main/docs/v1",
+        "supports": "ODRP014 月份 API 路徑與民國年月參數"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
+      "notes": "既有 H3 人口、縣市人口指標與人口 adapter 已存在，不應宣稱人口圖層空白。本次未在兩份圖層目錄找到村里單齡月資料對應登錄。第一順位；單縣市試作估計 1–2 工程日，含年齡彙總、區碼與邊界核對；全國跨期另估。"
+    }
+  },
+  {
+    "secondary_types": [],
+    "discovered_at": "2026-10-01",
+    "last_verified_at": "2026-10-01",
+    "id": "taipei-metro-hourly-od",
+    "title": "臺北捷運每日分時站間 OD",
+    "primary_type": "dataset",
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "urban",
+      "transport",
+      "OD",
+      "大眾運輸"
+    ],
+    "scope": "臺北捷運站間進出流量；官方目錄涵蓋 2017-01-01 至 2026-08-31；月檔內為每日分時資料",
+    "summary": "既有資料首次收錄。已讀取含 116 個月份連結的官方 CSV 索引；可為鐵路位置與站點增加旅次方向及時段需求。",
+    "source_url": "https://data.taipei/dataset/detail?id=63f31c7e-7fc3-418b-bd82-b95158755b4d",
+    "published_at": null,
+    "source_updated_at": "2026-09-15",
+    "data_details": {
+      "update_frequency": "每月；資源更新 2026-09-15 11:10:49，詮釋更新 11:11:39。目錄期間末端為 2026-08-31。",
+      "formats": [
+        "CSV"
+      ],
+      "access": "免費公開；先下載月份索引，再跟隨當月 CSV 連結。索引不是 OD 明細 API。",
+      "api": null,
+      "license": "政府資料開放授權條款第 1 版；允許再利用，需顯名並保留來源與變更說明",
+      "license_url": "https://data.taipei/rule"
+    },
+    "use_cases": [
+      "單月平假日尖峰站間需求圖與站點進出量",
+      "用實際票證站間流量補充時刻表推估位置，建立交通需求背景"
+    ],
+    "limitations": [
+      "已讀月份索引；2026-08 OD 明細下載嘗試未成功，實際列數、欄位、編碼與缺值未驗證",
+      "OD 是站間旅次統計，不能解讀為不重複人數、居住地或實際行走路線",
+      "不含所有交通運具；直線連接只代表起訖關係，不可當乘車路線",
+      "首次上架日期未確認；國家入口 128506 本次讀取失敗，改用原提供機關頁",
+      "分析前需核對跨午夜服務日、站名／站碼與轉乘計數語意；OD 本身不能推知車廂擁擠程度"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.taipei/dataset/detail?id=63f31c7e-7fc3-418b-bd82-b95158755b4d",
+        "supports": "每日分時 OD、月更、涵蓋期間、來源與更新日"
+      },
+      {
+        "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=eb481f58-1238-4cff-8caa-fa7bb20cb4f4",
+        "supports": "已讀官方 CSV 月份索引，116 筆連結，末端 2026-08"
+      },
+      {
+        "url": "https://data.taipei/rule",
+        "supports": "臺北市資料大平臺政府資料開放授權條款"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
+      "notes": "既有鐵道時刻表推算位置與中捷站點出站彙總，不能稱交通流量完全未整合。本次未在兩份圖層目錄找到北捷每日分時站間 OD 登錄。第二順位；單月原型估計 2–3 工程日，含月檔清理、站名對照、日型彙總與流向顯示。"
+    }
+  },
+  {
+    "secondary_types": [],
+    "discovered_at": "2026-10-01",
+    "last_verified_at": "2026-10-01",
+    "id": "taiwan-water-discharge-permits-declarations",
+    "title": "台灣水污染源許可與排放申報",
+    "primary_type": "dataset",
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "environment",
+      "water-quality",
+      "污染申報",
+      "流域"
+    ],
+    "scope": "列管場所之許可、放流口與申報紀錄；包含放流口座標欄位；資料粒度須按事業、許可、放流口、期間與測項核對",
+    "summary": "既有資料首次收錄。用排放許可及申報細節補充既有列管設施點位，適合流域背景檢視；不能直接認定污染違規。",
+    "source_url": "https://data.moenv.gov.tw/dataset/detail/EMS_S_03",
+    "published_at": "2019-07-12",
+    "source_updated_at": "2026-09-04",
+    "data_details": {
+      "update_frequency": "每 3 月；提供機關最後更新 2026-09-04，國家入口詮釋更新 2026-09-15。實際申報期間尚未下載核對。",
+      "formats": [
+        "CSV",
+        "JSON",
+        "XML"
+      ],
+      "access": "免費、UTF-8；官方頁提供下載與 API 文件。本次預覽顯示 0 列，未驗證完整下載，不能據此判定資料集為空。",
+      "api": "https://data.moenv.gov.tw/swagger/",
+      "license": "政府資料開放授權條款第 1 版；允許再利用，需顯名並保留來源與變更說明",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "以事業編號補充既有設施的許可期間、承受水體及排放申報",
+      "在單一流域比較同測項、同單位、同期間申報資料"
+    ],
+    "limitations": [
+      "許可與自行申報不等於即時水質觀測、違規或已確認污染",
+      "同一場所可能多許可、多放流口、多期間與測項，不能按列數計設施數",
+      "TM2 與經緯度欄位的 CRS、缺值、座標品質待實檔驗證",
+      "API 配額及 key 申請另依官方條款；本次未申請，目錄不收錄任何 key"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.moenv.gov.tw/dataset/detail/EMS_S_03",
+        "supports": "33 欄、格式、更新頻率、提供機關更新日、授權連結及本次預覽狀態"
+      },
+      {
+        "url": "https://data.gov.tw/dataset/106598",
+        "supports": "2019-07-12 上架、2026-09-15 詮釋更新、格式與授權"
+      },
+      {
+        "url": "https://data.moenv.gov.tw/api-term",
+        "supports": "API 使用條件、配額與申請限制"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
+      "notes": "既有 EMS_S_01 列管設施、EMS_P_46 裁處及確認污染場址；本筆是申報屬性補強，不另稱污染圖層缺口。暫列次順位：下載可用後，單流域試作估計 2–4 工程日；先核對一對多關係及單位。"
+    }
+  },
+  {
+    "secondary_types": [],
+    "discovered_at": "2026-10-01",
+    "last_verified_at": "2026-10-01",
+    "id": "nasa-misr-browse-customization",
+    "title": "NASA MISR 瀏覽與資料訂製平台：調軌後資料支援",
+    "primary_type": "data_platform",
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "environment",
+      "weather",
+      "ocean",
+      "remote-sensing",
+      "煙霧",
+      "雲"
+    ],
+    "scope": "全球日照區多角度衛星觀測入口；台日與周邊海域須逐日期、航帶及產品檢查，不是連續即時覆蓋",
+    "summary": "近期更新：NASA 於 2026-09-28 公告工具支援 Terra 2022-10 調軌後資料；該期間目前僅 FIRSTLOOK 可下載，其餘仍在處理。",
+    "source_url": "https://misr.jpl.nasa.gov/get-data/",
+    "published_at": null,
+    "source_updated_at": "2026-09-28",
+    "data_details": {
+      "update_frequency": "隨各產品處理與航帶產出；9/28 為工具更新公告日，非平台初次發布日或所有資料觀測日。",
+      "formats": [
+        "HDF-EOS",
+        "NetCDF"
+      ],
+      "access": "公開文件與瀏覽入口；資料下載需免費 Earthdata 帳號。可按日期、地點及 block 裁切，格式依 collection 而定。",
+      "api": null,
+      "license": "NASA-led mission 資料若無特別標註，依 Earthdata 指引為 CC0；仍需逐 collection 核對，建議引用版本，不能暗示 NASA 背書。平台程式及第三方內容不因此一併取得授權。",
+      "license_url": "https://www.earthdata.nasa.gov/engage/open-data-services-software/data-use-policy"
+    },
+    "use_cases": [
+      "推論用途：台日煙霧、霾、火山羽流與海域雲系事件的多角度觀測背景",
+      "先選單一事件及航帶，保留觀測時間、產品版本、FIRSTLOOK／FINAL 與缺測區"
+    ],
+    "limitations": [
+      "僅調軌後 FIRSTLOOK 目前可用；其餘產品預計 2026 年底處理完成，並非已提供",
+      "FIRSTLOOK 不可未加說明地混入 FINAL 長期趨勢；觀測時刻漂移與航跡改變需納入比較",
+      "無統一解析度：275m／1.1km 指部分原始影像波段與模式，不可套用所有衍生產品",
+      "本次查證官方文件與公告，未登入下載、驗證台日最新航帶或測試工具完整互動；公告直接開啟間歇失敗，已用官方索引全文交叉查核"
+    ],
+    "evidence": [
+      {
+        "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=8268",
+        "supports": "2026-09-28 更新公告、調軌後支援與 FIRSTLOOK 可用性限制"
+      },
+      {
+        "url": "https://misr.jpl.nasa.gov/get-data/",
+        "supports": "下載帳號、分段裁切、格式及軌道漂移說明"
+      },
+      {
+        "url": "https://misr.jpl.nasa.gov/get-data/local-mode-data/",
+        "supports": "不同波段與模式的解析度界線"
+      },
+      {
+        "url": "https://l0dup05.larc.nasa.gov/MISR_BROWSE/",
+        "supports": "官方影像瀏覽入口"
+      },
+      {
+        "url": "https://l0dup05.larc.nasa.gov/cgi-bin/MISR/main.cgi",
+        "supports": "官方訂製入口"
+      },
+      {
+        "url": "https://www.earthdata.nasa.gov/engage/open-data-services-software/data-use-policy",
+        "supports": "NASA 資料使用與引用政策"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
+      "notes": "未在上述兩份圖層目錄找到 MISR 對應登錄；不推論其他服務完全未使用。事件研究備選；裁切一景並轉為展示圖層估計 2–4 工程日，科學解讀與品質驗證另估。"
+    }
   }
 ]

@@ -1,8 +1,8 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 13 項，皆為 candidate；可依類型、地區與主題瀏覽。最新查核：2026-09-30。
+目前 17 項，皆為 candidate；可依類型、地區與主題瀏覽。最新查核：2026-10-01（本期 4 項；其餘保留各自查核日）。
 
 ## 依類型
 
@@ -20,9 +20,19 @@
 
 - [GHSL GHS-POP R2023A：全球人口網格與暴露估算底圖](#jrc-ghsl-ghs-pop-r2023a)
 
+
+- [台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
+
+- [臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+
+- [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
+
 ### data_platform
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
+
+
+- [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
 
@@ -64,6 +74,15 @@
 
 - [SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
+
+- [台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
+
+- [臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+
+- [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
+
+- [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
+
 ### Japan
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
@@ -86,6 +105,9 @@
 
 - [SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
+
+- [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
+
 ### global
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
@@ -103,6 +125,9 @@
 - [Prithvi-EO-2.0：多時序地球觀測基礎模型](#prithvi-eo-2-0)
 
 - [SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
+
+
+- [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
 
@@ -122,7 +147,7 @@
 
 - disaster-context：[Google Dynamic World V1：全球 10 公尺近即時土地覆蓋](#google-dynamic-world-v1)、[GHSL GHS-POP R2023A：全球人口網格與暴露估算底圖](#jrc-ghsl-ghs-pop-r2023a)
 
-- environment：[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)、[JAXA GCOM-C 海表溫度](#jaxa-gcomc-sst)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)
+- environment：[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)、[JAXA GCOM-C 海表溫度](#jaxa-gcomc-sst)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)、[台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)、[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 - environmental-change：[Google Dynamic World V1：全球 10 公尺近即時土地覆蓋](#google-dynamic-world-v1)
 
@@ -130,7 +155,7 @@
 
 - gis：[SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
-- hazards：[115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)、[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)、[地理院地圖：滑動比較與地形工具](#gsi-maps-showcase)、[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
+- hazards：[115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)、[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)、[地理院地圖：滑動比較與地形工具](#gsi-maps-showcase)、[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)、[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
 
 - historical-imagery：[地理院地圖：滑動比較與地形工具](#gsi-maps-showcase)
 
@@ -146,11 +171,11 @@
 
 - multispectral：[Prithvi-EO-2.0：多時序地球觀測基礎模型](#prithvi-eo-2-0)
 
-- ocean：[JAXA GCOM-C 海表溫度](#jaxa-gcomc-sst)
+- ocean：[JAXA GCOM-C 海表溫度](#jaxa-gcomc-sst)、[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
-- population：[GHSL GHS-POP R2023A：全球人口網格與暴露估算底圖](#jrc-ghsl-ghs-pop-r2023a)
+- population：[GHSL GHS-POP R2023A：全球人口網格與暴露估算底圖](#jrc-ghsl-ghs-pop-r2023a)、[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
 
-- remote-sensing：[Google Dynamic World V1：全球 10 公尺近即時土地覆蓋](#google-dynamic-world-v1)、[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
+- remote-sensing：[Google Dynamic World V1：全球 10 公尺近即時土地覆蓋](#google-dynamic-world-v1)、[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)、[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 - remote_sensing：[Prithvi-EO-2.0：多時序地球觀測基礎模型](#prithvi-eo-2-0)、[SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
@@ -160,13 +185,13 @@
 
 - time-series：[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
-- transport：[Overture Maps 2026 年 9 月版](#overture-maps)
+- transport：[Overture Maps 2026 年 9 月版](#overture-maps)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
 
-- urban：[Overture Maps 2026 年 9 月版](#overture-maps)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)
+- urban：[Overture Maps 2026 年 9 月版](#overture-maps)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)、[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
 
 - vectorization：[SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
-- weather：[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
+- weather：[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)、[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 - 土地利用：[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)
 
@@ -221,6 +246,24 @@
 - 避難所：[兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 - 醫療可及性：[兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
+
+- 年齡結構：[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
+
+- 服務可及性：[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)
+
+- OD：[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+
+- 大眾運輸：[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+
+- water-quality：[台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
+
+- 污染申報：[台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
+
+- 流域：[台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
+
+- 煙霧：[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
+
+- 雲：[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ## 資源卡
 
@@ -379,3 +422,51 @@
 - SamGeo 為 SAM 模型加上地理影像讀寫、提示座標處理及向量輸出。適合快速把衛星或空拍影像中的候選物件轉成可檢視的 GeoTIFF／GeoJSON 圖層，尤其適合人工輔助圈選與標註。
 
 - [官方來源](https://github.com/opengeos/segment-geospatial)；首次收錄：2026-09-30；最近核對：2026-09-30；狀態：candidate
+
+<a id="taiwan-village-single-age-population"></a>
+
+### 台灣村里每月單齡人口與戶數
+
+- ID：taiwan-village-single-age-population
+
+- 類型：dataset；地區：Taiwan；主題：urban、hazards、population、年齡結構、服務可及性
+
+- 既有資料首次收錄。已下載並解析 2026-08 CSV：7,781 筆、210 欄，年月均為 11508。適合把既有人口背景細化為年齡別需求。
+
+- [官方來源](https://data.gov.tw/dataset/77132)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+
+<a id="taipei-metro-hourly-od"></a>
+
+### 臺北捷運每日分時站間 OD
+
+- ID：taipei-metro-hourly-od
+
+- 類型：dataset；地區：Taiwan；主題：urban、transport、OD、大眾運輸
+
+- 既有資料首次收錄。已讀取含 116 個月份連結的官方 CSV 索引；可為鐵路位置與站點增加旅次方向及時段需求。
+
+- [官方來源](https://data.taipei/dataset/detail?id=63f31c7e-7fc3-418b-bd82-b95158755b4d)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+
+<a id="taiwan-water-discharge-permits-declarations"></a>
+
+### 台灣水污染源許可與排放申報
+
+- ID：taiwan-water-discharge-permits-declarations
+
+- 類型：dataset；地區：Taiwan；主題：environment、water-quality、污染申報、流域
+
+- 既有資料首次收錄。用排放許可及申報細節補充既有列管設施點位，適合流域背景檢視；不能直接認定污染違規。
+
+- [官方來源](https://data.moenv.gov.tw/dataset/detail/EMS_S_03)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+
+<a id="nasa-misr-browse-customization"></a>
+
+### NASA MISR 瀏覽與資料訂製平台：調軌後資料支援
+
+- ID：nasa-misr-browse-customization
+
+- 類型：data_platform；地區：global, Taiwan, Japan；主題：environment、weather、ocean、remote-sensing、煙霧、雲
+
+- 近期更新：NASA 於 2026-09-28 公告工具支援 Terra 2022-10 調軌後資料；該期間目前僅 FIRSTLOOK 可下載，其餘仍在處理。
+
+- [官方來源](https://misr.jpl.nasa.gov/get-data/)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
