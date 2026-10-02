@@ -1283,7 +1283,7 @@
   {
     "secondary_types": [],
     "discovered_at": "2026-10-01",
-    "last_verified_at": "2026-10-01",
+    "last_verified_at": "2026-10-02",
     "id": "taiwan-water-discharge-permits-declarations",
     "title": "台灣水污染源許可與排放申報",
     "primary_type": "dataset",
@@ -1335,12 +1335,16 @@
       {
         "url": "https://data.moenv.gov.tw/api-term",
         "supports": "API 使用條件、配額與申請限制"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/ee208fd2fdf4db3157c743d4e06655698e22754e/src/components/sidebar/layerCatalog.ts",
+        "supports": "2026-10-02 公開專案目錄已有水質／污水及環境統計；不表示 EMS_S_03 已整合"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
-      "notes": "既有 EMS_S_01 列管設施、EMS_P_46 裁處及確認污染場址；本筆是申報屬性補強，不另稱污染圖層缺口。暫列次順位：下載可用後，單流域試作估計 2–4 工程日；先核對一對多關係及單位。"
+      "checked_scope": "mini-taiwan-pulse 公開 master ee208fd2fdf4db3157c743d4e06655698e22754e 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts、package.json、package-lock.json、src/map/MapView.tsx、src/data/statisticsColorScale.ts 及 environmentStatisticsRecipes.catalog.json；未驗證執行中的網站、所有分支或資料庫。",
+      "notes": "既有 EMS_S_01 列管設施、EMS_P_46 裁處及確認污染場址；本筆是申報屬性補強，不另稱污染圖層缺口。暫列次順位：下載可用後，單流域試作估計 2–4 工程日；先核對一對多關係及單位。 2026-10-02 公開目錄已有 waterQualityStations、sewageTreatmentPlants、drinkingWaterProtectionZones 及環境縣市統計；這些不等於 EMS_S_03 許可／申報明細。維持 candidate，增量應是事業—放流口—申報期間串接，不再推薦從零新增水質主題。"
     }
   },
   {
@@ -1419,6 +1423,205 @@
       "status": "candidate",
       "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
       "notes": "未在上述兩份圖層目錄找到 MISR 對應登錄；不推論其他服務完全未使用。事件研究備選；裁切一景並轉為展示圖層估計 2–4 工程日，科學解讀與品質驗證另估。"
+    }
+  },
+  {
+    "id": "mapbox-standard-hd-roads",
+    "title": "Mapbox Standard：高倍率車道細節與立體道路",
+    "primary_type": "model_tool",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "global"
+    ],
+    "topics": [
+      "transport",
+      "urban",
+      "cartography"
+    ],
+    "scope": "Mapbox 公告 71 城市／29 國；台灣、日本目標位置本次未實測，不能推論全部覆蓋",
+    "summary": "2026-09-18 官方更新：高倍率道路標線及橋梁／隧道立體呈現。為商用底圖工具與展示候選，並非可任意下載再散布的開放路網。",
+    "source_url": "https://www.mapbox.com/blog/new-road-detail-in-mapbox-standard",
+    "published_at": "2026-09-18",
+    "source_updated_at": null,
+    "discovered_at": "2026-10-02",
+    "last_verified_at": "2026-10-02",
+    "use_cases": [
+      "於橋梁或路口放大檢視時提供立體空間脈絡",
+      "借鏡按縮放尺度逐步顯示細節，而非全圖同時渲染"
+    ],
+    "limitations": [
+      "官方文件 showHdRoads 預設關閉；覆盖限特定城市／主要公路",
+      "公告要求 Mapbox GL JS 3.30 或行動 SDK 11.30；需先核對版本、Standard style 及費用",
+      "遵守 Mapbox 服務條款與 attribution；不把底圖視為開放可重散布車道幾何",
+      "未測目標地區、GPU／記憶體成本；視覺道路不能取代合法通行或分析路網"
+    ],
+    "implementation_sources": [
+      "https://docs.mapbox.com/map-styles/guides/standard-styles/"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.mapbox.com/blog/new-road-detail-in-mapbox-standard",
+        "supports": "9/18 發布日、道路細節、覆盖概數及 SDK 版本要求"
+      },
+      {
+        "url": "https://docs.mapbox.com/map-styles/guides/standard-styles/",
+        "supports": "showHdRoads 預設關閉與有限覆盖"
+      },
+      {
+        "url": "https://docs.mapbox.com/help/dive-deeper/attribution/",
+        "supports": "Mapbox Standard 要求 logo 與文字 attribution"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/ee208fd2fdf4db3157c743d4e06655698e22754e/package-lock.json",
+        "supports": "本次查核鎖定 mapbox-gl 3.18.1；宣告範圍不等於實際安裝版本"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master ee208fd2fdf4db3157c743d4e06655698e22754e 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts、package.json、package-lock.json、src/map/MapView.tsx、src/data/statisticsColorScale.ts 及 environmentStatisticsRecipes.catalog.json；未驗證執行中的網站、所有分支或資料庫。",
+      "notes": "Mapbox 已是專案依賴；新功能未在本次查核找到啟用，lockfile 3.18.1 尚不滿足公告 3.30 要求。先做單地點覆盖確認，再估升級；小型技術驗證約 1–2 工程日，升級回歸另估。"
+    }
+  },
+  {
+    "id": "analysis-pooled-choropleth-breaks",
+    "title": "跨期共用分級：讓不同年份的同色代表同一範圍",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "environment",
+      "urban",
+      "time-series",
+      "cartography"
+    ],
+    "scope": "可比較且同單位、同定義、同邊界的地區×期間統計；不限地區",
+    "summary": "既有方法首次收錄。PySAL mapclassify.Pooled 對多欄合併估分界，再把同一分界套回各欄；適合檢查時間軸設色是否可比較，並非新發明。",
+    "source_url": "https://pysal.org/mapclassify/generated/mapclassify.Pooled.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-02",
+    "last_verified_at": "2026-10-02",
+    "use_cases": [
+      "台灣環境縣市統計跨年比較採共同圖例",
+      "建立固定基期與 pooled 全期間兩種分級方案並展示差異"
+    ],
+    "limitations": [
+      "須先統一分母年度、單位、行政區邊界與統計定義；分級不會修復資料可比性",
+      "缺測不能填零；同值很多時有效級數可能不足",
+      "全期間 pooled 加入新資料後分界會變；需保存基期、切點與版本",
+      "這是展示分類，不提供因果或顯著性檢定；本次未在真實台灣資料執行"
+    ],
+    "implementation_sources": [
+      "https://pysal.org/mapclassify/generated/mapclassify.Pooled.html",
+      "https://pysal.org/mapclassify/notebooks/03_choropleth.html",
+      "https://github.com/pysal/mapclassify"
+    ],
+    "evidence": [
+      {
+        "url": "https://pysal.org/mapclassify/generated/mapclassify.Pooled.html",
+        "supports": "對欄合併分級並共用 bins 的 API 與範例"
+      },
+      {
+        "url": "https://pysal.org/mapclassify/notebooks/03_choropleth.html",
+        "supports": "分類方法、級數與色盤互動探索及圖例"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/pysal/mapclassify/main/LICENSE.txt",
+        "supports": "程式 BSD-3-Clause 條件，資料需另查原授權"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/ee208fd2fdf4db3157c743d4e06655698e22754e/src/data/statisticsColorScale.ts",
+        "supports": "Pulse 已有依既定 breaks 產生 Mapbox step 色階的程式"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master ee208fd2fdf4db3157c743d4e06655698e22754e 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts、package.json、package-lock.json、src/map/MapView.tsx、src/data/statisticsColorScale.ts 及 environmentStatisticsRecipes.catalog.json；未驗證執行中的網站、所有分支或資料庫。",
+      "notes": "已有統計色階與同切點去重程式；建議新增的是跨期切點的計算／版本契約，不能宣稱目前所有統計都逐年重算或缺少共同分級。先挑同一指標 3 年比較，估計 1 工程日。"
+    }
+  },
+  {
+    "id": "japan-plateau-view-platform",
+    "title": "PLATEAU VIEW 與日本 3D 都市模型配信",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "hazards",
+      "cartography"
+    ],
+    "scope": "日本多地自治體；官方清單列 306 個地點，清單更新日 2026-05-11；不是全國完整覆蓋或同年模型",
+    "summary": "既有資源首次收錄。瀏覽日本 3D 城市並取得原始模型或串流圖磚；目前入口標題為 VIEW 5.0，精確版本發布日未確認。",
+    "source_url": "https://www.mlit.go.jp/plateau/open-data/",
+    "published_at": null,
+    "source_updated_at": "2026-05-11",
+    "discovered_at": "2026-10-02",
+    "last_verified_at": "2026-10-02",
+    "data_details": {
+      "update_frequency": "各地通常約 1–5 年；清單更新日不是各模型測製日期",
+      "formats": [
+        "CityGML",
+        "3D Tiles",
+        "MVT",
+        "OBJ（部分）",
+        "FBX（部分）"
+      ],
+      "access": "VIEW 可直接瀏覽；官方清單連至 G 空間情報中心下載，FAQ 表示不需申請手續。未做圖磚端到端測試。",
+      "api": "https://docs.plateauview.mlit.go.jp/datasets/3d-tiles/",
+      "license": "官方政策未另註時採 PDL1.0，允許依 CC BY 4.0 等規約使用；需顯名、標示加工，個別權利與測量法限制另核對",
+      "license_url": "https://www.mlit.go.jp/plateau/site-policy/"
+    },
+    "use_cases": [
+      "參考城市選擇、圖層切換、建物屬性卡與 LOD 呈現",
+      "單城 3D 示範，屬性卡同時揭露測製年度與精細程度"
+    ],
+    "limitations": [
+      "配信屬試驗運行，服務水準、內容及 API 可能變更",
+      "各地年份、LOD 與屬性不同，不能未對齊就做跨城比較",
+      "尚未驗證台灣產品渲染器接入與效能；原始 CityGML 轉換難度較高"
+    ],
+    "implementation_sources": [
+      "https://plateauview.mlit.go.jp/",
+      "https://docs.plateauview.mlit.go.jp/datasets/3d-tiles/"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.mlit.go.jp/plateau/open-data/",
+        "supports": "306 locations、2026-05-11 清單更新及下载入口"
+      },
+      {
+        "url": "https://plateauview.mlit.go.jp/",
+        "supports": "正式展示入口，頁面標題為 VIEW 5.0"
+      },
+      {
+        "url": "https://www.mlit.go.jp/plateau/faq/",
+        "supports": "模型格式、更新周期及取得方式"
+      },
+      {
+        "url": "https://www.mlit.go.jp/plateau/site-policy/",
+        "supports": "官方授權、來源及加工標示，個別權利限制"
+      },
+      {
+        "url": "https://docs.plateauview.mlit.go.jp/intro/",
+        "supports": "配信試驗運行及服務不保證"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master ee208fd2fdf4db3157c743d4e06655698e22754e 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts、package.json、package-lock.json、src/map/MapView.tsx、src/data/statisticsColorScale.ts 及 environmentStatisticsRecipes.catalog.json；未驗證執行中的網站、所有分支或資料庫。",
+      "notes": "本次兩份圖層目錄未找到 PLATEAU 對應，不推論其他分支未使用。展示設計可先借鏡；單城技術驗證估計 2–3 工程日，原始格式 ETL 另估。"
     }
   }
 ]

@@ -1,8 +1,8 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 17 項，皆為 candidate；可依類型、地區與主題瀏覽。最新查核：2026-10-01（本期 4 項；其餘保留各自查核日）。
+目前 20 項，皆為 candidate；可依類型、地區與主題瀏覽。最新查核：2026-10-02（新增 3 項、更新 1 項；其餘保留各自查核日）。
 
 ## 依類型
 
@@ -29,12 +29,16 @@
 
 ### data_platform
 
+- [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
+
 - [Overture Maps 2026 年 9 月版](#overture-maps)
 
 
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [跨期共用分級：讓不同年份的同色代表同一範圍](#analysis-pooled-choropleth-breaks)
 
 - [Local Moran’s I：辨識環境暴露群聚與空間離群值](#analysis-local-moran-pysal)
 
@@ -47,6 +51,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
 
 - [Prithvi-EO-2.0：多時序地球觀測基礎模型](#prithvi-eo-2-0)
 
@@ -85,6 +91,8 @@
 
 ### Japan
 
+- [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
+
 - [Overture Maps 2026 年 9 月版](#overture-maps)
 
 - [NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
@@ -110,6 +118,8 @@
 
 ### global
 
+- [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
+
 - [Overture Maps 2026 年 9 月版](#overture-maps)
 
 - [NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
@@ -130,6 +140,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [跨期共用分級：讓不同年份的同色代表同一範圍](#analysis-pooled-choropleth-breaks)
 
 - [Local Moran’s I：辨識環境暴露群聚與空間離群值](#analysis-local-moran-pysal)
 
@@ -264,6 +276,12 @@
 - 煙霧：[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 - 雲：[NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
+
+### 2026-10-02 新增主題交叉索引
+
+- transport／urban／cartography：[Mapbox 道路細節](#mapbox-standard-hd-roads)
+- environment／urban／time-series／cartography：[跨期共用分級](#analysis-pooled-choropleth-breaks)
+- urban／hazards／cartography：[PLATEAU 平台、資料集與展示](#japan-plateau-view-platform)
 
 ## 資源卡
 
@@ -455,9 +473,9 @@
 
 - 類型：dataset；地區：Taiwan；主題：environment、water-quality、污染申報、流域
 
-- 既有資料首次收錄。用排放許可及申報細節補充既有列管設施點位，適合流域背景檢視；不能直接認定污染違規。
+- 10/02 核對：專案已有水質／污水與環境統計，本筆增量為許可及申報關聯；來源頁更新日未變。既有資料首次收錄。用排放許可及申報細節補充既有列管設施點位，適合流域背景檢視；不能直接認定污染違規。
 
-- [官方來源](https://data.moenv.gov.tw/dataset/detail/EMS_S_03)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+- [官方來源](https://data.moenv.gov.tw/dataset/detail/EMS_S_03)；首次收錄：2026-10-01；最近核對：2026-10-02；狀態：candidate
 
 <a id="nasa-misr-browse-customization"></a>
 
@@ -470,3 +488,30 @@
 - 近期更新：NASA 於 2026-09-28 公告工具支援 Terra 2022-10 調軌後資料；該期間目前僅 FIRSTLOOK 可下載，其餘仍在處理。
 
 - [官方來源](https://misr.jpl.nasa.gov/get-data/)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+
+<a id="mapbox-standard-hd-roads"></a>
+
+### Mapbox Standard：高倍率車道細節與立體道路
+
+- ID：mapbox-standard-hd-roads
+- 類型：model_tool；次類型：showcase；地區：global；主題：transport、urban、cartography
+- 2026-09-18 官方更新：高倍率道路標線及橋梁／隧道立體呈現。為商用底圖工具與展示候選，並非可任意下載再散布的開放路網。
+- [官方來源](https://www.mapbox.com/blog/new-road-detail-in-mapbox-standard)；首次收錄：2026-10-02；最近核對：2026-10-02；狀態：candidate
+
+<a id="analysis-pooled-choropleth-breaks"></a>
+
+### 跨期共用分級：讓不同年份的同色代表同一範圍
+
+- ID：analysis-pooled-choropleth-breaks
+- 類型：analysis_method；次類型：model_tool；地區：not_region_specific；主題：environment、urban、time-series、cartography
+- 既有方法首次收錄。PySAL mapclassify.Pooled 對多欄合併估分界，再把同一分界套回各欄；適合檢查時間軸設色是否可比較，並非新發明。
+- [官方來源](https://pysal.org/mapclassify/generated/mapclassify.Pooled.html)；首次收錄：2026-10-02；最近核對：2026-10-02；狀態：candidate
+
+<a id="japan-plateau-view-platform"></a>
+
+### PLATEAU VIEW 與日本 3D 都市模型配信
+
+- ID：japan-plateau-view-platform
+- 類型：data_platform；次類型：dataset、showcase；地區：Japan；主題：urban、hazards、cartography
+- 既有資源首次收錄。瀏覽日本 3D 城市並取得原始模型或串流圖磚；目前入口標題為 VIEW 5.0，精確版本發布日未確認。
+- [官方來源](https://www.mlit.go.jp/plateau/open-data/)；首次收錄：2026-10-02；最近核對：2026-10-02；狀態：candidate
