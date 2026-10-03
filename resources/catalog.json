@@ -1568,7 +1568,7 @@
     "published_at": null,
     "source_updated_at": "2026-05-11",
     "discovered_at": "2026-10-02",
-    "last_verified_at": "2026-10-02",
+    "last_verified_at": "2026-10-03",
     "data_details": {
       "update_frequency": "各地通常約 1–5 年；清單更新日不是各模型測製日期",
       "formats": [
@@ -1616,12 +1616,206 @@
       {
         "url": "https://docs.plateauview.mlit.go.jp/intro/",
         "supports": "配信試驗運行及服務不保證"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/6f3b65b2654073935b7293959258e44121b3fdd6/src/data/layerManifest.ts",
+        "supports": "jpBuildingHeight 原始碼登錄 PLATEAU 部分建物高度；只證明程式對接，不代表本期運行驗收"
+      }
+    ],
+    "integration": {
+      "status": "integrated",
+      "checked_scope": "mini-taiwan-pulse 公開 master 6f3b65b2654073935b7293959258e44121b3fdd6 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未查詢部署中圖磚、動態目錄、資料庫或其他分支。",
+      "notes": "部分資料已在原始碼登錄：jpBuildingHeight 使用 PLATEAU 分區建物高度 PMTiles，遠距格網與近距輪廓；不是全日本完成，也不等於 VIEW／3D Tiles 已接入或本次實測成功。更正前期未發現對應的判讀；候選增量改為年度／LOD 來源卡與覆蓋揭露。"
+    }
+  },
+  {
+    "id": "taiwan-wra-flood-scenarios",
+    "title": "台灣淹水潛勢：多降雨情境與資源版本",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "hazards",
+      "flood",
+      "urban"
+    ],
+    "scope": "水利署淹水潛勢；資源目錄列台灣本島與離島縣市包及10種定量降雨SHP，實際模型範圍依圖資註記",
+    "summary": "既有資料首次收錄。Pulse已有650mm/24h；可研究其餘情境與版本卡，不把目錄更新日視為模型重算日。",
+    "source_url": "https://data.gov.tw/dataset/25766",
+    "published_at": "2017-09-12",
+    "source_updated_at": "2026-09-29",
+    "discovered_at": "2026-10-03",
+    "last_verified_at": "2026-10-03",
+    "data_details": {
+      "update_frequency": "詮釋資料標不定期；說明要求潛勢圖5年更新，個別資源日期需另核對",
+      "formats": [
+        "CSV／JSON／XML（資源目錄）",
+        "SHP（10種情境連結）",
+        "7z（縣市包）"
+      ],
+      "access": "本次直接讀取官方JSON目錄；未下載或解壓SHP及7z。目錄SHP建置日2022-08-12，縣市包2018-10-31。",
+      "api": "https://opendata.wra.gov.tw/api/v2/de9578fe-b014-4f00-b8ca-e6280324f08d?format=JSON&sort=_importdate+asc",
+      "license": "政府資料開放授權條款第1版；另遵守資料頁防災用途、不得用作土地管制／開發限制判定的使用限制",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "既有650mm/24h圖層擴充同年度不同降雨情境選單",
+      "同一區域比較情境下人口／設施暴露，保留模型日期與假設"
+    ],
+    "limitations": [
+      "設計情境不是即時災況或未來颱風預報",
+      "詮釋資料2026-09-29更新不等於資源2026重製；先確認版本有效性再使用",
+      "防洪設施正常運作等假設；無資料不代表無風險",
+      "首次只驗證目錄，未驗證幾何、欄位、下載成功與各情境覆蓋"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.gov.tw/dataset/25766",
+        "supports": "上架與詮釋資料日期、頻率、授權及模型用途限制"
+      },
+      {
+        "url": "https://opendata.wra.gov.tw/api/v2/de9578fe-b014-4f00-b8ca-e6280324f08d?format=JSON&sort=_importdate+asc",
+        "supports": "實讀30筆資源，20個縣市包及10個SHP情境；各資源建置日期"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/6f3b65b2654073935b7293959258e44121b3fdd6/src/data/layerManifest.ts",
+        "supports": "waterFloodExtreme 650mm/24h 已登錄"
+      }
+    ],
+    "integration": {
+      "status": "integrated",
+      "checked_scope": "mini-taiwan-pulse 公開 master 6f3b65b2654073935b7293959258e44121b3fdd6 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未查詢部署中圖磚、動態目錄、資料庫或其他分支。",
+      "notes": "部分整合：waterFloodExtreme 已登錄650mm/24h；多情境比較仍是候選，不推論其他服務不存在。難度中；先一區兩情境檢查版本、CRS和覆蓋，小試估計1–2工程日，未執行。"
+    }
+  },
+  {
+    "id": "analysis-exactextract-zonal-statistics",
+    "title": "exactextract：按像元覆蓋比例計算人口暴露",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "hazards",
+      "population",
+      "environment",
+      "spatial-statistics"
+    ],
+    "scope": "向量多邊形與數值網格的分區統計，不限地區；不是預測模型",
+    "summary": "既有方法／開源工具首次收錄。以每像元被多邊形覆蓋比例加權，避免僅用像元中心決定取捨；可與既有GHSL候選資源串接。",
+    "source_url": "https://isciences.github.io/exactextract/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-03",
+    "last_verified_at": "2026-10-03",
+    "use_cases": [
+      "淹水情境面內人口網格加權加總",
+      "流域／行政區環境網格統計，輸出CSV或GeoJSON-like features"
+    ],
+    "limitations": [
+      "人口count/raster用coverage-weighted sum；密度需乘面積，不能混用",
+      "部分像元加權含像元內均勻配置假設，幾何精確不代表人口位置精確",
+      "重疊洪水面先按同一情境消除重疊；情境間不能直接加總",
+      "NODATA與覆蓋率需分開記錄；投影、格網和年份需對齊",
+      "Apache-2.0授權僅限程式；輸入資料維持原授權；本期未安裝或執行實資料"
+    ],
+    "implementation_sources": [
+      "https://isciences.github.io/exactextract/",
+      "https://isciences.github.io/exactextract/operations.html",
+      "https://github.com/isciences/exactextract"
+    ],
+    "evidence": [
+      {
+        "url": "https://isciences.github.io/exactextract/",
+        "supports": "C++核心、Python/R/CLI入口、分塊與部分像元統計"
+      },
+      {
+        "url": "https://isciences.github.io/exactextract/operations.html",
+        "supports": "sum為值乘覆蓋比例；count不是人數；面積權重與NODATA參數"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/isciences/exactextract/master/LICENSE",
+        "supports": "Apache-2.0程式授權"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse 公開 master ee208fd2fdf4db3157c743d4e06655698e22754e 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts、package.json、package-lock.json、src/map/MapView.tsx、src/data/statisticsColorScale.ts 及 environmentStatisticsRecipes.catalog.json；未驗證執行中的網站、所有分支或資料庫。",
-      "notes": "本次兩份圖層目錄未找到 PLATEAU 對應，不推論其他分支未使用。展示設計可先借鏡；單城技術驗證估計 2–3 工程日，原始格式 ETL 另估。"
+      "checked_scope": "mini-taiwan-pulse 公開 master 6f3b65b2654073935b7293959258e44121b3fdd6 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未查詢部署中圖磚、動態目錄、資料庫或其他分支。",
+      "notes": "上述圖層目錄不足判斷後端是否已用此函式庫，不能宣稱全專案未使用。建議一區一情境、一版人口網格做對照試算，難度低至中，估計1工程日；非已產出的暴露人數。"
+    }
+  },
+  {
+    "id": "japan-mlit-river-flood-inundation",
+    "title": "日本國土數值情報：河川單位洪水浸水想定 A31a",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "flood",
+      "urban"
+    ],
+    "scope": "日本河川管理者提供的河川資料，非全河川完整覆蓋；2025年度版，JGD2011經緯度，官方位置精度25公尺",
+    "summary": "既有資料首次收錄。河川別向量含計畫規模、最大規模、持續時間、氾濫流與河岸侵蝕，可補既有日本洪水影像圖層缺少的屬性查詢。",
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31a-2025.html",
+    "published_at": null,
+    "source_updated_at": "2026-06-08",
+    "discovered_at": "2026-10-03",
+    "last_verified_at": "2026-10-03",
+    "data_details": {
+      "update_frequency": "年度版本及追加更新；固定頻率承諾未確認",
+      "formats": [
+        "GML",
+        "Shapefile",
+        "GeoJSON"
+      ],
+      "access": "官方下載頁按地方整備局／都道府縣分包，內含河川別資料；本期只核對清單與規格，未下載ZIP。",
+      "api": null,
+      "license": "2025年度版CC BY 4.0；標示來源及加工，核對地方附加條件與各版本授權",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html"
+    },
+    "use_cases": [
+      "補jpWaterFloodHazard背景影像的河川／深度／持續時間查詢",
+      "與建物或人口資料做情境暴露分析，不作安全判定"
+    ],
+    "limitations": [
+      "source_updated_at是2026-06-08追加公開日；頁面履歷2026年5月與2025資料年度不同，首頁2026年9月欄目不是發布日",
+      "水深與時間為分級，不能當精確連續值",
+      "未涵蓋所有支流、超出假設降雨、高潮或內水；圖外不代表無風險",
+      "多河川／情境重疊需處理，不能直接加總；本期未驗證個別ZIP"
+    ],
+    "implementation_sources": [
+      "https://nlftp.mlit.go.jp/ksj/gml/datalist/A31_manual.pdf"
+    ],
+    "evidence": [
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31a-2025.html",
+        "supports": "2025年度版內容、格式、屬性、位置精度及限制"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj_news.html",
+        "supports": "2026-06-08追加公開公告，不是9月發布"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html",
+        "supports": "來源與加工標示使用條件"
+      },
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/A31_manual.pdf",
+        "supports": "深度分级與持續時間分圖的展示參考"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開 master 6f3b65b2654073935b7293959258e44121b3fdd6 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未查詢部署中圖磚、動態目錄、資料庫或其他分支。",
+      "notes": "jpWaterFloodHazard 已接官方GSI XYZ raster，不等於本向量A31a已接入。候選是可查詢屬性／情境切換。單河川小試難度中、估計1–2工程日，跨河川去重另估。"
     }
   }
 ]

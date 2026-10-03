@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 20 項，皆為 candidate；可依類型、地區與主題瀏覽。最新查核：2026-10-02（新增 3 項、更新 1 項；其餘保留各自查核日）。
+目前 23 項：21 項 candidate、2 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-03（新增 3 項、更新 PLATEAU 接入判讀；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [日本國土數值情報：河川單位洪水浸水想定 A31a](#japan-mlit-river-flood-inundation)
+
+- [台灣淹水潛勢：多降雨情境與資源版本](#taiwan-wra-flood-scenarios)
 
 - [115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)
 
@@ -38,6 +42,8 @@
 
 ### analysis_method
 
+- [exactextract：按像元覆蓋比例計算人口暴露](#analysis-exactextract-zonal-statistics)
+
 - [跨期共用分級：讓不同年份的同色代表同一範圍](#analysis-pooled-choropleth-breaks)
 
 - [Local Moran’s I：辨識環境暴露群聚與空間離群值](#analysis-local-moran-pysal)
@@ -61,6 +67,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [台灣淹水潛勢：多降雨情境與資源版本](#taiwan-wra-flood-scenarios)
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
 
@@ -90,6 +98,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [日本國土數值情報：河川單位洪水浸水想定 A31a](#japan-mlit-river-flood-inundation)
 
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
 
@@ -140,6 +150,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [exactextract：按像元覆蓋比例計算人口暴露](#analysis-exactextract-zonal-statistics)
 
 - [跨期共用分級：讓不同年份的同色代表同一範圍](#analysis-pooled-choropleth-breaks)
 
@@ -282,6 +294,11 @@
 - transport／urban／cartography：[Mapbox 道路細節](#mapbox-standard-hd-roads)
 - environment／urban／time-series／cartography：[跨期共用分級](#analysis-pooled-choropleth-breaks)
 - urban／hazards／cartography：[PLATEAU 平台、資料集與展示](#japan-plateau-view-platform)
+
+### 2026-10-03 新增主題交叉索引
+
+- hazards／flood／urban：[台灣多降雨情境](#taiwan-wra-flood-scenarios)、[日本河川洪水向量](#japan-mlit-river-flood-inundation)
+- hazards／population／environment／spatial-statistics：[exactextract 分區統計](#analysis-exactextract-zonal-statistics)
 
 ## 資源卡
 
@@ -514,4 +531,37 @@
 - ID：japan-plateau-view-platform
 - 類型：data_platform；次類型：dataset、showcase；地區：Japan；主題：urban、hazards、cartography
 - 既有資源首次收錄。瀏覽日本 3D 城市並取得原始模型或串流圖磚；目前入口標題為 VIEW 5.0，精確版本發布日未確認。
-- [官方來源](https://www.mlit.go.jp/plateau/open-data/)；首次收錄：2026-10-02；最近核對：2026-10-02；狀態：candidate
+- [官方來源](https://www.mlit.go.jp/plateau/open-data/)；首次收錄：2026-10-02；最近核對：2026-10-03；狀態：integrated（部分建物高度原始碼登錄）
+
+- 2026-10-03 接入校正：Pulse 已有 jpBuildingHeight 分區建物高度；不等於 VIEW／3D Tiles 完整整合或線上運行已驗收。[本期證據](../reports/2026-10-03.md#japan-plateau-view-platform)
+
+
+<a id="taiwan-wra-flood-scenarios"></a>
+
+### 台灣淹水潛勢：多降雨情境與資源版本
+
+- ID：taiwan-wra-flood-scenarios
+- 類型：dataset；地區：Taiwan；主題：hazards、flood、urban
+- 既有資料首次收錄。Pulse已有650mm/24h；可研究其餘情境與版本卡，不把目錄更新日視為模型重算日。
+- [官方來源](https://data.gov.tw/dataset/25766)；首次收錄：2026-10-03；最近核對：2026-10-03；狀態：integrated（部分情境原始碼登錄）
+- [適用情境、限制與接入判讀](../reports/2026-10-03.md#taiwan-wra-flood-scenarios)
+
+<a id="analysis-exactextract-zonal-statistics"></a>
+
+### exactextract：按像元覆蓋比例計算人口暴露
+
+- ID：analysis-exactextract-zonal-statistics
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：hazards、population、environment、spatial-statistics
+- 既有方法／開源工具首次收錄。以每像元被多邊形覆蓋比例加權，避免僅用像元中心決定取捨；可與既有GHSL候選資源串接。
+- [官方來源](https://isciences.github.io/exactextract/)；首次收錄：2026-10-03；最近核對：2026-10-03；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-03.md#analysis-exactextract-zonal-statistics)
+
+<a id="japan-mlit-river-flood-inundation"></a>
+
+### 日本國土數值情報：河川單位洪水浸水想定 A31a
+
+- ID：japan-mlit-river-flood-inundation
+- 類型：dataset；地區：Japan；主題：hazards、flood、urban
+- 既有資料首次收錄。河川別向量含計畫規模、最大規模、持續時間、氾濫流與河岸侵蝕，可補既有日本洪水影像圖層缺少的屬性查詢。
+- [官方來源](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31a-2025.html)；首次收錄：2026-10-03；最近核對：2026-10-03；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-03.md#japan-mlit-river-flood-inundation)
