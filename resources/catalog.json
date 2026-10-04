@@ -1817,5 +1817,202 @@
       "checked_scope": "mini-taiwan-pulse 公開 master 6f3b65b2654073935b7293959258e44121b3fdd6 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未查詢部署中圖磚、動態目錄、資料庫或其他分支。",
       "notes": "jpWaterFloodHazard 已接官方GSI XYZ raster，不等於本向量A31a已接入。候選是可查詢屬性／情境切換。單河川小試難度中、估計1–2工程日，跨河川去重另估。"
     }
+  },
+  {
+    "id": "global-fishing-watch-api",
+    "title": "Global Fishing Watch：海事資料 API 與 SAR 來源變更",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "transport",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "全球 AIS 船舶與衛星船舶偵測，可研究台日海域；實際覆蓋依衛星過境、接收與船舶設備而變。",
+    "summary": "2026-09-14 官方宣布 SAR 來源轉接 Sentinel-1C/1D 並恢復資料流；Pulse 已有 GFW 圖層，本期重點是來源、版本與覆蓋差異的解讀。",
+    "source_url": "https://api-doc.globalfishingwatch.org/our-apis/documentation/",
+    "published_at": null,
+    "source_updated_at": "2026-09-14",
+    "discovered_at": "2026-10-04",
+    "last_verified_at": "2026-10-04",
+    "data_details": {
+      "update_frequency": "依產品；AIS 約每日更新且有數日延遲，SAR 受過境限制。官方頁面對延遲有72h與96h／5日差異，須以產品實際時間確認。",
+      "formats": [
+        "REST JSON",
+        "CSV",
+        "GeoTIFF"
+      ],
+      "access": "API 需個別帳號 token；下載門戶需登入。本次只讀公開文件，未使用 API token。",
+      "api": "https://api-doc.globalfishingwatch.org/our-apis/documentation/",
+      "license": "API 為 CC BY-NC 4.0 非商用並需顯名；各資料另核對 metadata，不能視為無限制開放資料。",
+      "license_url": "https://api-doc.globalfishingwatch.org/our-apis/documentation/docs/license-rate-limits"
+    },
+    "use_cases": [
+      "台灣周邊／日本海域海事活動的版本與覆蓋說明",
+      "比較同區同期間 AIS 與 SAR 的觀測差異"
+    ],
+    "limitations": [
+      "來源更新日指 SAR 恢復公告，不是整个平台或所有資料的更新日",
+      "SAR 未匹配 AIS 不等於違法；捕撈活動估計不是漁獲量",
+      "公開文件延遲描述不一致；本次未量測資料新鮮度",
+      "供應商恢復／回補聲明不證明下游資料已回補"
+    ],
+    "evidence": [
+      {
+        "url": "https://globalfishingwatch.org/platform-update/sar-vessel-detection-and-fixed-infrastructure-datasets-issue/",
+        "supports": "9/14恢復公告、Sentinel-1C/1D校準、6/30起回補及約兩月驗證窗限制"
+      },
+      {
+        "url": "https://api-doc.globalfishingwatch.org/our-apis/documentation/docs/v3/general-api-doc/key-concepts/",
+        "supports": "資料版本、x-datasets與個別資料延遲"
+      },
+      {
+        "url": "https://globalfishingwatch.org/global-fishing-watch-data-availability/",
+        "supports": "下載/僅展示區分、格式、延遲差異"
+      },
+      {
+        "url": "https://api-doc.globalfishingwatch.org/our-apis/documentation/docs/license-rate-limits",
+        "supports": "API非商用、顯名、token保密及速率限制"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/8d4fdc06f1d335b3dbc7baed146b3c81545e0405/src/data/layerManifest.ts",
+        "supports": "已有五項 GFW 圖層登錄"
+      }
+    ],
+    "integration": {
+      "status": "integrated",
+      "checked_scope": "公開 master 8d4fdc06f1d335b3dbc7baed146b3c81545e0405 的 layerManifest.ts 與 layerCatalog.ts 全文；未驗收線上資料。",
+      "notes": "已有 presence、hourly grid/tracks、fishing effort、SAR unmatched 登錄；研究增量為來源版本與覆蓋品質卡。難度中，先一海域短時段比較；不新增相同圖層。"
+    }
+  },
+  {
+    "id": "japan-gsj-geology-50k-services",
+    "title": "日本 GSJ 五萬分之一地質圖 WMS／WMTS",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "environment",
+      "hazards",
+      "geology"
+    ],
+    "scope": "日本已發布的1:50,000地質圖幅；2026-09-14新增青森區域14圖幅服務，非全日本完整覆蓋。",
+    "summary": "近期服務覆蓋更新：可作岩性、構造與地形對照背景；服務上架日不是野外調查日。",
+    "source_url": "https://gbank.gsj.jp/owscontents/index_en.html",
+    "published_at": null,
+    "source_updated_at": "2026-09-14",
+    "discovered_at": "2026-10-04",
+    "last_verified_at": "2026-10-04",
+    "data_details": {
+      "update_frequency": "不定期；逐圖幅查看原圖出版日",
+      "formats": [
+        "WMS 1.1.1/1.3.0",
+        "WMTS 1.0.0",
+        "PNG"
+      ],
+      "access": "公開服務目錄按圖幅選URL；本次未成功實測GetCapabilities或圖磚。",
+      "api": "https://gbank.gsj.jp/owscontents/geologicmap50k_index_en.html",
+      "license": "日本政府標準利用規約v2.0；須註明GSJ/AIST來源與加工，第三方權利另核對。",
+      "license_url": "https://www.gsj.jp/en/license/index.html"
+    },
+    "use_cases": [
+      "日本地形／坡地災害展示的地質背景",
+      "以單圖幅在QGIS小試，再評估網頁疊圖"
+    ],
+    "limitations": [
+      "影像服務不等於可下載分析用地質多邊形",
+      "不能推論地塊安全或地震發生機率",
+      "比例尺、圖幅接邊與地質年代需保留"
+    ],
+    "evidence": [
+      {
+        "url": "https://gbank.gsj.jp/owscontents/index_en.html",
+        "supports": "2026-09-14新增青森14圖幅"
+      },
+      {
+        "url": "https://gbank.gsj.jp/owscontents/contents/geologicmap50k_detail_en.html",
+        "supports": "WMS/WMTS、GetFeatureInfo與座標系規格"
+      },
+      {
+        "url": "https://www.gsj.jp/en/license/index.html",
+        "supports": "使用及顯名條款"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "公開master 8d4fdc06f1d335b3dbc7baed146b3c81545e0405兩份圖層目錄，未找到GSJ/geology/地質對應日本圖層；非全部資產搜尋。",
+      "notes": "難度低至中：單圖幅疊圖和圖例小試；服務可用性、網頁跨域及顯名驗收未做。"
+    }
+  },
+  {
+    "id": "duckdb-spatial-metadata-inventory",
+    "title": "DuckDB Spatial：先讀地理檔 metadata 的盤點方法",
+    "primary_type": "model_tool",
+    "secondary_types": [
+      "analysis_method"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "data-quality",
+      "gis",
+      "environment",
+      "urban"
+    ],
+    "scope": "GDAL支援的地理向量格式；適合台灣或日本開放資料入口的檔案級盤點。",
+    "summary": "既有工具新收錄。ST_Read_Meta先讀圖層及CRS等metadata，再用ST_Read做有限取樣；協助區分已知幾何、缺CRS與尚待查證。",
+    "source_url": "https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read_meta",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-04",
+    "last_verified_at": "2026-10-04",
+    "use_cases": [
+      "為開放資料GIS化盤點補充檔案層级證據",
+      "先檢查多圖層/CRS，再決定是否進行重型轉檔"
+    ],
+    "limitations": [
+      "不會自動判斷資料主題、地址可定位率或授權",
+      "metadata成本依格式與驅動而異，不保證遠端零下載",
+      "ST_Read預設僅第一圖層，須逐層選擇；空間過濾不一定有效下推",
+      "本期未安裝或執行；不是對既有盤點完成度的聲明"
+    ],
+    "implementation_sources": [
+      "https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read_meta",
+      "https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read",
+      "https://github.com/duckdb/duckdb-spatial/blob/main/LICENSE"
+    ],
+    "evidence": [
+      {
+        "url": "https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read_meta",
+        "supports": "ST_Read_Meta回傳layers結構與CRS範例"
+      },
+      {
+        "url": "https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read",
+        "supports": "選層、驅動、過濾及單執行緒限制"
+      },
+      {
+        "url": "https://github.com/duckdb/duckdb-spatial/blob/main/LICENSE",
+        "supports": "MIT授權；資料各自授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "本期只讀Pulse前端圖層目錄，不能判斷後端是否已使用DuckDB。",
+      "notes": "候選是metadata-first盤點流程，非聲稱DuckDB在所有專案尚未使用。難度低至中，先少量不同格式樣本比較耗時/成功率。"
+    }
   }
 ]

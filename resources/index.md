@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 23 項：21 項 candidate、2 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-03（新增 3 項、更新 PLATEAU 接入判讀；其餘保留各自查核日）。
+目前 26 項：23 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-04（新增 3 項；原有記錄保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [日本 GSJ 五萬分之一地質圖 WMS／WMTS](#japan-gsj-geology-50k-services)
 
 - [日本國土數值情報：河川單位洪水浸水想定 A31a](#japan-mlit-river-flood-inundation)
 
@@ -33,6 +35,8 @@
 
 ### data_platform
 
+- [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
+
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
@@ -58,6 +62,8 @@
 
 ### model_tool
 
+- [DuckDB Spatial：先讀地理檔 metadata 的盤點方法](#duckdb-spatial-metadata-inventory)
+
 - [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
 
 - [Prithvi-EO-2.0：多時序地球觀測基礎模型](#prithvi-eo-2-0)
@@ -67,6 +73,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
 
 - [台灣淹水潛勢：多降雨情境與資源版本](#taiwan-wra-flood-scenarios)
 
@@ -99,6 +107,10 @@
 
 ### Japan
 
+- [日本 GSJ 五萬分之一地質圖 WMS／WMTS](#japan-gsj-geology-50k-services)
+
+- [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
+
 - [日本國土數值情報：河川單位洪水浸水想定 A31a](#japan-mlit-river-flood-inundation)
 
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
@@ -128,6 +140,8 @@
 
 ### global
 
+- [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
+
 - [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
 
 - [Overture Maps 2026 年 9 月版](#overture-maps)
@@ -151,6 +165,8 @@
 
 ### not_region_specific
 
+- [DuckDB Spatial：先讀地理檔 metadata 的盤點方法](#duckdb-spatial-metadata-inventory)
+
 - [exactextract：按像元覆蓋比例計算人口暴露](#analysis-exactextract-zonal-statistics)
 
 - [跨期共用分級：讓不同年份的同色代表同一範圍](#analysis-pooled-choropleth-breaks)
@@ -160,6 +176,13 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ## 依主題
+
+- data-quality：[GFW 來源品質](#global-fishing-watch-api)、[DuckDB metadata 盤點](#duckdb-spatial-metadata-inventory)
+- geology：[日本 GSJ 地質圖](#japan-gsj-geology-50k-services)
+- remote-sensing：[GFW SAR 來源變更](#global-fishing-watch-api)
+- ocean／transport：[GFW 海事資料](#global-fishing-watch-api)
+- environment／hazards：[日本 GSJ 地質圖](#japan-gsj-geology-50k-services)
+- gis／urban：[DuckDB metadata 盤點](#duckdb-spatial-metadata-inventory)
 
 - 2SFCA：[兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
@@ -565,3 +588,36 @@
 - 既有資料首次收錄。河川別向量含計畫規模、最大規模、持續時間、氾濫流與河岸侵蝕，可補既有日本洪水影像圖層缺少的屬性查詢。
 - [官方來源](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31a-2025.html)；首次收錄：2026-10-03；最近核對：2026-10-03；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-03.md#japan-mlit-river-flood-inundation)
+
+
+<a id="global-fishing-watch-api"></a>
+
+### Global Fishing Watch：海事資料 API 與 SAR 來源變更
+
+- ID：global-fishing-watch-api
+- 類型：data_platform；次類型：dataset、showcase；地區：global、Taiwan、Japan；主題：ocean、transport、remote-sensing、data-quality
+- 2026-09-14 官方宣布 SAR 來源轉接 Sentinel-1C/1D 並恢復資料流；Pulse 已有 GFW 圖層，本期重點是來源、版本與覆蓋差異的解讀。
+- [官方來源](https://api-doc.globalfishingwatch.org/our-apis/documentation/)；首次收錄：2026-10-04；最近核對：2026-10-04；狀態：integrated
+- [適用情境、限制與接入判讀](../reports/2026-10-04.md#global-fishing-watch-api)
+
+
+<a id="japan-gsj-geology-50k-services"></a>
+
+### 日本 GSJ 五萬分之一地質圖 WMS／WMTS
+
+- ID：japan-gsj-geology-50k-services
+- 類型：dataset；次類型：data_platform；地區：Japan；主題：environment、hazards、geology
+- 近期服務覆蓋更新：可作岩性、構造與地形對照背景；服務上架日不是野外調查日。
+- [官方來源](https://gbank.gsj.jp/owscontents/index_en.html)；首次收錄：2026-10-04；最近核對：2026-10-04；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-04.md#japan-gsj-geology-50k-services)
+
+
+<a id="duckdb-spatial-metadata-inventory"></a>
+
+### DuckDB Spatial：先讀地理檔 metadata 的盤點方法
+
+- ID：duckdb-spatial-metadata-inventory
+- 類型：model_tool；次類型：analysis_method；地區：not_region_specific；主題：data-quality、gis、environment、urban
+- 既有工具新收錄。ST_Read_Meta先讀圖層及CRS等metadata，再用ST_Read做有限取樣；協助區分已知幾何、缺CRS與尚待查證。
+- [官方來源](https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read_meta)；首次收錄：2026-10-04；最近核對：2026-10-04；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-04.md#duckdb-spatial-metadata-inventory)
