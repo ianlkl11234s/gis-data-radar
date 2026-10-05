@@ -1,8 +1,8 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 26 項：23 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-04（新增 3 項；原有記錄保留各自查核日）。
+目前 28 項：25 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-05（新增 2 項；更新村里人口接入判讀；其餘保留各自查核日）。
 
 ## 依類型
 
@@ -35,6 +35,8 @@
 
 ### data_platform
 
+- [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
+
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
 
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
@@ -45,6 +47,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [H3 密度與邊界核算：選格不等於分配人口](#h3-density-boundary-accounting)
 
 - [exactextract：按像元覆蓋比例計算人口暴露](#analysis-exactextract-zonal-statistics)
 
@@ -73,6 +77,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
 
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
 
@@ -107,6 +113,8 @@
 
 ### Japan
 
+- [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
+
 - [日本 GSJ 五萬分之一地質圖 WMS／WMTS](#japan-gsj-geology-50k-services)
 
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
@@ -140,6 +148,8 @@
 
 ### global
 
+- [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
+
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
 
 - [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
@@ -165,6 +175,8 @@
 
 ### not_region_specific
 
+- [H3 密度與邊界核算：選格不等於分配人口](#h3-density-boundary-accounting)
+
 - [DuckDB Spatial：先讀地理檔 metadata 的盤點方法](#duckdb-spatial-metadata-inventory)
 
 - [exactextract：按像元覆蓋比例計算人口暴露](#analysis-exactextract-zonal-statistics)
@@ -176,6 +188,9 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ## 依主題
+
+- POI／time-series：[Places Insights](#google-places-insights)
+- spatial-statistics／data-quality：[H3 密度與邊界核算](#h3-density-boundary-accounting)
 
 - data-quality：[GFW 來源品質](#global-fishing-watch-api)、[DuckDB metadata 盤點](#duckdb-spatial-metadata-inventory)
 - geology：[日本 GSJ 地質圖](#japan-gsj-geology-50k-services)
@@ -491,7 +506,7 @@
 
 - 既有資料首次收錄。已下載並解析 2026-08 CSV：7,781 筆、210 欄，年月均為 11508。適合把既有人口背景細化為年齡別需求。
 
-- [官方來源](https://data.gov.tw/dataset/77132)；首次收錄：2026-10-01；最近核對：2026-10-01；狀態：candidate
+- [官方來源](https://data.gov.tw/dataset/77132)；首次收錄：2026-10-01；最近核對：2026-10-05；狀態：candidate（完整單齡／跨月增量待比對；既有村里人口及年齡 recipes 已登錄）
 
 <a id="taipei-metro-hourly-od"></a>
 
@@ -621,3 +636,23 @@
 - 既有工具新收錄。ST_Read_Meta先讀圖層及CRS等metadata，再用ST_Read做有限取樣；協助區分已知幾何、缺CRS與尚待查證。
 - [官方來源](https://duckdb.org/docs/current/core_extensions/spatial/functions#st_read_meta)；首次收錄：2026-10-04；最近核對：2026-10-04；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-04.md#duckdb-spatial-metadata-inventory)
+
+<a id="google-places-insights"></a>
+
+### Google Places Insights：台日 POI 月度變化與聚合查詢
+
+- ID：google-places-insights
+- 類型：data_platform／dataset／showcase；地區：Taiwan、Japan、global；主題：urban、POI、time-series、data-quality
+- 2026-09-02 月度歷史快照與 PLACES_COUNT_CHANGE 正式可用；可比較自 2024-01 起的月份。商用資料服務，公開文件不等於開放資料授權。
+- [官方來源](https://developers.google.com/maps/documentation/placesinsights/overview)；首次收錄／查核：2026-10-05；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-05.md#google-places-insights)
+
+<a id="h3-density-boundary-accounting"></a>
+
+### H3 密度與邊界核算：選格不等於分配人口
+
+- ID：h3-density-boundary-accounting
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：urban、population、POI、spatial-statistics、data-quality
+- 既有工具的新收錄：格心選格、相交選格與人口分配是三個不同問題；同解析度格子也不是完全等面積。
+- [官方來源](https://h3geo.org/docs/api/regions/)；首次收錄／查核：2026-10-05；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-05.md#h3-density-boundary-accounting)

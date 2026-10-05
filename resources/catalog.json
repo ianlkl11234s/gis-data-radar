@@ -1159,7 +1159,7 @@
   {
     "secondary_types": [],
     "discovered_at": "2026-10-01",
-    "last_verified_at": "2026-10-01",
+    "last_verified_at": "2026-10-05",
     "id": "taiwan-village-single-age-population",
     "title": "台灣村里每月單齡人口與戶數",
     "primary_type": "dataset",
@@ -1174,7 +1174,7 @@
       "服務可及性"
     ],
     "scope": "全國村里；2018 年起按月、性別與單一年齡統計；無內附邊界幾何",
-    "summary": "既有資料首次收錄。已下載並解析 2026-08 CSV：7,781 筆、210 欄，年月均為 11508。適合把既有人口背景細化為年齡別需求。",
+    "summary": "既有資料首次收錄。已下載並解析 2026-08 CSV：7,781 筆、210 欄，年月均為 11508。適合把既有人口背景細化為年齡別需求。 10/05 接入判讀更新：正式發布分支已有村里人口／年齡統計，不再視為空白主題；77132完整單齡欄位與既有衍生圖層的逐欄對照仍待確認。",
     "source_url": "https://data.gov.tw/dataset/77132",
     "published_at": "2018-02-27",
     "source_updated_at": "2026-09-10",
@@ -1214,8 +1214,8 @@
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse 公開 master 2abdd69bfa6b3104e26a669cd135a049498fd439 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；另讀人口 adapter、統計 catalog 與 dataCatalogLoader。未查詢部署中的動態資料目錄、其他分支或全部資料庫。",
-      "notes": "既有 H3 人口、縣市人口指標與人口 adapter 已存在，不應宣稱人口圖層空白。本次未在兩份圖層目錄找到村里單齡月資料對應登錄。第一順位；單縣市試作估計 1–2 工程日，含年齡彙總、區碼與邊界核對；全國跨期另估。"
+      "checked_scope": "mini-taiwan-pulse master f831d92a46d678dfd2399c78834bc84db877c7b9 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；另讀 demographicsStatisticsRecipes.ts；未檢查所有後端或運行環境",
+      "notes": "已有村里人口與年齡 recipes，來源原始碼註明115年8月一期；本筆完整單齡資料仍列candidate，僅代表細粒度欄位/跨月增量待比對，不宣稱村里人口尚未整合。未重下載77132；保留此前實檔查核證據。"
     }
   },
   {
@@ -2013,6 +2013,156 @@
       "status": "candidate",
       "checked_scope": "本期只讀Pulse前端圖層目錄，不能判斷後端是否已使用DuckDB。",
       "notes": "候選是metadata-first盤點流程，非聲稱DuckDB在所有專案尚未使用。難度低至中，先少量不同格式樣本比較耗時/成功率。"
+    }
+  },
+  {
+    "id": "google-places-insights",
+    "title": "Google Places Insights：台日 POI 月度變化與聚合查詢",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Taiwan",
+      "Japan",
+      "global"
+    ],
+    "topics": [
+      "urban",
+      "POI",
+      "time-series",
+      "data-quality"
+    ],
+    "scope": "官方支援國家含台灣、日本；自訂區域或 H3 格網統計，不保證每個行政欄位完整，也非全球完整 POI 清冊",
+    "summary": "2026-09-02 月度歷史快照與 PLACES_COUNT_CHANGE 正式可用；可比較自 2024-01 起的月份。商用資料服務，公開文件不等於開放資料授權。",
+    "source_url": "https://developers.google.com/maps/documentation/placesinsights/overview",
+    "published_at": "2025-04-01",
+    "source_updated_at": "2026-09-02",
+    "discovered_at": "2026-10-05",
+    "last_verified_at": "2026-10-05",
+    "data_details": {
+      "update_frequency": "歷史月快照；當前內容定期更新，未實測最新資料延遲",
+      "formats": [
+        "BigQuery tables",
+        "SQL table-valued functions",
+        "GEOGRAPHY"
+      ],
+      "access": "需申請 Places Insights 存取；官方價格頁要求洽業務，無可直接套用的公開單價。未申請、未查詢或產生費用。",
+      "api": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-change",
+      "license": "依與 Google 的服務協議及 Places Insights 政策；須顯名，快取／公開再散布及非 Google 底圖使用需依實際合約核對。非開放資料。",
+      "license_url": "https://developers.google.com/maps/documentation/placesinsights/policies"
+    },
+    "use_cases": [
+      "固定台日城市範圍，比較相同類別 POI 月變化",
+      "借鏡官方城市／星期／時段控制連動密度圖的展示設計"
+    ],
+    "limitations": [
+      "Places Count 函數最小搜尋面積 1,600m²；此為查詢限制，不是位置精度",
+      "直接 SQL 聚合會省略 0–4 筆列；省略不能當零，Count 函數另有低計數支援",
+      "Place IDs 為樣本而非完整逐店輸出；新增／消失亦可能涉及資料維護",
+      "價格、BigQuery 計算與其他 API 費用須分別確認，不以一般 Places API 價目代入",
+      "只核對公開文件與教程，展示互動與 SQL 未實跑"
+    ],
+    "implementation_sources": [
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/places-count-change",
+      "https://github.com/googlemaps-samples/insights-samples",
+      "https://developers.google.com/maps/architecture/places-insights-looker-studio"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.google.com/maps/documentation/placesinsights/release-notes",
+        "supports": "2025-04-01 Preview；2026-03-12 台灣加入；2026-09-02 歷史快照與變化函數 GA，非本日新聞"
+      },
+      {
+        "url": "https://developers.google.com/maps/documentation/placesinsights/overview",
+        "supports": "聚合方式、低計數省略、最小面積、樣本 ID"
+      },
+      {
+        "url": "https://developers.google.com/maps/documentation/placesinsights/reference/country-schema",
+        "supports": "台灣與日本欄位各異"
+      },
+      {
+        "url": "https://developers.google.com/maps/documentation/placesinsights/quota-and-pricing",
+        "supports": "價格需聯絡銷售、適用 BigQuery 限制"
+      },
+      {
+        "url": "https://developers.google.com/maps/documentation/placesinsights/policies",
+        "supports": "服務協議、顯名、內容可能不準確及定期刷新"
+      },
+      {
+        "url": "https://developers.google.com/maps/architecture/places-insights-looker-studio",
+        "supports": "可借鑑城市／星期／時段選單連動聚合地圖；教程更新2026-09-30，不等同产品新發布"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master f831d92a46d678dfd2399c78834bc84db877c7b9 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；另讀 demographicsStatisticsRecipes.ts；未檢查所有後端或運行環境",
+      "notes": "指定目錄未見 Places Insights；已有公司統計、人口及 H3。候選增量是營業地點／月度變化，不是重複人口圖層。難度中至高：存取、合約、費用與低計數語意先確認。"
+    }
+  },
+  {
+    "id": "h3-density-boundary-accounting",
+    "title": "H3 密度與邊界核算：選格不等於分配人口",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "urban",
+      "population",
+      "POI",
+      "spatial-statistics",
+      "data-quality"
+    ],
+    "scope": "通用 H3 格網方法，可套用台日；非新增觀測資料集",
+    "summary": "既有工具的新收錄：格心選格、相交選格與人口分配是三個不同問題；同解析度格子也不是完全等面積。",
+    "source_url": "https://h3geo.org/docs/api/regions/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-05",
+    "last_verified_at": "2026-10-05",
+    "use_cases": [
+      "既有人口／YouBike H3 圖的面積分母及沿岸邊界檢查",
+      "跨台日城市比較 POI 密度前固定解析度及統計範圍"
+    ],
+    "limitations": [
+      "polygonToCells 用格心選格，不代表精確裁切",
+      "experimental overlap 納入相交格，不會自動提供人口權重",
+      "cellArea 為球面面積；海岸陸域分母需另行裁切且與分子一致",
+      "人口面轉格若採面積比例是假設區內均勻，應驗算總量並標示估計",
+      "沒有實跑產品資料、未評估效能或確認既有後端算法"
+    ],
+    "implementation_sources": [
+      "https://h3geo.org/docs/api/regions/#polygontocells",
+      "https://h3geo.org/docs/api/regions/#polygontocellsexperimental",
+      "https://h3geo.org/docs/api/misc/#cellareakm2"
+    ],
+    "evidence": [
+      {
+        "url": "https://h3geo.org/docs/api/regions/",
+        "supports": "格心選格及實驗性相交／包含模式"
+      },
+      {
+        "url": "https://h3geo.org/docs/core-library/restable/",
+        "supports": "同解析度面積仍有差異；平均值不能代替逐格面積"
+      },
+      {
+        "url": "https://h3geo.org/docs/api/misc/#cellareakm2",
+        "supports": "逐格球面面積函數"
+      },
+      {
+        "url": "https://github.com/uber/h3/blob/master/LICENSE",
+        "supports": "H3 Apache 2.0；不授予輸入資料權利"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse master f831d92a46d678dfd2399c78834bc84db877c7b9 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；另讀 demographicsStatisticsRecipes.ts；未檢查所有後端或運行環境",
+      "notes": "原始碼已登錄人口、社經與 YouBike H3；本筆候選是密度／邊界稽核方法，不是建議重新導入 H3。低至中難度，以沿岸與行政界線小樣本先驗總量。"
     }
   }
 ]
