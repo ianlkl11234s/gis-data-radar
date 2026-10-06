@@ -2164,5 +2164,209 @@
       "checked_scope": "mini-taiwan-pulse master f831d92a46d678dfd2399c78834bc84db877c7b9 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；另讀 demographicsStatisticsRecipes.ts；未檢查所有後端或運行環境",
       "notes": "原始碼已登錄人口、社經與 YouBike H3；本筆候選是密度／邊界稽核方法，不是建議重新導入 H3。低至中難度，以沿岸與行政界線小樣本先驗總量。"
     }
+  },
+  {
+    "id": "openaerialmap-stac-coverage",
+    "title": "OpenAerialMap：STAC 與免下載影像的覆蓋目錄",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "remote-sensing",
+      "hazards",
+      "urban",
+      "data-quality"
+    ],
+    "scope": "全球自願提供的局部航拍／衛星影像；台日覆蓋不連續，不能視為全國正射影像底圖。",
+    "summary": "2026-09-22 文件記載新 STAC／coverage PMTiles 接法與舊 tiles 服務棄用。本次成功讀取台灣範圍一筆 STAC metadata，及 coverage archive 的部分標頭；適合先回答何處有影像。",
+    "source_url": "https://docs.imagery.hotosm.org/usage/using-imagery/",
+    "published_at": null,
+    "source_updated_at": "2026-09-22",
+    "discovered_at": "2026-10-06",
+    "last_verified_at": "2026-10-06",
+    "data_details": {
+      "update_frequency": "影像依提供者上傳；官方說 coverage PMTiles 每小時重建，未量測實際延遲。",
+      "formats": [
+        "STAC JSON",
+        "COG/GeoTIFF",
+        "PMTiles",
+        "XYZ"
+      ],
+      "access": "公開讀取 metadata；本次 STAC GET 與 PMTiles Range GET 成功，未下载原影像。",
+      "api": "https://api.imagery.hotosm.org/stac/search",
+      "license": "新版 FAQ 要求逐影像查授權；本次台灣樣本標為 CC-BY-4.0。舊站通則不能當所有新 collection 的統一授權。",
+      "license_url": "https://docs.imagery.hotosm.org/about/faq/"
+    },
+    "use_cases": [
+      "台日 AOI 影像可用性目錄",
+      "先顯示覆蓋／日期／解析度，再按需開單張影像"
+    ],
+    "limitations": [
+      "coverage 的 density 是格內影像數，不是地面面積覆盖率或有效像元範圍",
+      "查核是小樣本，不證明台日完整覆蓋；未驗證所有圖磚或視覺品質",
+      "9/22 是文件日期，不宣稱當日整體平台正式發布；單筆拍攝、建立與抓取時間應分開"
+    ],
+    "implementation_sources": [
+      "https://docs.imagery.hotosm.org/usage/using-imagery/",
+      "https://github.com/hotosm/openaerialmap"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.imagery.hotosm.org/usage/using-imagery/",
+        "supports": "新服務端點、density z0–13、逐影像圖磚、每小時重建與文件日期"
+      },
+      {
+        "url": "https://docs.imagery.hotosm.org/about/faq/",
+        "supports": "免費存取、逐影像授權"
+      },
+      {
+        "url": "https://api.imagery.hotosm.org/stac/search?collections=openaerialmap&bbox=119,21.8,122.1,25.5&limit=1",
+        "supports": "2026-10-06 成功返回 FeatureCollection 及台灣範圍一筆公開 metadata；未取原影像"
+      },
+      {
+        "url": "https://s3.amazonaws.com/oin-hotosm-temp/global-coverage.pmtiles",
+        "supports": "2026-10-06 Range bytes=0-126 回應 206，標頭 PMTiles v3；Content-Range總長12,233,342 bytes，非完整檔案驗證"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f；讀取 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文、完整路徑樹及 docs/features/terrain-vector/README.md；未掃描全部檔案內容或線上驗收",
+      "notes": "指定登錄未見 OAM；不代表全部專案或外部服務未使用。導入難度低至中：先coverage，再STAC分頁／篩選／快取及權利顯示。"
+    }
+  },
+  {
+    "id": "gdal-valid-data-footprint",
+    "title": "GDAL footprint：分開影像外框與有效像元覆蓋",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "remote-sensing",
+      "gis",
+      "data-quality"
+    ],
+    "scope": "適用具有地理定位與 nodata／mask 的 raster；方法不限地區。",
+    "summary": "既有方法新收錄：以有效像元遮罩產生多邊形，補足 metadata bbox 不能保證每處有可用影像的問題。",
+    "source_url": "https://gdal.org/en/stable/programs/gdal_footprint.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-06",
+    "last_verified_at": "2026-10-06",
+    "use_cases": [
+      "少量候選影像的覆蓋精查",
+      "區分候選外框、有效像元與已檢視品質三層證據"
+    ],
+    "limitations": [
+      "gdal_footprint 自3.8.0提供；新CLI gdal raster footprint自3.11提供，部署先檢查版本",
+      "需讀取像元mask，不是零下載metadata查詢；大量影像可能昂貴",
+      "預設max_points=100可能簡化邊界；band union與intersection語意不同",
+      "valid不代表無雲、無陰影或近期；錯誤nodata會誤刪有效黑色像元",
+      "未安裝或實跑；工具主要MIT授權，依賴及輸入資料另核对"
+    ],
+    "implementation_sources": [
+      "https://gdal.org/en/stable/programs/gdal_footprint.html",
+      "https://gdal.org/en/stable/programs/gdal_raster_footprint.html",
+      "https://gdal.org/en/stable/license.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://gdal.org/en/stable/programs/gdal_footprint.html",
+        "supports": "mask/nodata足跡、3.8.0、band組合、overview與預設100點"
+      },
+      {
+        "url": "https://gdal.org/en/stable/programs/gdal_raster_footprint.html",
+        "supports": "新版CLI自3.11提供"
+      },
+      {
+        "url": "https://gdal.org/en/stable/license.html",
+        "supports": "主要MIT；依賴授權可能另有條件"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f；讀取 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文、完整路徑樹及 docs/features/terrain-vector/README.md；未掃描全部檔案內容或線上驗收",
+      "notes": "既有台灣地形文件已使用GDAL計算坡度／坡向；本筆增量是影像有效範圍QA，未證明後端從未用footprint。難度低至中，先1–3張小樣本。"
+    }
+  },
+  {
+    "id": "japan-gsi-dem1a",
+    "title": "日本 GSI DEM1A：1m 地表高程與供應範圍",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "environment",
+      "terrain",
+      "urban"
+    ],
+    "scope": "日本已整備區域的航空雷射地表高程；非全國連續1m覆蓋。1m名稱對應0.04角秒格網。",
+    "summary": "既有資料的新收錄；2026-07-31擴大1m及5m DEM供應區域。可為日本地形解讀提供資料，不把供應更新當量測日期。",
+    "source_url": "https://service.gsi.go.jp/kiban/",
+    "published_at": null,
+    "source_updated_at": "2026-07-31",
+    "discovered_at": "2026-10-06",
+    "last_verified_at": "2026-10-06",
+    "data_details": {
+      "update_frequency": "分區不定期整備／發布；逐區量測時期不同",
+      "formats": [
+        "JPGIS GML/XML"
+      ],
+      "access": "官方下載服務，需免費使用者註冊；本次未註冊或下載。",
+      "api": null,
+      "license": "國土地理院內容使用規約（PDL 1.0），顯名及加工標示；基本測量成果另有測量法複製／使用承認條件，依用途核對。",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+    },
+    "use_cases": [
+      "日本局部坡度、地形剖面與地表背景",
+      "與既有日本洪水潛勢比較，不單靠DEM重建洪水風險"
+    ],
+    "limitations": [
+      "移除建物／橋梁／樹木，不能用作完整表面模型或橋面高程",
+      "DEM1A高度RMS約0.3m內，格內無地面雷射點時2m內；格距不是垂直精度",
+      "作成年月不是實際量測時間；跨期差分須先統一高程基準、方法與精度",
+      "7/31是DEM供應更新；9/30點雲公告不可混為同一版本",
+      "未驗證二進位下載、資料品質或線上呈現"
+    ],
+    "implementation_sources": [
+      "https://service.gsi.go.jp/kiban/app/help/",
+      "https://service.gsi.go.jp/kiban/app/spec_update_info/"
+    ],
+    "evidence": [
+      {
+        "url": "https://service.gsi.go.jp/kiban/app/data_update_info/",
+        "supports": "2026-07-31 DEM範圍更新；2026年歷史5m/10m資料追加"
+      },
+      {
+        "url": "https://www.gsi.go.jp/kiban/faq.html",
+        "supports": "格距、高度精度、地表模型及時間限制"
+      },
+      {
+        "url": "https://service.gsi.go.jp/kiban/app/help/",
+        "supports": "下載格式、註冊及測量成果使用條件"
+      },
+      {
+        "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+        "supports": "內容使用規約"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f；讀取 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文、完整路徑樹及 docs/features/terrain-vector/README.md；未掃描全部檔案內容或線上驗收",
+      "notes": "台灣既有地形以NLSC20m DTM衍生坡度／坡向；指定目錄未見日本DEM1A。與已收錄GSI Maps展示案例不同。難度中：GML轉raster、CRS／高程基準／nodata與切片。"
+    }
   }
 ]

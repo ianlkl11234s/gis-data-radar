@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 28 項：25 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-05（新增 2 項；更新村里人口接入判讀；其餘保留各自查核日）。
+目前 31 項：28 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-06（新增 3 項；OAM 覆蓋、日本 DEM 與有效像元方法；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [日本 GSI DEM1A：1m 地表高程與供應範圍](#japan-gsi-dem1a)
 
 - [日本 GSJ 五萬分之一地質圖 WMS／WMTS](#japan-gsj-geology-50k-services)
 
@@ -35,6 +37,8 @@
 
 ### data_platform
 
+- [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
+
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
 
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
@@ -47,6 +51,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [GDAL footprint：分開影像外框與有效像元覆蓋](#gdal-valid-data-footprint)
 
 - [H3 密度與邊界核算：選格不等於分配人口](#h3-density-boundary-accounting)
 
@@ -77,6 +83,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
 
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
 
@@ -113,6 +121,10 @@
 
 ### Japan
 
+- [日本 GSI DEM1A：1m 地表高程與供應範圍](#japan-gsi-dem1a)
+
+- [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
+
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
 
 - [日本 GSJ 五萬分之一地質圖 WMS／WMTS](#japan-gsj-geology-50k-services)
@@ -148,6 +160,8 @@
 
 ### global
 
+- [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
+
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
 
 - [Global Fishing Watch：海事資料 API 與 SAR 來源變更](#global-fishing-watch-api)
@@ -174,6 +188,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [GDAL footprint：分開影像外框與有效像元覆蓋](#gdal-valid-data-footprint)
 
 - [H3 密度與邊界核算：選格不等於分配人口](#h3-density-boundary-accounting)
 
@@ -337,6 +353,12 @@
 
 - hazards／flood／urban：[台灣多降雨情境](#taiwan-wra-flood-scenarios)、[日本河川洪水向量](#japan-mlit-river-flood-inundation)
 - hazards／population／environment／spatial-statistics：[exactextract 分區統計](#analysis-exactextract-zonal-statistics)
+
+### 2026-10-06 新增主題交叉索引
+
+- 遙測／覆蓋／資料品質：[OAM STAC 覆蓋](#openaerialmap-stac-coverage)、[有效像元 footprint](#gdal-valid-data-footprint)
+- 災害／都市／地形：[日本 GSI DEM1A](#japan-gsi-dem1a)、[OAM STAC 覆蓋](#openaerialmap-stac-coverage)
+- 跨類型展示：[OAM](#openaerialmap-stac-coverage)；方法與工具：[GDAL footprint](#gdal-valid-data-footprint)
 
 ## 資源卡
 
@@ -656,3 +678,33 @@
 - 既有工具的新收錄：格心選格、相交選格與人口分配是三個不同問題；同解析度格子也不是完全等面積。
 - [官方來源](https://h3geo.org/docs/api/regions/)；首次收錄／查核：2026-10-05；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-05.md#h3-density-boundary-accounting)
+
+<a id="openaerialmap-stac-coverage"></a>
+
+### OpenAerialMap：STAC 與免下載影像的覆蓋目錄
+
+- ID：openaerialmap-stac-coverage
+- 類型：data_platform／dataset／showcase；地區：global、Taiwan、Japan；主題：remote-sensing、hazards、urban、data-quality
+- 2026-09-22 文件記載新 STAC／coverage PMTiles 接法與舊 tiles 服務棄用。本次成功讀取台灣範圍一筆 STAC metadata，及 coverage archive 的部分標頭；適合先回答何處有影像。
+- [官方來源](https://docs.imagery.hotosm.org/usage/using-imagery/)；首次收錄／查核：2026-10-06；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-06.md#openaerialmap-stac-coverage)
+
+<a id="gdal-valid-data-footprint"></a>
+
+### GDAL footprint：分開影像外框與有效像元覆蓋
+
+- ID：gdal-valid-data-footprint
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：remote-sensing、gis、data-quality
+- 既有方法新收錄：以有效像元遮罩產生多邊形，補足 metadata bbox 不能保證每處有可用影像的問題。
+- [官方來源](https://gdal.org/en/stable/programs/gdal_footprint.html)；首次收錄／查核：2026-10-06；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-06.md#gdal-valid-data-footprint)
+
+<a id="japan-gsi-dem1a"></a>
+
+### 日本 GSI DEM1A：1m 地表高程與供應範圍
+
+- ID：japan-gsi-dem1a
+- 類型：dataset；地區：Japan；主題：hazards、environment、terrain、urban
+- 既有資料的新收錄；2026-07-31擴大1m及5m DEM供應區域。可為日本地形解讀提供資料，不把供應更新當量測日期。
+- [官方來源](https://service.gsi.go.jp/kiban/)；首次收錄／查核：2026-10-06；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-06.md#japan-gsi-dem1a)
