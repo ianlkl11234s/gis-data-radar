@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 31 項：28 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-06（新增 3 項；OAM 覆蓋、日本 DEM 與有效像元方法；其餘保留各自查核日）。
+目前 33 項：30 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-07（新增 2 項；珊瑚熱壓力與海洋熱浪；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
 - [日本 GSI DEM1A：1m 地表高程與供應範圍](#japan-gsi-dem1a)
 
@@ -52,6 +54,8 @@
 
 ### analysis_method
 
+- [heatwaveR：從海溫時間序列辨識海洋熱浪](#heatwaver-marine-heatwave-events)
+
 - [GDAL footprint：分開影像外框與有效像元覆蓋](#gdal-valid-data-footprint)
 
 - [H3 密度與邊界核算：選格不等於分配人口](#h3-density-boundary-accounting)
@@ -83,6 +87,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
 - [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
 
@@ -120,6 +126,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
 - [日本 GSI DEM1A：1m 地表高程與供應範圍](#japan-gsi-dem1a)
 
@@ -160,6 +168,8 @@
 
 ### global
 
+- [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
+
 - [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
 
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
@@ -188,6 +198,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [heatwaveR：從海溫時間序列辨識海洋熱浪](#heatwaver-marine-heatwave-events)
 
 - [GDAL footprint：分開影像外框與有效像元覆蓋](#gdal-valid-data-footprint)
 
@@ -359,6 +371,14 @@
 - 遙測／覆蓋／資料品質：[OAM STAC 覆蓋](#openaerialmap-stac-coverage)、[有效像元 footprint](#gdal-valid-data-footprint)
 - 災害／都市／地形：[日本 GSI DEM1A](#japan-gsi-dem1a)、[OAM STAC 覆蓋](#openaerialmap-stac-coverage)
 - 跨類型展示：[OAM](#openaerialmap-stac-coverage)；方法與工具：[GDAL footprint](#gdal-valid-data-footprint)
+
+### 2026-10-07 新增主題交叉索引
+
+- 海洋／環境：[NOAA 珊瑚熱壓力](#noaa-coral-reef-watch-heat-stress)、[heatwaveR 事件辨識](#heatwaver-marine-heatwave-events)
+- 災害／遙測：[NOAA 珊瑚熱壓力](#noaa-coral-reef-watch-heat-stress)
+- 氣象／時間序列：[heatwaveR 事件辨識](#heatwaver-marine-heatwave-events)
+- 平台／展示參考（次類型）：[NOAA 指標、區域與動畫切換](#noaa-coral-reef-watch-heat-stress)
+- 工具（次類型）：[heatwaveR](#heatwaver-marine-heatwave-events)
 
 ## 資源卡
 
@@ -708,3 +728,23 @@
 - 既有資料的新收錄；2026-07-31擴大1m及5m DEM供應區域。可為日本地形解讀提供資料，不把供應更新當量測日期。
 - [官方來源](https://service.gsi.go.jp/kiban/)；首次收錄／查核：2026-10-06；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-06.md#japan-gsi-dem1a)
+
+<a id="noaa-coral-reef-watch-heat-stress"></a>
+
+### NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW
+
+- ID：noaa-coral-reef-watch-heat-stress
+- 類型：dataset／data_platform／showcase；地區：global、Taiwan、Japan；主題：ocean、environment、hazards、remote-sensing
+- 2026-09-30 發布年內破紀錄 DHW 產品；比較當年最大值與 1985–2025 歷史最大值，基準逐年延長。既有每日熱壓力產品可補珊瑚分布的時間維度。
+- [官方來源](https://coralreefwatch.noaa.gov/product/5km/index.php)；首次收錄／查核：2026-10-07；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-07.md#noaa-coral-reef-watch-heat-stress)
+
+<a id="heatwaver-marine-heatwave-events"></a>
+
+### heatwaveR：從海溫時間序列辨識海洋熱浪
+
+- ID：heatwaver-marine-heatwave-events
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：ocean、weather、environment、time-series
+- 既有方法首次收錄。以季節性門檻與連續超標辨識事件，輸出起訖、強度及持續日數；不同於珊瑚 DHW。
+- [官方來源](https://robwschlegel.github.io/heatwaveR/)；首次收錄／查核：2026-10-07；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-07.md#heatwaver-marine-heatwave-events)

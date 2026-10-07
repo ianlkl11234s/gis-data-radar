@@ -2368,5 +2368,143 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f；讀取 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文、完整路徑樹及 docs/features/terrain-vector/README.md；未掃描全部檔案內容或線上驗收",
       "notes": "台灣既有地形以NLSC20m DTM衍生坡度／坡向；指定目錄未見日本DEM1A。與已收錄GSI Maps展示案例不同。難度中：GML轉raster、CRS／高程基準／nodata與切片。"
     }
+  },
+  {
+    "id": "noaa-coral-reef-watch-heat-stress",
+    "title": "NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "environment",
+      "hazards",
+      "remote-sensing"
+    ],
+    "scope": "全球海洋 0.05°（名目 5km），可選台灣至琉球；近岸混合像元不是逐礁現地量測",
+    "summary": "2026-09-30 發布年內破紀錄 DHW 產品；比較當年最大值與 1985–2025 歷史最大值，基準逐年延長。既有每日熱壓力產品可補珊瑚分布的時間維度。",
+    "source_url": "https://coralreefwatch.noaa.gov/product/5km/index.php",
+    "published_at": "2018-08-01",
+    "source_updated_at": "2026-09-30",
+    "discovered_at": "2026-10-07",
+    "last_verified_at": "2026-10-07",
+    "data_details": {
+      "update_frequency": "每日；美東約 13:30 更新，通常處理前一天觀測。實際最新日期以資料為準",
+      "formats": [
+        "NetCDF4",
+        "PNG",
+        "ERDDAP"
+      ],
+      "access": "公開 HTTP 檔案目錄及官方列出的 ERDDAP；本次讀取目錄而未下載像元。新破紀錄圖的獨立機器下載端點尚未核實。",
+      "api": "https://coralreefwatch.noaa.gov/product/5km/index.php",
+      "license": "CRW 官方說明為 public domain，可自由散布並應引用 NOAA Coral Reef Watch；不延伸適用其他珊瑚資料源。",
+      "license_url": "https://coralreefwatch.noaa.gov/satellite/docs/recommendations_crw_citation.php"
+    },
+    "use_cases": [
+      "台灣／琉球珊瑚熱壓力背景與時間軸",
+      "比較每日 DHW 與年度破紀錄狀態，保留基準期間"
+    ],
+    "limitations": [
+      "熱壓力不等於實測白化、死亡或活珊瑚覆蓋率",
+      "年內破紀錄狀態不等於當天仍處於熱壓力",
+      "5km 不適合逐礁精細判讀；沒有訊號不能證明安全",
+      "source_updated_at 是新產品發布日，非最新像元日期；每日 DHW 目錄查見 2026-10-05 檔與 md5，未驗檔內容"
+    ],
+    "evidence": [
+      {
+        "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_dhw-recordbreaking_ytd.php",
+        "supports": "9/30 新產品、歷史比較基準及每日更新"
+      },
+      {
+        "url": "https://coralreefwatch.noaa.gov/product/5km/index.php",
+        "supports": "核心 v3.1 發布、解析度、格式、下載與動畫"
+      },
+      {
+        "url": "https://coralreefwatch.noaa.gov/product/5km/index_5km_dhw.php",
+        "supports": "DHW 為最近 12 週累積熱壓力"
+      },
+      {
+        "url": "https://coralreefwatch.noaa.gov/satellite/docs/recommendations_crw_citation.php",
+        "supports": "public domain 與引用"
+      },
+      {
+        "url": "https://www.star.nesdis.noaa.gov/pub/socd/mecb/crw/data/5km/v3.1_op/nc/v1.0/daily/dhw/2026/",
+        "supports": "已讀公開目錄，最新列出 20261005 NetCDF 及 md5"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；未做線上運行驗收",
+      "notes": "已存在珊瑚歷史分布與棲地分類登錄；本次指定目錄未見 CRW 熱壓力，不代表其他服務未使用。導入難度中：裁切台日 AOI、轉圖磚、分離觀測日期與下載日期。"
+    }
+  },
+  {
+    "id": "heatwaver-marine-heatwave-events",
+    "title": "heatwaveR：從海溫時間序列辨識海洋熱浪",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "ocean",
+      "weather",
+      "environment",
+      "time-series"
+    ],
+    "scope": "不限地區；先單一海洋格點或站點，再擴網格",
+    "summary": "既有方法首次收錄。以季節性門檻與連續超標辨識事件，輸出起訖、強度及持續日數；不同於珊瑚 DHW。",
+    "source_url": "https://robwschlegel.github.io/heatwaveR/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-07",
+    "last_verified_at": "2026-10-07",
+    "use_cases": [
+      "台灣與日本各選一點建立可重現的海溫事件卡",
+      "以門檻曲線、事件區段與地圖連動呈現"
+    ],
+    "limitations": [
+      "需明訂氣候基準期、缺值與事件合併規則；短期 SST 不能代替長期基準",
+      "預設五日及兩步間隔對每日序列有特定含義，不能直接套到不同頻率",
+      "MIT 僅涵蓋工具，輸入資料仍依原授權",
+      "文件顯示開發版 0.5.5.9000；DESCRIPTION Date 2026-07-27 不作正式發布證據；未安裝或跑模型"
+    ],
+    "implementation_sources": [
+      "https://robwschlegel.github.io/heatwaveR/reference/ts2clm.html",
+      "https://robwschlegel.github.io/heatwaveR/reference/detect_event.html",
+      "https://github.com/robwschlegel/heatwaveR"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.marineheatwaves.org/mhw-overview.html",
+        "supports": "Hobday 定義、90百分位、五日與事件合併"
+      },
+      {
+        "url": "https://robwschlegel.github.io/heatwaveR/reference/ts2clm.html",
+        "supports": "明訂基準期，建議30年，缺值參數"
+      },
+      {
+        "url": "https://robwschlegel.github.io/heatwaveR/reference/detect_event.html",
+        "supports": "事件輸出及持續／合併參數"
+      },
+      {
+        "url": "https://github.com/robwschlegel/heatwaveR/blob/master/DESCRIPTION",
+        "supports": "MIT + LICENSE、開發版與描述日期"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；未做線上運行驗收",
+      "notes": "指定目錄未見 heatwaveR 或海洋熱浪事件登錄；不代表全專案未使用。導入難度中：先釘選套件與 SST，單點驗算後才批次。"
+    }
   }
 ]
