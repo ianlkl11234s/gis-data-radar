@@ -2506,5 +2506,188 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；未做線上運行驗收",
       "notes": "指定目錄未見 heatwaveR 或海洋熱浪事件登錄；不代表全專案未使用。導入難度中：先釘選套件與 SST，單點驗算後才批次。"
     }
+  },
+  {
+    "id": "japan-gtfs-data-repository",
+    "title": "日本 GTFS 資料庫：運行版本與有效期間目錄",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "transport",
+      "urban",
+      "accessibility",
+      "data-quality"
+    ],
+    "scope": "日本各提供者登錄的公共運輸 feeds，非全國完整保證；本次抽樣岐阜縣北恵那交通",
+    "summary": "既有來源新收錄。把過去、現行及預定班表與個別授權集中管理，適合先盤點能否做公共運輸可達性。已成功解析一筆北恵那 GTFS ZIP 的 feed_info。",
+    "source_url": "https://gtfs-data.jp/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-08",
+    "last_verified_at": "2026-10-08",
+    "data_details": {
+      "update_frequency": "由提供者依改點等事件更新，無統一每日承諾",
+      "formats": [
+        "GTFS ZIP",
+        "CSV"
+      ],
+      "access": "公開固定下載 URL／API；本次北恵那 ZIP 無需登入成功下載 394132 bytes、13 個文字檔。網站本體需 JavaScript，未完成互動驗收。",
+      "api": "https://api.gtfs-data.jp/v2/organizations/kitaena/feeds/kitaena/files/feed.zip",
+      "license": "逐 feed 指定，平台支援 CC0、CC BY 等；本次北恵那個別授權未獨立核實，不能把平台或下載成功視為統一授權。",
+      "license_url": "https://www.busdata.or.jp/document/20250218_repository.pdf"
+    },
+    "use_cases": [
+      "先盤點日本一城市有效班表與缺漏營運者",
+      "借鑑有效期間、更新日與授權分欄呈現，避免把下載時間當運行版本"
+    ],
+    "limitations": [
+      "北恵那 feed_info 有效期 2026-09-14 至 2027-03-13；僅 metadata 解析，不保證每天有班次或轉乘完整",
+      "未核實全平台現行 feed 數量，不沿用 2025 宣傳數字",
+      "靜態班表不等於即時延誤或實際到站",
+      "下載範例個別授權仍待確認，不將原檔再散布"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.busdata.or.jp/document/20250218_repository.pdf",
+        "supports": "營運者、按地區／事業者篩選、有效期間／更新日／授權及現行／預定固定URL的官方說明與畫面"
+      },
+      {
+        "url": "https://api.gtfs-data.jp/v2/organizations/kitaena/feeds/kitaena/files/feed.zip",
+        "supports": "2026-10-08 實際下載解析 feed_info；13檔、有效期20260914—20270313"
+      },
+      {
+        "url": "https://gtfs.org/documentation/schedule/reference/",
+        "supports": "GTFS 靜態班表欄位與服務日期規則"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文；未核對全部服務、分支或線上运行",
+      "notes": "指定目錄已有日本車站與台灣公車／路網等時圈，未見此平台名稱。難度中：逐feed授權、日期與營運者完整性後，再談跨業者路由。"
+    }
+  },
+  {
+    "id": "japan-yonkoh-gtfs",
+    "title": "四國交通 GTFS-JP：2026 年 10 月班表更新",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "transport",
+      "urban",
+      "accessibility"
+    ],
+    "scope": "四國交通公告之路線巴士班表；未成功解析檔案，不能宣稱涵蓋全四國或所有營運路線",
+    "summary": "近期更新：公告 9/30 發布，內文明列 10/1 資料更新，頁面最後更新 10/5；CC BY 4.0 已明示，但公告主要下載連結回傳登入失敗頁，取得可用檔案仍待確認。",
+    "source_url": "https://yonkoh.co.jp/archives/info/%E6%A8%99%E6%BA%96%E7%9A%84%E3%81%AA%E3%83%90%E3%82%B9%E6%83%85%E5%A0%B1%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%EF%BC%88gtfs-jp%EF%BC%89%E6%9B%B4%E6%96%B0%E3%81%AE%E3%81%8A%E3%81%97-2",
+    "published_at": "2026-09-30",
+    "source_updated_at": "2026-10-05",
+    "discovered_at": "2026-10-08",
+    "last_verified_at": "2026-10-08",
+    "data_details": {
+      "update_frequency": "配合班表改正，不定期；本次公告資料日 2026-10-01",
+      "formats": [
+        "GTFS-JP ZIP"
+      ],
+      "access": "官方公開公告提供下載；主要 webftp 連結回傳登入失敗 HTML，另一官方 gtfs.zip 連結未取得可解析結果。未登入或繞過限制。",
+      "api": null,
+      "license": "Creative Commons Attribution 4.0 International（CC BY 4.0）；保留四國交通來源與改作標示",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "use_cases": [
+      "日本單一營運區的班次／服務時段地圖候選",
+      "以明確改點事件測試舊新班表差異"
+    ],
+    "limitations": [
+      "source_updated_at 是公告頁更新日，不是每站觀測或GTFS有效期",
+      "檔案取得受阻，停站序、路線數、服務日及實際覆蓋尚未驗證",
+      "不能當作即時延誤；公告保留變更／停止與免責說明"
+    ],
+    "evidence": [
+      {
+        "url": "https://yonkoh.co.jp/archives/info/%E6%A8%99%E6%BA%96%E7%9A%84%E3%81%AA%E3%83%90%E3%82%B9%E6%83%85%E5%A0%B1%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%EF%BC%88gtfs-jp%EF%BC%89%E6%9B%B4%E6%96%B0%E3%81%AE%E3%81%8A%E3%81%97-2",
+        "supports": "公告日期、10/1資料更新、10/5頁面更新與CC BY4.0"
+      },
+      {
+        "url": "https://webftp-sv3035.xserver.jp/yonkoh.co.jp/public_html/wp/gtfs/gtfs.zip",
+        "supports": "本次開啟回傳登入失敗HTML，不是可解析ZIP"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文；未核對全部服務、分支或線上运行",
+      "notes": "指定目錄未見四國交通GTFS；非全專案不存在證明。難度中，但可用下載檔是前置阻礙，暫不排正式導入。"
+    }
+  },
+  {
+    "id": "r5py-transit-accessibility",
+    "title": "r5py：按出發時段計算公共運輸可達性",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "transport",
+      "urban",
+      "accessibility",
+      "time-series"
+    ],
+    "scope": "不限地區；台灣／日本須有當地有效 GTFS、OSM 路網與起訖點",
+    "summary": "既有方法／工具新收錄。將步行接駁、班表與換乘納入旅行時間矩陣，以出發時間窗的中位數或分位數呈現，而不是把站點距離當可達性。",
+    "source_url": "https://r5py.readthedocs.io/stable/user-guide/user-manual/travel-time-matrices.html",
+    "published_at": null,
+    "source_updated_at": "2026-06-29",
+    "discovered_at": "2026-10-08",
+    "last_verified_at": "2026-10-08",
+    "use_cases": [
+      "台灣一個生活圈比較平日早上與假日公共運輸30分鐘可到的醫療／工作機會",
+      "日本先用小區域有效GTFS，驗證單一起点到多個目的地"
+    ],
+    "limitations": [
+      "頁面更新日2026-06-29；不是本日新發布，未安裝或執行模型",
+      "GTFS日期、假日例外、時區與跨午夜時間需驗證；班表推算不是即時交通保證",
+      "低班次區需較長出發時間窗；不可把找不到路徑或超過時間上限當零分鐘",
+      "運算量隨起訖對數增加，先少量點，不直接全台全對全",
+      "r5py為GPL-3.0-or-later OR MIT雙授權；R5依賴與OSM／GTFS資料權利另核對"
+    ],
+    "implementation_sources": [
+      "https://r5py.readthedocs.io/stable/user-guide/user-manual/travel-time-matrices.html",
+      "https://r5py.readthedocs.io/stable/reference/reference.html",
+      "https://github.com/r5py/r5py"
+    ],
+    "evidence": [
+      {
+        "url": "https://r5py.readthedocs.io/stable/user-guide/user-manual/travel-time-matrices.html",
+        "supports": "按分鐘出發時間窗、中位數、低頻率限制及日期有效性"
+      },
+      {
+        "url": "https://r5py.readthedocs.io/stable/user-guide/user-manual/data-requirements.html",
+        "supports": "OSM PBF、GTFS、多feeds及可選高程需求"
+      },
+      {
+        "url": "https://r5py.readthedocs.io/stable/reference/reference.html",
+        "supports": "TravelTimeMatrix與percentiles／departure_time_window參數"
+      },
+      {
+        "url": "https://r5py.readthedocs.io/stable/user-guide/citation.html",
+        "supports": "雙授權及R5方法論文入口"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文；未核對全部服務、分支或線上运行",
+      "notes": "已有OSRM醫療／消防等時圈，不重做道路距離；增量是帶班表的公共運輸時段可達性。指定目錄未見r5py。難度中至高：GTFS整備、路網銜接、運算快取及不確定性展示。"
+    }
   }
 ]

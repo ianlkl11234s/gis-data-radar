@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 33 項：30 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-07（新增 2 項；珊瑚熱壓力與海洋熱浪；其餘保留各自查核日）。
+目前 36 項：33 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-08（新增 3 項；GTFS 版本與公共運輸可達性；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [四國交通 GTFS-JP：2026 年 10 月班表更新](#japan-yonkoh-gtfs)
 
 - [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
@@ -39,6 +41,8 @@
 
 ### data_platform
 
+- [日本 GTFS 資料庫：運行版本與有效期間目錄](#japan-gtfs-data-repository)
+
 - [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
 
 - [Google Places Insights：台日 POI 月度變化與聚合查詢](#google-places-insights)
@@ -53,6 +57,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [r5py：按出發時段計算公共運輸可達性](#r5py-transit-accessibility)
 
 - [heatwaveR：從海溫時間序列辨識海洋熱浪](#heatwaver-marine-heatwave-events)
 
@@ -127,6 +133,10 @@
 
 ### Japan
 
+- [四國交通 GTFS-JP：2026 年 10 月班表更新](#japan-yonkoh-gtfs)
+
+- [日本 GTFS 資料庫：運行版本與有效期間目錄](#japan-gtfs-data-repository)
+
 - [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
 - [日本 GSI DEM1A：1m 地表高程與供應範圍](#japan-gsi-dem1a)
@@ -198,6 +208,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [r5py：按出發時段計算公共運輸可達性](#r5py-transit-accessibility)
 
 - [heatwaveR：從海溫時間序列辨識海洋熱浪](#heatwaver-marine-heatwave-events)
 
@@ -379,6 +391,12 @@
 - 氣象／時間序列：[heatwaveR 事件辨識](#heatwaver-marine-heatwave-events)
 - 平台／展示參考（次類型）：[NOAA 指標、區域與動畫切換](#noaa-coral-reef-watch-heat-stress)
 - 工具（次類型）：[heatwaveR](#heatwaver-marine-heatwave-events)
+
+### 2026-10-08 新增主題交叉索引
+
+- 交通／都市／可達性：[日本 GTFS 平台](#japan-gtfs-data-repository)、[四國交通更新](#japan-yonkoh-gtfs)、[r5py](#r5py-transit-accessibility)
+- 資料品質／展示參考：[GTFS 有效期與版本目錄](#japan-gtfs-data-repository)
+- 方法／工具／時間序列：[r5py 旅行時間矩陣](#r5py-transit-accessibility)
 
 ## 資源卡
 
@@ -748,3 +766,33 @@
 - 既有方法首次收錄。以季節性門檻與連續超標辨識事件，輸出起訖、強度及持續日數；不同於珊瑚 DHW。
 - [官方來源](https://robwschlegel.github.io/heatwaveR/)；首次收錄／查核：2026-10-07；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-07.md#heatwaver-marine-heatwave-events)
+
+<a id="japan-gtfs-data-repository"></a>
+
+### 日本 GTFS 資料庫：運行版本與有效期間目錄
+
+- ID：japan-gtfs-data-repository
+- 類型：data_platform／dataset／showcase；地區：Japan；主題：transport、urban、accessibility、data-quality
+- 既有來源新收錄。把過去、現行及預定班表與個別授權集中管理，適合先盤點能否做公共運輸可達性。已成功解析一筆北恵那 GTFS ZIP 的 feed_info。
+- [官方來源](https://gtfs-data.jp/)；首次收錄／查核：2026-10-08；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-08.md#japan-gtfs-data-repository)
+
+<a id="japan-yonkoh-gtfs"></a>
+
+### 四國交通 GTFS-JP：2026 年 10 月班表更新
+
+- ID：japan-yonkoh-gtfs
+- 類型：dataset；地區：Japan；主題：transport、urban、accessibility
+- 近期更新：公告 9/30 發布，內文明列 10/1 資料更新，頁面最後更新 10/5；CC BY 4.0 已明示，但公告主要下載連結回傳登入失敗頁，取得可用檔案仍待確認。
+- [官方來源](https://yonkoh.co.jp/archives/info/%E6%A8%99%E6%BA%96%E7%9A%84%E3%81%AA%E3%83%90%E3%82%B9%E6%83%85%E5%A0%B1%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%EF%BC%88gtfs-jp%EF%BC%89%E6%9B%B4%E6%96%B0%E3%81%AE%E3%81%8A%E3%81%97-2)；首次收錄／查核：2026-10-08；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-08.md#japan-yonkoh-gtfs)
+
+<a id="r5py-transit-accessibility"></a>
+
+### r5py：按出發時段計算公共運輸可達性
+
+- ID：r5py-transit-accessibility
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：transport、urban、accessibility、time-series
+- 既有方法／工具新收錄。將步行接駁、班表與換乘納入旅行時間矩陣，以出發時間窗的中位數或分位數呈現，而不是把站點距離當可達性。
+- [官方來源](https://r5py.readthedocs.io/stable/user-guide/user-manual/travel-time-matrices.html)；首次收錄／查核：2026-10-08；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-08.md#r5py-transit-accessibility)
