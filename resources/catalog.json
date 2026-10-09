@@ -2689,5 +2689,249 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文；未核對全部服務、分支或線上运行",
       "notes": "已有OSRM醫療／消防等時圈，不重做道路距離；增量是帶班表的公共運輸時段可達性。指定目錄未見r5py。難度中至高：GTFS整備、路網銜接、運算快取及不確定性展示。"
     }
+  },
+  {
+    "id": "taiwan-wra-basin-attributes",
+    "title": "水利署流域基本資料：可接流域圖層的統計屬性",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "environment",
+      "water",
+      "data-quality"
+    ],
+    "scope": "水利署各河川分署彙整的流域屬性；本次回傳27列，不代表全台每一條溪流",
+    "summary": "既有資料新收錄；JSON 實讀 27 列、26 個河川代碼，含同碼坡度衝突與欄名／單位不一致，應先設品質閘門再 join。",
+    "source_url": "https://data.gov.tw/dataset/167897",
+    "published_at": "2024-03-01",
+    "source_updated_at": "2026-10-04",
+    "discovered_at": "2026-10-09",
+    "last_verified_at": "2026-10-09",
+    "evidence": [
+      {
+        "url": "https://data.gov.tw/dataset/167897",
+        "supports": "欄位、單位、授權、上架日期與詮釋資料更新日期"
+      },
+      {
+        "url": "https://opendata.wra.gov.tw/api/v2/25d934ae-ecc4-4952-a05b-7ecc208bfd3a?format=JSON&sort=_importdate+asc",
+        "supports": "2026-10-09實際解析27列，鹽水溪重複代碼及阿公店溪年逕流量空值"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未核對所有後端、分支或線上部署",
+      "notes": "已有流域界與河川／水質圖層；未見此資料集 ID。難度低至中，增量是屬性與品質檢核，不是另畫一套流域。"
+    },
+    "data_details": {
+      "update_frequency": "不定期；10/4為詮釋資料更新，不證明數值重算",
+      "formats": [
+        "CSV",
+        "JSON",
+        "XML"
+      ],
+      "access": "公開 API 本次成功解析；不含幾何，需另與流域面做鍵值核對",
+      "api": "https://opendata.wra.gov.tw/api/v2/25d934ae-ecc4-4952-a05b-7ecc208bfd3a?format=JSON&sort=_importdate+asc",
+      "license": "政府資料開放授權條款第1版；需顯名",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "為流域 popup 補主流長度、面積與年逕流量",
+      "以河川代碼盤點統計表能否連到既有圖層"
+    ],
+    "limitations": [
+      "同碼165000鹽水溪兩列坡度不同，不能任選一列或直接多對一合併",
+      "drainageareaha官方定義為平方公里，不能按欄名ha換算",
+      "年逕流量缺值不可填零；數值統計期間未標，不當今年觀測",
+      "本次未驗證與既有流域面的代碼一對一關係"
+    ]
+  },
+  {
+    "id": "hydrosheds-river-basin-topology",
+    "title": "HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "hazards",
+      "network-analysis"
+    ],
+    "scope": "HydroRIVERS v1全球河網含台日；以15角秒底圖生成，有最小集水面積／流量門檻",
+    "summary": "既有來源新收錄；河段的NEXT_DOWN與分層子流域能支援上游追溯。v2美洲發布不能解讀為台日資料已更新。",
+    "source_url": "https://www.hydrosheds.org/products/hydrorivers",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-09",
+    "last_verified_at": "2026-10-09",
+    "evidence": [
+      {
+        "url": "https://www.hydrosheds.org/products/hydrorivers",
+        "supports": "v1範圍、門檻、格式與授權"
+      },
+      {
+        "url": "https://data.hydrosheds.org/file/technical-documentation/HydroRIVERS_TechDoc_v10.pdf",
+        "supports": "NEXT_DOWN、MAIN_RIV、流量期間與子流域連接"
+      },
+      {
+        "url": "https://www.hydrosheds.org/products/hydrobasins",
+        "supports": "分層子流域與拓樸"
+      },
+      {
+        "url": "https://newsletter.hydrosheds.org/archive/2026-07-09-newsletter",
+        "supports": "7月9日v2首批美洲公告，不是本週新聞"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未核對所有後端、分支或線上部署",
+      "notes": "已有河線、流域界與推估RPI河段；指定目錄未見HydroRIVERS名稱。難度中，先單一流域比對，不取代較精細的在地資料。"
+    },
+    "data_details": {
+      "update_frequency": "版本型靜態產品，無定期即時更新承諾",
+      "formats": [
+        "Shapefile",
+        "File Geodatabase"
+      ],
+      "access": "公開分洲下載；本次讀文件，未下載亞洲91MB SHP或完整河網",
+      "api": null,
+      "license": "HydroSHEDS專用授權，允許科學、教育及商用；依原文件的顯名與再散布條件，不等同CC BY",
+      "license_url": "https://www.hydrosheds.org/products/hydrorivers"
+    },
+    "use_cases": [
+      "由測站所在河段追出上游連通河段",
+      "以HYBAS_ID對接子流域，跨台日比較方法"
+    ],
+    "limitations": [
+      "小於10平方公里集水面積且平均流量小於0.1立方公尺/秒的河流不在此網路",
+      "單一NEXT_DOWN無法完整描述分汊、潮汐逆流或人工管網",
+      "DIS_AV_CMS是長期估計，非當日流量",
+      "v1確切首次發布日與頁面更新日未知；技術文件標2019年10月",
+      "HydroSHEDS v2官方2026-07-09公告首批美洲，本次未確認台日v2可用"
+    ]
+  },
+  {
+    "id": "japan-j-flwdir",
+    "title": "J-FlwDir：日本約30m流向與上游集水面積",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "hazards",
+      "terrain"
+    ],
+    "scope": "日本全域1角秒約30m；每塊1°×1°，WGS84；水文補正高程非原始測量DEM",
+    "summary": "既有資料新發現；官方v1.4為2022-12-01，可用於測站上游集水區研究，需先註冊下載。",
+    "source_url": "https://global-hydrodynamics.github.io/J-FlwDir/",
+    "published_at": "2018-11-20",
+    "source_updated_at": "2022-12-01",
+    "discovered_at": "2026-10-09",
+    "last_verified_at": "2026-10-09",
+    "evidence": [
+      {
+        "url": "https://global-hydrodynamics.github.io/J-FlwDir/",
+        "supports": "規格、下載條件、授權與版本歷程"
+      },
+      {
+        "url": "https://doi.org/10.2208/journalofjsce.8.1_234",
+        "supports": "2020年方法論文，流向修正與河網連續性"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未核對所有後端、分支或線上部署",
+      "notes": "指定目錄未見J-FlwDir；難度中至高，流向編碼與NoData轉換、跨格完整上游範圍需驗證。未完成取得或導入。"
+    },
+    "data_details": {
+      "update_frequency": "不定期版本修正；現行v1.4",
+      "formats": [
+        "GeoTIFF"
+      ],
+      "access": "需官方表單登記並收取下載密碼；本次僅閱讀公開文件，未註冊、下載或聯絡",
+      "api": null,
+      "license": "CC BY4.0；作者為版本管理不鼓勵未經同意鏡像完整原始資料集",
+      "license_url": "https://global-hydrodynamics.github.io/J-FlwDir/#license-and-data-policy--ライセンス利用条件"
+    },
+    "use_cases": [
+      "日本一個水質測站的上游集水區",
+      "比較行政區統計與集水區土地利用差異"
+    ],
+    "limitations": [
+      "資料與演算法有誤差；30m像元不代表30m定位精度",
+      "dir的signed/unsigned與河口、內陸凹地、海域特殊值須核對；不能直接假設套件相容",
+      "HAND是相對排水高度，不能直接當淹水深度",
+      "upg摘要與詳述不一致，本期不推薦使用該欄",
+      "只有官方靜態河網圖，未驗證互動展示網站"
+    ]
+  },
+  {
+    "id": "pyflwdir-upstream-catchment",
+    "title": "PyFlwDir：測站集水區與點源下游追蹤",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "network-analysis"
+    ],
+    "scope": "不限地區；需要有效流向網格與出口／點源位置",
+    "summary": "既有方法與Python工具新收錄；將出口點沿流向定位至河道、劃集水區，並從點源追蹤下游。",
+    "source_url": "https://deltares.github.io/pyflwdir/latest/_examples/basins.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-09",
+    "last_verified_at": "2026-10-09",
+    "evidence": [
+      {
+        "url": "https://deltares.github.io/pyflwdir/latest/_examples/basins.html",
+        "supports": "basins與沿流向snap的官方範例"
+      },
+      {
+        "url": "https://deltares.github.io/pyflwdir/latest/_examples/tracing.html",
+        "supports": "點源下游追蹤範例"
+      },
+      {
+        "url": "https://github.com/Deltares/pyflwdir",
+        "supports": "原始碼及MIT授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts 全文；未核對所有後端、分支或線上部署",
+      "notes": "已有河川與RPI圖層；指定目錄未見PyFlwDir。難度中至高，先單一測站人工驗證，不直接全台批次。"
+    },
+    "use_cases": [
+      "測站上游土地利用及設施篩選",
+      "區分只是附近與具有地表水連通性的設施"
+    ],
+    "limitations": [
+      "本期未安裝／執行，J-FlwDir與此工具組合未實測",
+      "檢查NoData、流向編碼、點位貼合距離及跨圖幅上游完整性",
+      "連通性不代表污染因果、流達時間或濃度；地下管線與潮汐需另處理",
+      "套件MIT授權，輸入資料仍各依原權利；文件首次發布與更新日未知"
+    ],
+    "implementation_sources": [
+      "https://deltares.github.io/pyflwdir/latest/_examples/basins.html",
+      "https://deltares.github.io/pyflwdir/latest/_examples/tracing.html",
+      "https://github.com/Deltares/pyflwdir"
+    ]
   }
 ]

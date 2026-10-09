@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 36 項：33 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-08（新增 3 項；GTFS 版本與公共運輸可達性；其餘保留各自查核日）。
+目前 40 項：37 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-09（新增 4 項；流域屬性與上下游連通性；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [J-FlwDir：日本約30m流向與上游集水面積](#japan-j-flwdir)
+
+- [水利署流域基本資料：可接流域圖層的統計屬性](#taiwan-wra-basin-attributes)
 
 - [四國交通 GTFS-JP：2026 年 10 月班表更新](#japan-yonkoh-gtfs)
 
@@ -41,6 +45,8 @@
 
 ### data_platform
 
+- [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
+
 - [日本 GTFS 資料庫：運行版本與有效期間目錄](#japan-gtfs-data-repository)
 
 - [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
@@ -57,6 +63,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [PyFlwDir：測站集水區與點源下游追蹤](#pyflwdir-upstream-catchment)
 
 - [r5py：按出發時段計算公共運輸可達性](#r5py-transit-accessibility)
 
@@ -93,6 +101,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
+
+- [水利署流域基本資料：可接流域圖層的統計屬性](#taiwan-wra-basin-attributes)
 
 - [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
@@ -132,6 +144,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [J-FlwDir：日本約30m流向與上游集水面積](#japan-j-flwdir)
+
+- [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
 
 - [四國交通 GTFS-JP：2026 年 10 月班表更新](#japan-yonkoh-gtfs)
 
@@ -178,6 +194,8 @@
 
 ### global
 
+- [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
+
 - [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
 
 - [OpenAerialMap：STAC 與免下載影像的覆蓋目錄](#openaerialmap-stac-coverage)
@@ -208,6 +226,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [PyFlwDir：測站集水區與點源下游追蹤](#pyflwdir-upstream-catchment)
 
 - [r5py：按出發時段計算公共運輸可達性](#r5py-transit-accessibility)
 
@@ -397,6 +417,13 @@
 - 交通／都市／可達性：[日本 GTFS 平台](#japan-gtfs-data-repository)、[四國交通更新](#japan-yonkoh-gtfs)、[r5py](#r5py-transit-accessibility)
 - 資料品質／展示參考：[GTFS 有效期與版本目錄](#japan-gtfs-data-repository)
 - 方法／工具／時間序列：[r5py 旅行時間矩陣](#r5py-transit-accessibility)
+
+### 2026-10-09 新增主題交叉索引
+
+- 水資源／環境／資料品質：[台灣流域屬性](#taiwan-wra-basin-attributes)
+- 水資源／網路分析：[HydroSHEDS 拓樸](#hydrosheds-river-basin-topology)、[PyFlwDir](#pyflwdir-upstream-catchment)
+- 日本／地形／災害：[J-FlwDir](#japan-j-flwdir)
+- 方法／工具（次類型）：[PyFlwDir 集水區與下游追蹤](#pyflwdir-upstream-catchment)
 
 ## 資源卡
 
@@ -796,3 +823,44 @@
 - 既有方法／工具新收錄。將步行接駁、班表與換乘納入旅行時間矩陣，以出發時間窗的中位數或分位數呈現，而不是把站點距離當可達性。
 - [官方來源](https://r5py.readthedocs.io/stable/user-guide/user-manual/travel-time-matrices.html)；首次收錄／查核：2026-10-08；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-08.md#r5py-transit-accessibility)
+
+
+<a id="taiwan-wra-basin-attributes"></a>
+
+### 水利署流域基本資料：可接流域圖層的統計屬性
+
+- ID：taiwan-wra-basin-attributes
+- 類型：dataset；地區：Taiwan；主題：environment、water、data-quality
+- 既有資料新收錄；JSON 實讀 27 列、26 個河川代碼，含同碼坡度衝突與欄名／單位不一致，應先設品質閘門再 join。
+- [官方來源](https://data.gov.tw/dataset/167897)；首次收錄／查核：2026-10-09；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-09.md#taiwan-wra-basin-attributes)
+
+<a id="hydrosheds-river-basin-topology"></a>
+
+### HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸
+
+- ID：hydrosheds-river-basin-topology
+- 類型：data_platform／dataset；地區：global、Taiwan、Japan；主題：water、environment、hazards、network-analysis
+- 既有來源新收錄；河段的NEXT_DOWN與分層子流域能支援上游追溯。v2美洲發布不能解讀為台日資料已更新。
+- [官方來源](https://www.hydrosheds.org/products/hydrorivers)；首次收錄／查核：2026-10-09；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-09.md#hydrosheds-river-basin-topology)
+
+<a id="japan-j-flwdir"></a>
+
+### J-FlwDir：日本約30m流向與上游集水面積
+
+- ID：japan-j-flwdir
+- 類型：dataset；地區：Japan；主題：water、environment、hazards、terrain
+- 既有資料新發現；官方v1.4為2022-12-01，可用於測站上游集水區研究，需先註冊下載。
+- [官方來源](https://global-hydrodynamics.github.io/J-FlwDir/)；首次收錄／查核：2026-10-09；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-09.md#japan-j-flwdir)
+
+<a id="pyflwdir-upstream-catchment"></a>
+
+### PyFlwDir：測站集水區與點源下游追蹤
+
+- ID：pyflwdir-upstream-catchment
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：water、environment、network-analysis
+- 既有方法與Python工具新收錄；將出口點沿流向定位至河道、劃集水區，並從點源追蹤下游。
+- [官方來源](https://deltares.github.io/pyflwdir/latest/_examples/basins.html)；首次收錄／查核：2026-10-09；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-09.md#pyflwdir-upstream-catchment)
