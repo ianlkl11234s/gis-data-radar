@@ -157,12 +157,12 @@
       "衛星"
     ],
     "scope": "全球 VIIRS 375m、MODIS 1km，包含台日；解析度為感測像元，非火場邊界或定位誤差",
-    "summary": "既有資料精選：為歷史消防火災紀錄增加近即時衛星觀測，兩者需分開命名與呈現。",
+    "summary": "既有資源追蹤：NOAA 10/1通知將S-NPP新資料停止供應日改為2026-11-02 13:00 UTC；FIRMS API已有NOAA-20／21來源選項，候選介接需分開保存衛星來源，不表示整個FIRMS停止。",
     "source_url": "https://firms.modaps.eosdis.nasa.gov/active_fire/",
     "published_at": null,
     "source_updated_at": null,
     "discovered_at": "2026-09-30",
-    "last_verified_at": "2026-09-30",
+    "last_verified_at": "2026-10-10",
     "data_details": {
       "update_frequency": "隨衛星過境產出；全球 NRT 一般過境後 3 小時內可用，非每處每 3 小時掃描",
       "formats": [
@@ -185,7 +185,8 @@
       "熱異常可能是工業等固定熱源，不等於火災通報",
       "雲遮及過境限制可漏測",
       "美加超即時能力不能套用台日",
-      "近即時資料與後續標準科學產品可能不同"
+      "近即時資料與後續標準科學產品可能不同",
+      "2026-10-10查核：S-NPP停止新資料供應為11/2 13:00 UTC（台北21:00），日期仍應追蹤；歷史LAADS產品保留。FIRMS NOAA-20／21 API有文件入口，但本次未用MAP_KEY驗證台日回傳。"
     ],
     "evidence": [
       {
@@ -203,12 +204,24 @@
       {
         "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5184",
         "supports": "NASA 使用與引用說明"
+      },
+      {
+        "url": "https://oceanwatch.noaa.gov/cwn/news/2026-10-01/cessation-suomi-national-polar-orbiting-partnership-s-npp-data-update-1.html",
+        "supports": "10/1修訂公告把原11/1改11/2 13:00 UTC，其他平台替代選項"
+      },
+      {
+        "url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
+        "supports": "NOAA20_NRT／NOAA21_NRT來源選項及API限制"
+      },
+      {
+        "url": "https://ladsweb.modaps.eosdis.nasa.gov/alerts-and-issues/199516",
+        "supports": "10/6更新公告與歷史LAADS資料保留；Start Date欄仍舊值，採公告正文與NOAA通知交叉核對"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
-      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。第二順位；成本低至中：後端快取、去重、信心值與觀測時間、延遲顯示。"
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts，另讀 src/data/buildingsGbaTypes.ts 與建物夜景文件；非全後端、所有分支或線上驗收",
+      "notes": "指定目錄未見FIRMS來源，不推論所有後端均未使用。導入成本低至中，先驗證台日範圍NOAA-20／21新鮮度、衛星標記與去重；本次沒有下載API資料或修改產品。"
     }
   },
   {
@@ -2933,5 +2946,206 @@
       "https://deltares.github.io/pyflwdir/latest/_examples/tracing.html",
       "https://github.com/Deltares/pyflwdir"
     ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": "2026-10-07",
+    "discovered_at": "2026-10-10",
+    "last_verified_at": "2026-10-10",
+    "id": "jaxa-gportal-alos-open-free",
+    "title": "JAXA G-Portal：ALOS 免費資料與平台遷移",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset"
+    ],
+    "regions": [
+      "Japan",
+      "global",
+      "Taiwan"
+    ],
+    "topics": [
+      "remote-sensing",
+      "environment",
+      "hazards",
+      "data-quality"
+    ],
+    "scope": "JAXA 全球觀測檔案，台日實際場景覆蓋需另查；僅指定 ALOS／ALOS-2 Open and Free 產品，不含全部高解析度產品",
+    "summary": "2026-10-07 公告舊站訂購10/16截止、新站供應10/26開始、舊站下載11/4截止；這是取得方式變更，不是新影像發布。",
+    "source_url": "https://www.gportal.jaxa.jp/",
+    "data_details": {
+      "update_frequency": "依產品及觀測檔案；平台遷移依公告，無統一更新頻率",
+      "formats": [
+        "COG（PALSAR-2 L2.2）",
+        "XML metadata（PALSAR-2 L2.2）",
+        "CEOS（SAR L1.1）"
+      ],
+      "access": "下載需註冊；新平台帳號／設定不直接沿用。網站多檔批次下載已取消，官方建議 CSW 搜尋與 SFTP；本次未註冊、訂購或下載。",
+      "api": "https://www.gportal.jaxa.jp/information/support?lang=en",
+      "license": "JAXA G-Portal 專用條款：可免費商用但須事前通知 JAXA、顯名及和平用途；非 CC BY。新站英文條款表示日文優先，日文原文未成功讀取；產品另有規定須個別核對。",
+      "license_url": "https://www.gportal.jaxa.jp/gpr/index/eula?lang=en"
+    },
+    "use_cases": [
+      "以台日歷史 SAR 檔案做災前災後對照候選",
+      "盤點平台更換對資料取得流程的影響"
+    ],
+    "limitations": [
+      "ALOS-2 高解析度一般產品及 ALOS/PRISM 不在所核對免費項目",
+      "需逐場景查覆蓋、觀測時間、模式與品質；本次未驗證台日下載檔",
+      "不同處理級別不是同一格式；不能把 Gamma-0 直接當災損分類",
+      "英文條款查核不取代日文優先原文與個別產品條件"
+    ],
+    "evidence": [
+      {
+        "url": "https://gportal.jaxa.jp/gpr/notice/notice/view/1509",
+        "supports": "10/7公告及三個遷移期限"
+      },
+      {
+        "url": "https://www.gportal.jaxa.jp/information/support?lang=en",
+        "supports": "免費產品範圍、批次下載變更及 CSW/SFTP"
+      },
+      {
+        "url": "https://gportal.jaxa.jp/gpr/notice/case/view/1502",
+        "supports": "新站帳號與認證遷移"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/palsar2_l22_e.htm",
+        "supports": "L2.2 COG地形校正Gamma-0產品"
+      },
+      {
+        "url": "https://www.gportal.jaxa.jp/gpr/index/eula?lang=en",
+        "supports": "新平台英文條款，商用事前通知等限制"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts，另讀 src/data/buildingsGbaTypes.ts 與建物夜景文件；非全後端、所有分支或線上驗收",
+      "notes": "目錄中的 ALOS 為衛星軌道展示，不是此影像下載介接的證據。導入難度中至高：帳號／權利核對、目錄查詢及SAR處理；未接入產品。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-10",
+    "last_verified_at": "2026-10-10",
+    "id": "nasa-black-marble-nightlights",
+    "title": "NASA Black Marble：可量測的每日夜間燈光",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "environment",
+      "hazards",
+      "remote-sensing",
+      "time-series"
+    ],
+    "scope": "全球15角秒約500m網格含台日；非逐棟亮度、停電戶數或地面照度",
+    "summary": "既有資源新收錄；以 NOAA-20 VJ146A2 的校正夜光與品質欄位為接入候選，搭配 S-NPP 新資料供應終止的來源遷移檢查。",
+    "source_url": "https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VJ146A2",
+    "data_details": {
+      "update_frequency": "每日產品；本次未查最新可用圖幅或實際供應延遲",
+      "formats": [
+        "HDF-EOS5",
+        "HDF5"
+      ],
+      "access": "LAADS產品頁與metadata公開；下載需 Earthdata／LAADS 登入或token。本次未建立憑證或下載影像。",
+      "api": "https://ladsweb.modaps.eosdis.nasa.gov/learn",
+      "license": "LAADS資料政策：免費、後續使用及再散布不受限制，請依官方提供的資料DOI與致謝方式引用；圖片與第三方內容另核對。",
+      "license_url": "https://ladsweb.modaps.eosdis.nasa.gov/learn"
+    },
+    "use_cases": [
+      "台日城市夜間活動的月度／事件前後比較",
+      "把真實觀測時間、缺測與補值來源做成資訊卡"
+    ],
+    "limitations": [
+      "VJ146A2資料序列自2018-01-05起，這不是產品發布日",
+      "月光、大氣、雲、雪與觀測角度均影響訊號，品質遮罩不可省略",
+      "gap-filled值可能不是當晚有效觀測，須保留Latest High-Quality Retrieval",
+      "不能僅憑亮度下降判定停電；需獨立事件證據及同季節基準",
+      "S-NPP替代產品不是直接串接保證，需做跨感測器重疊期比較；未實測"
+    ],
+    "implementation_sources": [
+      "https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VJ146A2",
+      "https://landweb.modaps.eosdis.nasa.gov/data/userguide/BlackMarbleUserGuide_Collection2.0_20241203.pdf"
+    ],
+    "evidence": [
+      {
+        "url": "https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VJ146A2",
+        "supports": "NOAA-20、每日15角秒、HDF5、品質與補值欄位、序列起始時間"
+      },
+      {
+        "url": "https://ladsweb.modaps.eosdis.nasa.gov/learn",
+        "supports": "LAADS使用與引用政策"
+      },
+      {
+        "url": "https://ladsweb.modaps.eosdis.nasa.gov/alerts-and-issues/199516",
+        "supports": "S-NPP資料供應11/2停止，歷史資料保留及替代產品映射"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts，另讀 src/data/buildingsGbaTypes.ts 與建物夜景文件；非全後端、所有分支或線上驗收",
+      "notes": "既有建物夜光由建物高度產生配色，與衛星實測夜光不同。指定目錄未見BlackMarble產品ID，不推論所有後端均未使用。導入難度中：區域裁切、QA遮罩、補值標記及跨衛星比較。"
+    }
+  },
+  {
+    "published_at": "2026-10-05",
+    "source_updated_at": "2026-10-05",
+    "discovered_at": "2026-10-10",
+    "last_verified_at": "2026-10-10",
+    "id": "black-marble-night-anomaly-ensemble",
+    "title": "Black Marble 夜間異常偵測：熱訊號與可見光聯合模型",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "hazards",
+      "environment",
+      "remote-sensing",
+      "machine-learning"
+    ],
+    "scope": "方法不限地區；論文以選定火災、燃燒火炬與火山場景測試，尚未驗證台日適用性",
+    "summary": "2026-10-05預印本把VNP46A1熱波段與DNB聯合建模，利用多模型一致性分級；一致性不是獨立真值準確率。",
+    "source_url": "https://arxiv.org/abs/2610.06674",
+    "use_cases": [
+      "為夜間災害候選點設計多訊號與信心分級",
+      "作為小範圍研究比較熱波段單獨偵測與多波段模型"
+    ],
+    "limitations": [
+      "預印本，未確認同行評審；沒有本次核實的可直接下載模型權重或作者程式入口",
+      "論文缺乏完整地面真值，以NightFire重疊及模型投票作部分評估，不能當獨立精確率",
+      "使用A1多波段，不能只拿A2校正夜光就重現",
+      "人工電光與燃燒可能混淆；不可作正式災害告警",
+      "論文CC BY-NC-ND 4.0不代表資料／未提供的程式或權重同授權"
+    ],
+    "implementation_sources": [
+      "https://arxiv.org/html/2610.06674v1#S2",
+      "https://arxiv.org/html/2610.06674v1#S5.SS1"
+    ],
+    "evidence": [
+      {
+        "url": "https://arxiv.org/abs/2610.06674",
+        "supports": "10/5 v1提交與研究主題"
+      },
+      {
+        "url": "https://arxiv.org/html/2610.06674v1",
+        "supports": "A1輸入、模型方法、投票評估、真值限制及文章授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts，另讀 src/data/buildingsGbaTypes.ts 與建物夜景文件；非全後端、所有分支或線上驗收",
+      "notes": "研究候選，導入難度高：需自行重現、標註在地驗證集並處理感測器轉換；本次僅閱讀，未執行模型。"
+    }
   }
 ]

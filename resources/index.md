@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 40 項：37 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-09（新增 4 項；流域屬性與上下游連通性；其餘保留各自查核日）。
+目前 43 項：40 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-10（新增3項、更新FIRMS；衛星來源接續與夜光品質；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
 
 - [J-FlwDir：日本約30m流向與上游集水面積](#japan-j-flwdir)
 
@@ -45,6 +47,8 @@
 
 ### data_platform
 
+- [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
+
 - [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
 
 - [日本 GTFS 資料庫：運行版本與有效期間目錄](#japan-gtfs-data-repository)
@@ -63,6 +67,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [Black Marble 夜間異常偵測：熱訊號與可見光聯合模型](#black-marble-night-anomaly-ensemble)
 
 - [PyFlwDir：測站集水區與點源下游追蹤](#pyflwdir-upstream-catchment)
 
@@ -101,6 +107,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
+
+- [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
 
 - [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
 
@@ -144,6 +154,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
+
+- [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
 
 - [J-FlwDir：日本約30m流向與上游集水面積](#japan-j-flwdir)
 
@@ -194,6 +208,10 @@
 
 ### global
 
+- [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
+
+- [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
+
 - [HydroSHEDS：HydroRIVERS 與 HydroBASINS 上下游拓樸](#hydrosheds-river-basin-topology)
 
 - [NOAA Coral Reef Watch：珊瑚熱壓力與年內破紀錄 DHW](#noaa-coral-reef-watch-heat-stress)
@@ -227,6 +245,8 @@
 
 ### not_region_specific
 
+- [Black Marble 夜間異常偵測：熱訊號與可見光聯合模型](#black-marble-night-anomaly-ensemble)
+
 - [PyFlwDir：測站集水區與點源下游追蹤](#pyflwdir-upstream-catchment)
 
 - [r5py：按出發時段計算公共運輸可達性](#r5py-transit-accessibility)
@@ -248,6 +268,10 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ## 依主題
+
+- 衛星來源接續／data-quality：[ALOS平台遷移](#jaxa-gportal-alos-open-free)、[FIRMS供應追蹤](#nasa-firms-viirs)
+- urban／time-series：[Black Marble實測夜光](#nasa-black-marble-nightlights)
+- machine-learning／hazards：[夜間異常模型](#black-marble-night-anomaly-ensemble)
 
 - POI／time-series：[Places Insights](#google-places-insights)
 - spatial-statistics／data-quality：[H3 密度與邊界核算](#h3-density-boundary-accounting)
@@ -461,7 +485,9 @@
 
 - 既有資料精選：為歷史消防火災紀錄增加近即時衛星觀測，兩者需分開命名與呈現。
 
-- [官方來源](https://firms.modaps.eosdis.nasa.gov/active_fire/)；首次收錄：2026-09-30；最近核對：2026-09-30；狀態：candidate
+- [官方來源](https://firms.modaps.eosdis.nasa.gov/active_fire/)；首次收錄：2026-09-30；最近核對：2026-10-10；狀態：candidate
+
+- 2026-10-10更新：[S-NPP來源接續判讀](../reports/2026-10-10.md#nasa-firms-viirs)，保留既有首次收錄日期
 
 <a id="jaxa-gcomc-sst"></a>
 
@@ -864,3 +890,38 @@
 - 既有方法與Python工具新收錄；將出口點沿流向定位至河道、劃集水區，並從點源追蹤下游。
 - [官方來源](https://deltares.github.io/pyflwdir/latest/_examples/basins.html)；首次收錄／查核：2026-10-09；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-09.md#pyflwdir-upstream-catchment)
+
+
+## 2026-10-10 既有資源更新
+
+- [NASA FIRMS 衛星熱異常](#nasa-firms-viirs)：最近查核2026-10-10，保留首次收錄2026-09-30；NOAA修訂S-NPP新資料停止日為11/2 13:00 UTC，已核對NOAA-20／21 API來源文件，未測回傳。[本期判讀](../reports/2026-10-10.md#nasa-firms-viirs)
+
+<a id="jaxa-gportal-alos-open-free"></a>
+
+### JAXA G-Portal：ALOS 免費資料與平台遷移
+
+- ID：jaxa-gportal-alos-open-free
+- 類型：data_platform／dataset；地區：Japan、global、Taiwan；主題：remote-sensing、environment、hazards、data-quality
+- 2026-10-07 公告舊站訂購10/16截止、新站供應10/26開始、舊站下載11/4截止；這是取得方式變更，不是新影像發布。
+- [官方或原始來源](https://www.gportal.jaxa.jp/)；首次收錄／查核：2026-10-10；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-10.md#jaxa-gportal-alos-open-free)
+
+<a id="nasa-black-marble-nightlights"></a>
+
+### NASA Black Marble：可量測的每日夜間燈光
+
+- ID：nasa-black-marble-nightlights
+- 類型：dataset／data_platform；地區：global、Taiwan、Japan；主題：urban、environment、hazards、remote-sensing、time-series
+- 既有資源新收錄；以 NOAA-20 VJ146A2 的校正夜光與品質欄位為接入候選，搭配 S-NPP 新資料供應終止的來源遷移檢查。
+- [官方或原始來源](https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VJ146A2)；首次收錄／查核：2026-10-10；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-10.md#nasa-black-marble-nightlights)
+
+<a id="black-marble-night-anomaly-ensemble"></a>
+
+### Black Marble 夜間異常偵測：熱訊號與可見光聯合模型
+
+- ID：black-marble-night-anomaly-ensemble
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：hazards、environment、remote-sensing、machine-learning
+- 2026-10-05預印本把VNP46A1熱波段與DNB聯合建模，利用多模型一致性分級；一致性不是獨立真值準確率。
+- [官方或原始來源](https://arxiv.org/abs/2610.06674)；首次收錄／查核：2026-10-10；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-10.md#black-marble-night-anomaly-ensemble)
