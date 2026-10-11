@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 43 項：40 項 candidate、3 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-10（新增3項、更新FIRMS；衛星來源接續與夜光品質；其餘保留各自查核日）。
+目前 46 項：42 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-11（新增3項、更新大規模崩塌整合狀態；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [NCDR 114年版海嘯溢淹潛勢：申請型SHP](#taiwan-ncdr-tsunami-inundation-2025)
 
 - [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
 
@@ -46,6 +48,8 @@
 - [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
 
 ### data_platform
+
+- [海しる API v3：日本海洋來源與沿岸安全展示](#japan-msil-api-v3)
 
 - [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
 
@@ -96,6 +100,8 @@
 
 ### model_tool
 
+- [CoastSeg：潮位校正的衛星岸線時間序列](#coastseg-shoreline-time-series)
+
 - [DuckDB Spatial：先讀地理檔 metadata 的盤點方法](#duckdb-spatial-metadata-inventory)
 
 - [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
@@ -107,6 +113,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [NCDR 114年版海嘯溢淹潛勢：申請型SHP](#taiwan-ncdr-tsunami-inundation-2025)
 
 - [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
 
@@ -154,6 +162,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [海しる API v3：日本海洋來源與沿岸安全展示](#japan-msil-api-v3)
 
 - [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
 
@@ -245,6 +255,8 @@
 
 ### not_region_specific
 
+- [CoastSeg：潮位校正的衛星岸線時間序列](#coastseg-shoreline-time-series)
+
 - [Black Marble 夜間異常偵測：熱訊號與可見光聯合模型](#black-marble-night-anomaly-ensemble)
 
 - [PyFlwDir：測站集水區與點源下游追蹤](#pyflwdir-upstream-catchment)
@@ -268,6 +280,9 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ## 依主題
+
+- ocean／hazards／transport：[海しるAPI與沿岸展示](#japan-msil-api-v3)、[臺灣海嘯溢淹潛勢](#taiwan-ncdr-tsunami-inundation-2025)
+- ocean／environment／remote-sensing：[CoastSeg岸線時間序列](#coastseg-shoreline-time-series)
 
 - 衛星來源接續／data-quality：[ALOS平台遷移](#jaxa-gportal-alos-open-free)、[FIRMS供應追蹤](#nasa-firms-viirs)
 - urban／time-series：[Black Marble實測夜光](#nasa-black-marble-nightlights)
@@ -471,9 +486,9 @@
 
 - 類型：dataset；地區：Taiwan；主題：hazards、坡地災害、土石流、崩塌、災害潛勢
 
-- 今年資料精選：可補坡地風險底圖，並與現有道路、橋梁、避難及降雨資料套疊。
+- 正式master已登錄大規模崩塌潛勢區與影響範圍；本複合條目其他土石流子項未逐一驗收。
 
-- [官方來源](https://data.gov.tw/news/31852)；首次收錄：2026-09-30；最近核對：2026-09-30；狀態：candidate
+- [官方來源](https://data.gov.tw/news/31852)；首次收錄：2026-09-30；最近核對：2026-10-11；狀態：integrated（部分原始碼登錄）
 
 <a id="nasa-firms-viirs"></a>
 
@@ -925,3 +940,33 @@
 - 2026-10-05預印本把VNP46A1熱波段與DNB聯合建模，利用多模型一致性分級；一致性不是獨立真值準確率。
 - [官方或原始來源](https://arxiv.org/abs/2610.06674)；首次收錄／查核：2026-10-10；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-10.md#black-marble-night-anomaly-ensemble)
+
+<a id="japan-msil-api-v3"></a>
+
+### 海しる API v3：日本海洋來源與沿岸安全展示
+
+- ID：japan-msil-api-v3
+- 類型：data_platform／showcase；地區：Japan；主題：ocean、hazards、transport
+- 10/8 ESRI Japan 官方示範把海しる Feature Service 疊成沿岸安全圖；v3仍須區分beta功能與規劃中的服務。
+- [官方或原始來源](https://portal.msil.go.jp/)；首次收錄／查核：2026-10-11；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-11.md#japan-msil-api-v3)
+
+<a id="taiwan-ncdr-tsunami-inundation-2025"></a>
+
+### NCDR 114年版海嘯溢淹潛勢：申請型SHP
+
+- ID：taiwan-ncdr-tsunami-inundation-2025
+- 類型：dataset；地區：Taiwan；主題：ocean、hazards
+- 既有資料新收錄；Max_depth為公尺水深，可研究沿岸設施暴露，但免費不等於免申請開放下載。
+- [官方或原始來源](https://datahub.ncdr.nat.gov.tw/dataset/detail?pid=8a83d05a-27ac-42a7-ad17-ad0eca0e016a)；首次收錄／查核：2026-10-11；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-11.md#taiwan-ncdr-tsunami-inundation-2025)
+
+<a id="coastseg-shoreline-time-series"></a>
+
+### CoastSeg：潮位校正的衛星岸線時間序列
+
+- ID：coastseg-shoreline-time-series
+- 類型：model_tool／analysis_method；地區：not_region_specific；主題：ocean、environment、remote-sensing
+- 既有工具新收錄；先辨識每期水陸邊界，再按斷面與潮位校正，比直接比較兩張衛星影像更可解釋。
+- [官方或原始來源](https://satelliteshorelines.github.io/CoastSeg/)；首次收錄／查核：2026-10-11；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-11.md#coastseg-shoreline-time-series)

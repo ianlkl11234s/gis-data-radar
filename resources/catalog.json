@@ -87,12 +87,12 @@
       "災害潛勢"
     ],
     "scope": "台灣列管 1,753 條土石流潛勢溪流及 94 處大規模崩塌潛勢區；線、集水區、影響範圍面，非全台連續風險評分",
-    "summary": "今年資料精選：可補坡地風險底圖，並與現有道路、橋梁、避難及降雨資料套疊。",
+    "summary": "既有資源狀態更新：正式master已登錄大規模崩塌潛勢區及影響範圍，不能繼續當作全新待補圖層；複合條目的土石流子項未在本次完成逐一驗收。",
     "source_url": "https://data.gov.tw/news/31852",
     "published_at": "2026-01-22",
     "source_updated_at": null,
     "discovered_at": "2026-09-30",
-    "last_verified_at": "2026-09-30",
+    "last_verified_at": "2026-10-11",
     "data_details": {
       "update_frequency": "115 年度；不定期更新",
       "formats": [
@@ -130,12 +130,16 @@
       {
         "url": "https://data.gov.tw/license",
         "supports": "顯名與衍生產品服務使用條件"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/d5278b1acd88f58596c43670868d18dcb9a62941/src/data/layerManifest.ts",
+        "supports": "正式master大規模崩塌潛勢區及影響範圍登錄"
       }
     ],
     "integration": {
-      "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
-      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。首選；成本低至中：核對 CRS、轉 WGS84、簡化切 PMTiles，保留年度與風險級別。"
+      "status": "integrated",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "部分原始碼登錄已整合：landslideDodAreas與landslideDodImpact包含111–115年版；不代表本期下載、部署或畫面驗收，亦未確認本複合條目所有土石流子項。"
     }
   },
   {
@@ -3146,6 +3150,194 @@
       "status": "candidate",
       "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts，另讀 src/data/buildingsGbaTypes.ts 與建物夜景文件；非全後端、所有分支或線上驗收",
       "notes": "研究候選，導入難度高：需自行重現、標註在地驗證集並處理感測器轉換；本次僅閱讀，未執行模型。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": "2026-08-28",
+    "discovered_at": "2026-10-11",
+    "last_verified_at": "2026-10-11",
+    "id": "japan-msil-api-v3",
+    "title": "海しる API v3：日本海洋來源與沿岸安全展示",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "hazards",
+      "transport"
+    ],
+    "scope": "日本周邊海域與沿岸；各圖層涵蓋與更新頻率分別查核",
+    "summary": "10/8 ESRI Japan 官方示範把海しる Feature Service 疊成沿岸安全圖；v3仍須區分beta功能與規劃中的服務。",
+    "source_url": "https://portal.msil.go.jp/",
+    "data_details": {
+      "update_frequency": "依圖層；v3 release notes最後更新2026-08-28，平台10/8另有維護公告",
+      "formats": [
+        "ArcGIS Feature Service",
+        "JSON"
+      ],
+      "access": "API需subscription key；本次只讀文件及展示教學，未建立金鑰或測API回傳",
+      "api": "https://portal.msil.go.jp/howtouse",
+      "license": "原則適用PDL1.0（與CC BY4.0相容），但逐圖層第三方條款優先；需顯名、標示加工及API免責聲明，不能整站統一重新授權",
+      "license_url": "https://www.msil.go.jp/data/terms-of-use-ja.pdf"
+    },
+    "use_cases": [
+      "在日本沿岸圖層加入航行警報與設施背景",
+      "借鑑按活動目的整合圖層及保留來源說明的設計"
+    ],
+    "limitations": [
+      "v3於8/27 beta開始；正式版自10月逐步推出仍為官方規劃，不宣稱全部已正式上線",
+      "已查release notes僅FeatureService為beta，ImageService及MapService仍研議",
+      "每次最多1000筆及64MB，需resultOffset分頁；未驗證實際服務",
+      "10/15 11:00–16:00預定維護，公告未明示時區",
+      "展示教學另用ESRI/Gehirn天氣服務，其授權費用不能當成MSIL的一部分",
+      "不可取代航海圖或即時航行決策"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.msil.go.jp/data/api/v3-release/?ext=1",
+        "supports": "8/27 beta開始、8/28 release notes、ArcGIS/QGIS接入及服務狀態"
+      },
+      {
+        "url": "https://blog.esrij.com/archives/72476",
+        "supports": "10/8官方教學，沿岸安全圖及外部天氣服務"
+      },
+      {
+        "url": "https://portal.msil.go.jp/howtouse",
+        "supports": "API金鑰與分頁限制"
+      },
+      {
+        "url": "https://portal.msil.go.jp/agreement",
+        "supports": "API使用條件與免責要求"
+      },
+      {
+        "url": "https://www.msil.go.jp/data/terms-of-use-ja.pdf",
+        "supports": "9/1系統條款與圖層例外"
+      }
+    ],
+    "implementation_sources": [
+      "https://blog.esrij.com/archives/72476"
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "指定目錄未見MSIL名稱；已有日本AMeDAS、警報、地震、火山，不把氣象疊圖本身當全新缺口。難度中：逐層權利、分頁、版本及快取驗證。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": "2025-04-02",
+    "discovered_at": "2026-10-11",
+    "last_verified_at": "2026-10-11",
+    "id": "taiwan-ncdr-tsunami-inundation-2025",
+    "title": "NCDR 114年版海嘯溢淹潛勢：申請型SHP",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "ocean",
+      "hazards"
+    ],
+    "scope": "臺灣海嘯溢淹潛勢；個別模擬情境及精度須取得文件後再核對",
+    "summary": "既有資料新收錄；Max_depth為公尺水深，可研究沿岸設施暴露，但免費不等於免申請開放下載。",
+    "source_url": "https://datahub.ncdr.nat.gov.tw/dataset/detail?pid=8a83d05a-27ac-42a7-ad17-ad0eca0e016a",
+    "data_details": {
+      "update_frequency": "版本型；本次未確認固定更新週期",
+      "formats": [
+        "SHP",
+        "ZIP"
+      ],
+      "access": "免費、依申請提供；下載需登入。本次未申請或下載",
+      "api": null,
+      "license": "公開詮釋資料未確認可自由再散布之開放授權；依申請核准條件，取得前不得當成可公開部署原始圖資",
+      "license_url": null
+    },
+    "use_cases": [
+      "沿岸公共設施與潛勢水深的研究性套疊"
+    ],
+    "limitations": [
+      "採集期間2024-09-01至2025-03-31，不是當前警報",
+      "2018-10-04為目錄原始上架日，不當作114年版發布日",
+      "未核驗下載檔、CRS、幾何有效性及情境參數",
+      "不能依未覆蓋或低模擬水深宣稱地點安全"
+    ],
+    "evidence": [
+      {
+        "url": "https://datahub.ncdr.nat.gov.tw/dataset/detail?pid=8a83d05a-27ac-42a7-ad17-ad0eca0e016a",
+        "supports": "114年版、4/2更新、SHP與Max_depth、依申請提供及登入限制"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "指定目錄未見此資料來源；不是全專案未用證明。導入難度中至高，先取得合法使用條件與模擬說明，再做一處沿岸暴露試算。"
+    }
+  },
+  {
+    "published_at": "2024-07-01",
+    "source_updated_at": null,
+    "discovered_at": "2026-10-11",
+    "last_verified_at": "2026-10-11",
+    "id": "coastseg-shoreline-time-series",
+    "title": "CoastSeg：潮位校正的衛星岸線時間序列",
+    "primary_type": "model_tool",
+    "secondary_types": [
+      "analysis_method"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "ocean",
+      "environment",
+      "remote-sensing"
+    ],
+    "scope": "通用方法，優先砂礫海灘；台日適用性需另做在地真值驗證",
+    "summary": "既有工具新收錄；先辨識每期水陸邊界，再按斷面與潮位校正，比直接比較兩張衛星影像更可解釋。",
+    "source_url": "https://satelliteshorelines.github.io/CoastSeg/",
+    "use_cases": [
+      "一段海灘的岸線變化及品質卡",
+      "保存輸入、參數與輸出session以供重現"
+    ],
+    "limitations": [
+      "2024-07-01是JOSS方法論文發布日，工具最早發布日未確認；文件更新日未知",
+      "砂礫海灘優先，濕地等場景效果較差；水線移動不能直接判定侵蝕",
+      "需潮位、坡度與參考高程；FES2014/2022及影像存取權利分別查核",
+      "GPL-3.0程式；論文CC BY4.0，輸入影像/模型並非自動同授權",
+      "本次未安裝或執行模型，未量出台日精度"
+    ],
+    "implementation_sources": [
+      "https://github.com/SatelliteShorelines/CoastSeg",
+      "https://satelliteshorelines.github.io/CoastSeg/How-to-Tidally-Correct/"
+    ],
+    "evidence": [
+      {
+        "url": "https://satelliteshorelines.github.io/CoastSeg/",
+        "supports": "Jupyter/Python流程、砂礫海灘限制、sessions與分割模型"
+      },
+      {
+        "url": "https://joss.theoj.org/papers/10.21105/joss.06683",
+        "supports": "論文2024-07-01發布與方法學入口"
+      },
+      {
+        "url": "https://satelliteshorelines.github.io/CoastSeg/How-to-Tidally-Correct/",
+        "supports": "潮位校正步驟、FES需求與CSV/GeoJSON輸出"
+      },
+      {
+        "url": "https://github.com/SatelliteShorelines/CoastSeg",
+        "supports": "GPL-3.0及可用notebook/script實作"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "指定目錄未見CoastSeg；難度中至高，先一小段砂岸少量日期、人工核對與潮位品質，不直接做全台自動侵蝕告警。"
     }
   }
 ]
