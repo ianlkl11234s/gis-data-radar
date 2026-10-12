@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 46 項：42 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-11（新增3項、更新大規模崩塌整合狀態；其餘保留各自查核日）。
+目前 49 項：45 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-12（新增3項GNSS資料、平台與校正方法；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [水利署 GNSS：測站位置與逐日高程](#taiwan-wra-gnss-subsidence)
 
 - [NCDR 114年版海嘯溢淹潛勢：申請型SHP](#taiwan-ncdr-tsunami-inundation-2025)
 
@@ -49,6 +51,8 @@
 
 ### data_platform
 
+- [日本 GEONET：F5.1／R5.1 日座標與地殼變動展示](#japan-geonet-daily-coordinates)
+
 - [海しる API v3：日本海洋來源與沿岸安全展示](#japan-msil-api-v3)
 
 - [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
@@ -71,6 +75,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [GNSS 維護跳點校正：分開儀器更換與地表變動](#gnss-maintenance-offset-correction)
 
 - [Black Marble 夜間異常偵測：熱訊號與可見光聯合模型](#black-marble-night-anomaly-ensemble)
 
@@ -113,6 +119,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [水利署 GNSS：測站位置與逐日高程](#taiwan-wra-gnss-subsidence)
 
 - [NCDR 114年版海嘯溢淹潛勢：申請型SHP](#taiwan-ncdr-tsunami-inundation-2025)
 
@@ -162,6 +170,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [日本 GEONET：F5.1／R5.1 日座標與地殼變動展示](#japan-geonet-daily-coordinates)
 
 - [海しる API v3：日本海洋來源與沿岸安全展示](#japan-msil-api-v3)
 
@@ -254,6 +264,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [GNSS 維護跳點校正：分開儀器更換與地表變動](#gnss-maintenance-offset-correction)
 
 - [CoastSeg：潮位校正的衛星岸線時間序列](#coastseg-shoreline-time-series)
 
@@ -465,6 +477,11 @@
 - 方法／工具（次類型）：[PyFlwDir 集水區與下游追蹤](#pyflwdir-upstream-catchment)
 
 ## 資源卡
+
+### 2026-10-12 新增主題交叉索引
+
+- 測地、災害、資料品質：[台灣GNSS](#taiwan-wra-gnss-subsidence)、[日本GEONET](#japan-geonet-daily-coordinates)
+- 時間序列與維護校正：[offset方法](#gnss-maintenance-offset-correction)
 
 <a id="overture-maps"></a>
 
@@ -970,3 +987,33 @@
 - 既有工具新收錄；先辨識每期水陸邊界，再按斷面與潮位校正，比直接比較兩張衛星影像更可解釋。
 - [官方或原始來源](https://satelliteshorelines.github.io/CoastSeg/)；首次收錄／查核：2026-10-11；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-11.md#coastseg-shoreline-time-series)
+
+<a id="taiwan-wra-gnss-subsidence"></a>
+
+### 水利署 GNSS：測站位置與逐日高程
+
+- ID：taiwan-wra-gnss-subsidence
+- 類型：dataset；地區：Taiwan；主題：hazards、environment、geodesy、data-quality
+- 既有資料新收錄。基本資料實讀42個唯一代碼，metadata仍寫33站；監測JSON為76,970列、38站、2011-01-02至2025-12-31，日粒度但年度發布，不是即時地層下陷。
+- [官方或原始來源](https://data.gov.tw/dataset/36694)；首次收錄／查核：2026-10-12；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-12.md#taiwan-wra-gnss-subsidence)
+
+<a id="japan-geonet-daily-coordinates"></a>
+
+### 日本 GEONET：F5.1／R5.1 日座標與地殼變動展示
+
+- ID：japan-geonet-daily-coordinates
+- 類型：data_platform／dataset／showcase；地區：Japan；主題：hazards、geodesy、time-series、data-quality
+- 新收錄既有平台。近期10/8月報更新；10/1公告P勝浦站10/9停止，8/20公告FTP於10/30結束。F5.1／R5.1採ITRF2020，日粒度不等於即時供應。
+- [官方或原始來源](https://terras.gsi.go.jp/pos_main.php)；首次收錄／查核：2026-10-12；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-12.md#japan-geonet-daily-coordinates)
+
+<a id="gnss-maintenance-offset-correction"></a>
+
+### GNSS 維護跳點校正：分開儀器更換與地表變動
+
+- ID：gnss-maintenance-offset-correction
+- 類型：analysis_method；地區：not_region_specific；主題：geodesy、time-series、data-quality
+- 既有方法新收錄。保留原始序列、維護事件與版本相符補正量，以累積校正分開儀器跳點與可能的地表訊號，不把每個突變都抹平。
+- [官方或原始來源](https://www.gsi.go.jp/kanshi/faq2_2.html)；首次收錄／查核：2026-10-12；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-12.md#gnss-maintenance-offset-correction)

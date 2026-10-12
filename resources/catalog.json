@@ -3339,5 +3339,198 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
       "notes": "指定目錄未見CoastSeg；難度中至高，先一小段砂岸少量日期、人工核對與潮位品質，不直接做全台自動侵蝕告警。"
     }
+  },
+  {
+    "id": "taiwan-wra-gnss-subsidence",
+    "title": "水利署 GNSS：測站位置與逐日高程",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "hazards",
+      "environment",
+      "geodesy",
+      "data-quality"
+    ],
+    "scope": "台灣水利署地層下陷GNSS固定站；點位高程觀測，不是全台連續沉陷面",
+    "summary": "既有資料新收錄。基本資料實讀42個唯一代碼，metadata仍寫33站；監測JSON為76,970列、38站、2011-01-02至2025-12-31，日粒度但年度發布，不是即時地層下陷。",
+    "source_url": "https://data.gov.tw/dataset/36694",
+    "published_at": "2017-09-12",
+    "source_updated_at": "2026-09-29",
+    "discovered_at": "2026-10-12",
+    "last_verified_at": "2026-10-12",
+    "data_details": {
+      "update_frequency": "監測結果每日粒度、審查後每年公布；站點基本資料不定期更新",
+      "formats": [
+        "JSON",
+        "CSV",
+        "XML"
+      ],
+      "access": "公開下載；基本資料36693需用observatoryidentifier連接監測資料36694。更新日為metadata更新，不是最新觀測日期。",
+      "api": "https://opendata.wra.gov.tw/api/v2/d98a5c3b-7e65-4aa2-996c-97215c6074bf?format=JSON&sort=_importdate+asc",
+      "license": "政府資料開放授權條款第1版；須顯名",
+      "license_url": "https://data.gov.tw/license"
+    },
+    "use_cases": [
+      "測站點擊查看高程變化與有效觀測期間",
+      "與地下水位及既有淹水潛勢並列研究，不直接推斷因果"
+    ],
+    "limitations": [
+      "基本資料42個唯一站碼、status均T；觀測檔38站，與metadata33站不同，各站可用期間仍需逐站核對",
+      "已見latitude_4326等欄位只有低小數位；應核對EPSG:3826座標及轉換後位置，不以這些經緯度做精密定位",
+      "點觀測不能直接代表整個地區；高程基準與儀器更換事件需查清",
+      "導入難度中：跨表join、座標品質、缺測及年度延遲；本期驗證觀測檔可解析、站碼日期組合無重複，未驗證每站完整性與高程正確性"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.gov.tw/dataset/36694",
+        "supports": "逐日高程、年度發布、格式、上架與metadata更新及授權"
+      },
+      {
+        "url": "https://data.gov.tw/dataset/36693",
+        "supports": "站點代碼與EPSG4326／3826等座標欄位"
+      },
+      {
+        "url": "https://opendata.wra.gov.tw/api/v2/ad87c3f0-4594-4b5b-859a-beaa6016464c?format=JSON&sort=_importdate+asc",
+        "supports": "2026-10-12直接解析基本資料42列，低小數位座標欄位"
+      },
+      {
+        "url": "https://opendata.wra.gov.tw/api/v2/d98a5c3b-7e65-4aa2-996c-97215c6074bf?format=JSON&sort=_importdate+asc",
+        "supports": "2026-10-12直接解析16,503,178 bytes：76,970列、38站、2011-01-02至2025-12-31，站碼日期組合無重複"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全後端、所有分支或線上驗收",
+      "notes": "指定目錄未找到地層下陷／GNSS測站來源；GNSS-R衛星登錄不是地表GNSS固定站。不能據此判定其他後端或研究未使用。"
+    }
+  },
+  {
+    "id": "japan-geonet-daily-coordinates",
+    "title": "日本 GEONET：F5.1／R5.1 日座標與地殼變動展示",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "geodesy",
+      "time-series",
+      "data-quality"
+    ],
+    "scope": "日本電子基準點點位觀測及相對變動；不可視為台灣GNSS資料或全球連續表面",
+    "summary": "新收錄既有平台。近期10/8月報更新；10/1公告P勝浦站10/9停止，8/20公告FTP於10/30結束。F5.1／R5.1採ITRF2020，日粒度不等於即時供應。",
+    "source_url": "https://terras.gsi.go.jp/pos_main.php",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-12",
+    "last_verified_at": "2026-10-12",
+    "data_details": {
+      "update_frequency": "F5.1每週一或二更新約3週前的一週；R5.1每日供應2日前資料；延遲及再分析需追蹤",
+      "formats": [
+        "POS text",
+        "KML",
+        "text"
+      ],
+      "access": "Web或註冊後SFTP；本次讀文件，未註冊或取得日座標實檔；KML為展示站的衍生向量下載功能",
+      "api": null,
+      "license": "GSI原則適用PDL1.0，需來源及加工標示，第三方與法令限制另核；建議標DOI 10.57499/GSI_GNSS_2026_001",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+    },
+    "use_cases": [
+      "日本地震／火山圖層加入測站變動時間序列",
+      "借鑑水平／垂直切換、期間選擇、固定參考站與向量倍率明示"
+    ],
+    "limitations": [
+      "F5舊解於2026-03-31觀測日起停止更新，不能與F5.1未經處理直接拼接",
+      "FTP服務10/30 12:00 JST結束、資料只到08:59 JST；SFTP需註冊，本期未建立存取",
+      "P勝浦02P107自10/9停止公開，缺資料可能是站點停用不是collector故障",
+      "難度中至高：座標系、參考站、offset及版本處理；展示說明已查，未完成互動與下載驗收",
+      "平台首次發布與整體更新日期未知，不把月報日期寫成全平台更新"
+    ],
+    "evidence": [
+      {
+        "url": "https://terras.gsi.go.jp/",
+        "supports": "FTP截止、站點停止及權利入口"
+      },
+      {
+        "url": "https://terras.gsi.go.jp/geo_info/information/information_F5_R5.html",
+        "supports": "F5.1／R5.1頻率、供應期間與取得方式"
+      },
+      {
+        "url": "https://terras.gsi.go.jp/pos_main.php",
+        "supports": "ITRF2020、POS格式與DOI"
+      },
+      {
+        "url": "https://mekira.gsi.go.jp/help/help_ja.html",
+        "supports": "期間、固定站、向量倍率、15日平均與KML展示設計"
+      },
+      {
+        "url": "https://web2.gsi.go.jp/WNEW/PRESS-RELEASE/2026-goudou1008.html",
+        "supports": "10/8發布9月地殼變動月報，不是即時警報"
+      },
+      {
+        "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+        "supports": "PDL1.0及例外"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全後端、所有分支或線上驗收",
+      "notes": "指定目錄未見GEONET日座標；已有地震來源不等同地殼變動時間序列。"
+    }
+  },
+  {
+    "id": "gnss-maintenance-offset-correction",
+    "title": "GNSS 維護跳點校正：分開儀器更換與地表變動",
+    "primary_type": "analysis_method",
+    "secondary_types": [],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "geodesy",
+      "time-series",
+      "data-quality"
+    ],
+    "scope": "一般GNSS時間序列品質流程；GSI實作補正檔只適用指定日本解算版本",
+    "summary": "既有方法新收錄。保留原始序列、維護事件與版本相符補正量，以累積校正分開儀器跳點與可能的地表訊號，不把每個突變都抹平。",
+    "source_url": "https://www.gsi.go.jp/kanshi/faq2_2.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-12",
+    "last_verified_at": "2026-10-12",
+    "use_cases": [
+      "讓測站高程圖同時顯示原值、校正值及維護標記",
+      "建立地表變動分析前的可重現品質檢查"
+    ],
+    "limitations": [
+      "難度中；需維護日期、匹配解算版本、符號與累積基準，不能任意去除地震造成的真實跳點",
+      "GSI補正量可因再計算改變，應保存版本；只能用於相符解析解",
+      "官方補正檔為地殼變動監視，不可用作測量成果",
+      "台灣可借鑑流程，不能套用日本補正係數；本期未執行校正或驗證準確率",
+      "官方F5.1補正檔被網頁讀取工具回報編碼問題，未當成已解析實檔"
+    ],
+    "implementation_sources": [
+      "https://www.gsi.go.jp/kanshi/faq2_2.html",
+      "https://mekira.gsi.go.jp/JAPANESE/corrf5_1o.dat"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.gsi.go.jp/kanshi/faq2_2.html",
+        "supports": "補正符號、累積、近鄰基線估計、F5.1檔案入口及使用限制"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全後端、所有分支或線上驗收",
+      "notes": "分析候選；圖層目錄不具備證明演算法使用與否的能力，本期未核對全部分析程式。"
+    }
   }
 ]
