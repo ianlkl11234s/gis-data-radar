@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 49 項：45 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-12（新增3項GNSS資料、平台與校正方法；其餘保留各自查核日）。
+目前 52 項：48 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-13（新增3項熱影像、區域擷取與品質方法；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
 
 - [水利署 GNSS：測站位置與逐日高程](#taiwan-wra-gnss-subsidence)
 
@@ -51,6 +53,8 @@
 
 ### data_platform
 
+- [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
+
 - [日本 GEONET：F5.1／R5.1 日座標與地殼變動展示](#japan-geonet-daily-coordinates)
 
 - [海しる API v3：日本海洋來源與沿岸安全展示](#japan-msil-api-v3)
@@ -76,6 +80,8 @@
 
 ### analysis_method
 
+- [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
+
 - [GNSS 維護跳點校正：分開儀器更換與地表變動](#gnss-maintenance-offset-correction)
 
 - [Black Marble 夜間異常偵測：熱訊號與可見光聯合模型](#black-marble-night-anomaly-ensemble)
@@ -100,11 +106,17 @@
 
 ### showcase
 
+- [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
+
 - [地理院地圖：滑動比較與地形工具](#gsi-maps-showcase)
 
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
+
+- [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
 
 - [CoastSeg：潮位校正的衛星岸線時間序列](#coastseg-shoreline-time-series)
 
@@ -119,6 +131,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
+
+- [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
 
 - [水利署 GNSS：測站位置與逐日高程](#taiwan-wra-gnss-subsidence)
 
@@ -170,6 +186,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
+
+- [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
 
 - [日本 GEONET：F5.1／R5.1 日座標與地殼變動展示](#japan-geonet-daily-coordinates)
 
@@ -228,6 +248,10 @@
 
 ### global
 
+- [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
+
+- [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
+
 - [NASA Black Marble：可量測的每日夜間燈光](#nasa-black-marble-nightlights)
 
 - [JAXA G-Portal：ALOS 免費資料與平台遷移](#jaxa-gportal-alos-open-free)
@@ -264,6 +288,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
 - [GNSS 維護跳點校正：分開儀器更換與地表變動](#gnss-maintenance-offset-correction)
 
@@ -475,6 +501,10 @@
 - 水資源／網路分析：[HydroSHEDS 拓樸](#hydrosheds-river-basin-topology)、[PyFlwDir](#pyflwdir-upstream-catchment)
 - 日本／地形／災害：[J-FlwDir](#japan-j-flwdir)
 - 方法／工具（次類型）：[PyFlwDir 集水區與下游追蹤](#pyflwdir-upstream-catchment)
+
+### 2026-10-13 新增主題交叉索引
+
+- urban／remote-sensing／data-quality：[ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)、[AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)、[NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
 ## 資源卡
 
@@ -1017,3 +1047,33 @@
 - 既有方法新收錄。保留原始序列、維護事件與版本相符補正量，以累積校正分開儀器跳點與可能的地表訊號，不把每個突變都抹平。
 - [官方或原始來源](https://www.gsi.go.jp/kanshi/faq2_2.html)；首次收錄／查核：2026-10-12；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-12.md#gnss-maintenance-offset-correction)
+
+<a id="nasa-ecostress-lste"></a>
+
+### ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度
+
+- ID：nasa-ecostress-lste
+- 類型：dataset；地區：global、Taiwan、Japan；主題：urban、environment、remote-sensing、data-quality
+- 既有資料新收錄，以有官方教學支援的ECO_L2T_LSTE.002為小試入口。補充既有Landsat暖季合成的觀測時刻維度，不代表即時氣溫。
+- [官方或原始來源](https://ecostress.jpl.nasa.gov/data)；首次收錄／查核：2026-10-13；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-13.md#nasa-ecostress-lste)
+
+<a id="nasa-appeears-subsetting"></a>
+
+### AppEEARS：按點位與區域抽取衛星時序
+
+- ID：nasa-appeears-subsetting
+- 類型：data_platform／model_tool；地區：global、Taiwan、Japan；主題：remote-sensing、urban、data-quality
+- 既有平台新收錄。以點／面範圍、日期與變數提交非同步擷取，先做小樣本，保留request、granule清單與品質資訊。
+- [官方或原始來源](https://appeears.earthdatacloud.nasa.gov/api/)；首次收錄／查核：2026-10-13；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-13.md#nasa-appeears-subsetting)
+
+<a id="nasa-vitals-thermal-quality"></a>
+
+### NASA VITALS：熱影像品質篩選與互動查值流程
+
+- ID：nasa-vitals-thermal-quality
+- 類型：analysis_method／model_tool／showcase；地區：not_region_specific；主題：remote-sensing、urban、data-quality
+- 既有方法與工具新收錄。以earthaccess與rioxarray搜尋、裁切、解碼QC後另套雲遮罩；用可切溫標的互動圖核對結果。
+- [官方或原始來源](https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html)；首次收錄／查核：2026-10-13；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-13.md#nasa-vitals-thermal-quality)

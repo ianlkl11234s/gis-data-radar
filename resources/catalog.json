@@ -3532,5 +3532,207 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全後端、所有分支或線上驗收",
       "notes": "分析候選；圖層目錄不具備證明演算法使用與否的能力，本期未核對全部分析程式。"
     }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-13",
+    "last_verified_at": "2026-10-13",
+    "id": "nasa-ecostress-lste",
+    "title": "ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "environment",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "ISS約北緯52度至南緯52度；台灣與日本在地理覆蓋內，但各地有效場景及無雲時序需另查",
+    "summary": "既有資料新收錄，以有官方教學支援的ECO_L2T_LSTE.002為小試入口。補充既有Landsat暖季合成的觀測時刻維度，不代表即時氣溫。",
+    "source_url": "https://ecostress.jpl.nasa.gov/data",
+    "data_details": {
+      "update_frequency": "隨ISS過境取得；典型重訪1–5日且時刻不固定，實際可用資料受雲、運作與品質影響，不是每日完整覆蓋",
+      "formats": [
+        "COG",
+        "HDF5"
+      ],
+      "access": "Earthdata Search或AppEEARS，資料取得需Earthdata Login；本次只讀公開文件，未登入下載。COG為L2T；HDF5為swath/grid，不能混認。",
+      "api": "https://cmr.earthdata.nasa.gov/search/",
+      "license": "NASA／LP DAAC公開資料使用政策；LP DAAC官方回覆說明其資料可重用、再散布並建議引用DOI。未核對本產品機器可讀授權欄，不將其他第三方影像或軟體一併重新授權。",
+      "license_url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5421"
+    },
+    "use_cases": [
+      "在台北或日本城市比較相近季節、相近時刻的地表溫度與有效觀測覆蓋",
+      "與現有Landsat暖季合成並列，區分長期背景和單次過境"
+    ],
+    "limitations": [
+      "地表皮膚溫度不是2m氣溫、體感溫度或健康風險指數",
+      "v2雲資訊不在原v1 QC位置，需另讀cloud_mask；定位與ISS遮擋也須檢查",
+      "Collection 2 L1/L2於2022-10-05供應，不把此日期當所有L2T產品各自發布日；本筆精確首次發布與更新日未知",
+      "搜尋出現v003目錄但直接頁面404，本次不宣稱v002是最新版或v003已可用",
+      "導入難度中至高；尚未查出台日有效場景數、未下載實檔或量測精度"
+    ],
+    "evidence": [
+      {
+        "url": "https://ecostress.jpl.nasa.gov/data",
+        "supports": "Collection 2歷史、LST與氣溫差異、取得入口"
+      },
+      {
+        "url": "https://doi.org/10.5067/ECOSTRESS/ECO_L2_LSTE.002",
+        "supports": "70m／52度覆蓋、v2雲遮罩與定位遮擋警告（官方swath產品文件）"
+      },
+      {
+        "url": "https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html",
+        "supports": "L2T COG讀取、時間與版號解析、品質處理"
+      },
+      {
+        "url": "https://science.nasa.gov/missions/landsat/improving-water-management-in-new-mexico-with-landsat-and-ecostress/",
+        "supports": "典型1–5日重訪與日內不同時刻"
+      },
+      {
+        "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5421",
+        "supports": "LP DAAC官方資料權利與引用說明"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；非全部後端、分支或線上部署驗收",
+      "notes": "已有urbanHeat／urban_heat_lst：Landsat 8/9 C2 L2 ST_B10 2019–2025暖季合成。指定目錄未見ECOSTRESS，候選只代表新來源／時間維度，不是熱島主題未做。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-13",
+    "last_verified_at": "2026-10-13",
+    "id": "nasa-appeears-subsetting",
+    "title": "AppEEARS：按點位與區域抽取衛星時序",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "remote-sensing",
+      "urban",
+      "data-quality"
+    ],
+    "scope": "依各支援產品；可指定台灣與日本研究區，並非所有衛星資料都可使用",
+    "summary": "既有平台新收錄。以點／面範圍、日期與變數提交非同步擷取，先做小樣本，保留request、granule清單與品質資訊。",
+    "source_url": "https://appeears.earthdatacloud.nasa.gov/api/",
+    "data_details": {
+      "update_frequency": "隨上游產品及服務處理；無本期確認的固定延遲保證",
+      "formats": [
+        "CSV",
+        "GeoTIFF",
+        "COG",
+        "NetCDF4",
+        "JSON"
+      ],
+      "access": "公開API文件；提交工作與下載需Earthdata Login，未建立帳戶、憑證或送出工作",
+      "api": "https://appeears.earthdatacloud.nasa.gov/api/",
+      "license": "服務輸出沿用各上游產品權利；不可視為全部輸出同一授權。NASA範例程式另依repo授權。",
+      "license_url": null
+    },
+    "use_cases": [
+      "先抽台北幾處公開公園或小區域，再決定是否做全市影像管線",
+      "保留bundle中的request.json、granule清單與sha256以提升可重現性"
+    ],
+    "limitations": [
+      "難度中；需排隊／狀態輪詢與產品版本核對，文件存在不代表本次任務成功",
+      "取樣或重投影不能修復上游雲污染與定位錯誤",
+      "官方2024-01-25答覆說明swath與tiled可因重投影／覆蓋不同而出現不同值，不應直接當重複觀測取平均",
+      "首次發布與整體更新日未知；不把搜尋索引的changelog日期當目前最新服務版"
+    ],
+    "implementation_sources": [
+      "https://github.com/nasa/AppEEARS-Data-Resources"
+    ],
+    "evidence": [
+      {
+        "url": "https://appeears.earthdatacloud.nasa.gov/api/",
+        "supports": "point/area、quality API、bundle內請求／來源及checksum"
+      },
+      {
+        "url": "https://github.com/nasa/AppEEARS-Data-Resources",
+        "supports": "Earthdata Login要求與Python/R、CSV/COG/NetCDF範例"
+      },
+      {
+        "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=4955",
+        "supports": "LP DAAC解釋swath與tiled之值和覆蓋差異"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；非全部後端、分支或線上部署驗收",
+      "notes": "指定圖層目錄未見AppEEARS；目錄不能證明後端是否用過此工具。可作資料探索入口，非新生產依賴的部署建議。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": "2026-07-14",
+    "discovered_at": "2026-10-13",
+    "last_verified_at": "2026-10-13",
+    "id": "nasa-vitals-thermal-quality",
+    "title": "NASA VITALS：熱影像品質篩選與互動查值流程",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool",
+      "showcase"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "remote-sensing",
+      "urban",
+      "data-quality"
+    ],
+    "scope": "通用Python/Jupyter方法；示範區不代表台日實證",
+    "summary": "既有方法與工具新收錄。以earthaccess與rioxarray搜尋、裁切、解碼QC後另套雲遮罩；用可切溫標的互動圖核對結果。",
+    "source_url": "https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html",
+    "use_cases": [
+      "給都市熱島圖加上原圖／QC／雲遮罩前後比較",
+      "提供觀測UTC、本地時刻、有效比例、溫標與產品版本品質卡"
+    ],
+    "limitations": [
+      "Apache-2.0程式，來源資料及背景底圖另依原權利；未安裝或執行",
+      "QC與cloud_mask必須分開處理；比較時需限制觀測季節、時刻及重採樣方法",
+      "首次發布日未知；7/14為repo CHANGE_LOG標記的重構更新，不宣稱此notebook同日首次發布",
+      "官方教學為流程證據，不是台日準確率或健康風險驗證；70m不能直接讀成單一行人道真值",
+      "難度中；憑證處理應留在安全環境，不將登入資料放到公開notebook"
+    ],
+    "implementation_sources": [
+      "https://github.com/nasa/VITALS",
+      "https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html",
+        "supports": "COG存取、裁切、QC後另套cloud_mask=0與互動溫標"
+      },
+      {
+        "url": "https://github.com/nasa/VITALS",
+        "supports": "Apache-2.0、notebook與共定位教學入口"
+      },
+      {
+        "url": "https://github.com/nasa/VITALS/blob/main/CHANGE_LOG.md",
+        "supports": "2026-07-14可安裝Python package重構、API更新"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；非全部後端、分支或線上部署驗收",
+      "notes": "分析方法候選；已做Landsat熱島，不代表ECOSTRESS QA流程已用。圖層目錄不足以驗收演算法，本期未核對全部分析程式。"
+    }
   }
 ]
