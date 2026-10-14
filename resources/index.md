@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 52 項：48 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-13（新增3項熱影像、區域擷取與品質方法；其餘保留各自查核日）。
+目前 54 項：50 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-14（新增2項歷年水面與觀測品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
 
@@ -53,6 +55,8 @@
 
 ### data_platform
 
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
+
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
 
 - [日本 GEONET：F5.1／R5.1 日座標與地殼變動展示](#japan-geonet-daily-coordinates)
@@ -80,6 +84,8 @@
 
 ### analysis_method
 
+- [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
+
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
 - [GNSS 維護跳點校正：分開儀器更換與地表變動](#gnss-maintenance-offset-correction)
@@ -106,6 +112,8 @@
 
 ### showcase
 
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
+
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
 - [地理院地圖：滑動比較與地形工具](#gsi-maps-showcase)
@@ -113,6 +121,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
@@ -131,6 +141,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
 
@@ -186,6 +198,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
 
@@ -248,6 +262,8 @@
 
 ### global
 
+- [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
+
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
 
 - [ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)
@@ -288,6 +304,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
 
@@ -505,6 +523,10 @@
 ### 2026-10-13 新增主題交叉索引
 
 - urban／remote-sensing／data-quality：[ECOSTRESS LSTE：帶觀測時刻與品質遮罩的70m地表溫度](#nasa-ecostress-lste)、[AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)、[NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
+
+### 2026-10-14 新增主題交叉索引
+
+- water／environment／remote-sensing／data-quality：[JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)、[WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
 ## 資源卡
 
@@ -1077,3 +1099,23 @@
 - 既有方法與工具新收錄。以earthaccess與rioxarray搜尋、裁切、解碼QC後另套雲遮罩；用可切溫標的互動圖核對結果。
 - [官方或原始來源](https://nasa.github.io/VITALS/python/Exploring_ECOSTRESS_L2T_LSTE.html)；首次收錄／查核：2026-10-13；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-13.md#nasa-vitals-thermal-quality)
+
+<a id="jrc-global-surface-water"></a>
+
+### JRC Global Surface Water v1.5：歷年水面與觀測品質
+
+- ID：jrc-global-surface-water
+- 類型：dataset／data_platform／showcase；地區：global、Taiwan、Japan；主題：water、environment、remote-sensing、data-quality
+- 2026年v1.5更新的首次收錄；8/26官方頁面列出Occurrence與2016–2021季節性修正，也保留月重現率未修問題。WMTS目錄實讀成功，未下載分析網格。
+- [官方或原始來源](https://global-surface-water.appspot.com/download)；首次收錄／查核：2026-10-14；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-14.md#jrc-global-surface-water)
+
+<a id="deafrica-wofs-water-frequency"></a>
+
+### WOfS水面變化分析：把清晰觀測數放回分母
+
+- ID：deafrica-wofs-water-frequency
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：water、environment、remote-sensing、data-quality
+- 既有方法首次收錄；以wet/clear觀測比率和門檻製作年度面積與增減圖，保留觀測數及門檻敏感度，不把缺測當乾涸。
+- [官方或原始來源](https://docs.digitalearthafrica.org/en/latest/sandbox/notebooks/Real_world_examples/Water_extent_WOfS.html)；首次收錄／查核：2026-10-14；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-14.md#deafrica-wofs-water-frequency)

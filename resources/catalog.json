@@ -3734,5 +3734,146 @@
       "checked_scope": "mini-taiwan-pulse 正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；非全部後端、分支或線上部署驗收",
       "notes": "分析方法候選；已做Landsat熱島，不代表ECOSTRESS QA流程已用。圖層目錄不足以驗收演算法，本期未核對全部分析程式。"
     }
+  },
+  {
+    "id": "jrc-global-surface-water",
+    "title": "JRC Global Surface Water v1.5：歷年水面與觀測品質",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "全球約30m開放水面；1984–2024歷史產品涵蓋台日，不是即時水位或蓄水量",
+    "summary": "2026年v1.5更新的首次收錄；8/26官方頁面列出Occurrence與2016–2021季節性修正，也保留月重現率未修問題。WMTS目錄實讀成功，未下載分析網格。",
+    "source_url": "https://global-surface-water.appspot.com/download",
+    "published_at": null,
+    "source_updated_at": "2026-08-26",
+    "discovered_at": "2026-10-14",
+    "last_verified_at": "2026-10-14",
+    "data_details": {
+      "update_frequency": "不定期版本發布；歷史資料截止2024，不是每日即時供應",
+      "formats": [
+        "GeoTIFF",
+        "Earth Engine assets",
+        "WMTS PNG",
+        "XML capabilities"
+      ],
+      "access": "公開分幅TIFF與WMTS；Earth Engine分析另需平台權限。本次WMTS XML HTTP200、16437bytes、6圖層，未驗證圖磚或完整台日數值。",
+      "api": "https://storage.googleapis.com/water-world/downloads_ancillary/WMTS_Global_Surface_WaterV2024.xml",
+      "license": "Copernicus開放使用政策，須適當引用；地圖標示Source: EC JRC/Google；第三方平台條款另計",
+      "license_url": "https://global-surface-water.appspot.com/download"
+    },
+    "use_cases": [
+      "在既有水庫、湖泊與養殖水體底圖上研究歷年水面出現範圍",
+      "借鑑Explorer點位時間剖面，同時顯示分類與有效觀測數"
+    ],
+    "limitations": [
+      "難度中；以GeoTIFF或EE數值分析，WMTS只有渲染RGB不可反推原始統計",
+      "C1/C2跨版本定位差有時達一個30m像元以上，不能把單像元岸線移動直接當真實變化",
+      "v1.4/v1.5 Monthly Recurrence稀疏觀測偏低問題尚未修；延伸資料不承襲原始期完整驗證",
+      "JRC Occurrence是按曆月統計後平均，不等同所有清晰觀測直接相除；缺測不是乾地",
+      "完整歷史需銜接舊期與新版修正期；官方YearlyHistory範例首項卻寫MonthlyHistory，執行前需核對collection粒度，未照抄執行",
+      "水面面積不能直接換算庫容；本期未盤點台日有效觀測覆蓋"
+    ],
+    "implementation_sources": [
+      "https://global-surface-water.appspot.com/gsw/Download_Instructions.html",
+      "https://global-surface-water.appspot.com/map"
+    ],
+    "evidence": [
+      {
+        "url": "https://global-surface-water.appspot.com/download",
+        "supports": "8/26更新、v1.5版本修正與未修限制、授權、EE和WMTS入口"
+      },
+      {
+        "url": "https://storage.googleapis.com/water-world/downloads_ancillary/DataUsersGuidev2024_v.5.pdf",
+        "supports": "2026版本、30m、按月Occurrence與時間統計定義"
+      },
+      {
+        "url": "https://global-surface-water.appspot.com/gsw/Download_Instructions.html",
+        "supports": "10度分幅TIFF與按年/月選取；本期未執行下載script"
+      },
+      {
+        "url": "https://storage.googleapis.com/water-world/downloads_ancillary/WMTS_Global_Surface_WaterV2024.xml",
+        "supports": "10/14實讀六個Layer目錄，並非圖磚內容或台日精度驗證"
+      },
+      {
+        "url": "https://global-surface-water.appspot.com/faq",
+        "supports": "點位時間剖面展示構想；FAQ舊期敘述不作新版期間依據"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；非所有後端或部署驗收",
+      "notes": "已有水庫蓄水率、湖泊及衛星養殖水體；指定目錄未見JRC GSW名稱，候選增量是多年水面與版本品質，不能推論全專案未使用。"
+    }
+  },
+  {
+    "id": "deafrica-wofs-water-frequency",
+    "title": "WOfS水面變化分析：把清晰觀測數放回分母",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "通用時序水面分析方法；官方範例及供應網格在非洲，台日需另外取得與驗證適用影像",
+    "summary": "既有方法首次收錄；以wet/clear觀測比率和門檻製作年度面積與增減圖，保留觀測數及門檻敏感度，不把缺測當乾涸。",
+    "source_url": "https://docs.digitalearthafrica.org/en/latest/sandbox/notebooks/Real_world_examples/Water_extent_WOfS.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-14",
+    "last_verified_at": "2026-10-14",
+    "use_cases": [
+      "先選台灣一座水庫與日本一座湖做同季節比較，保留有效樣本數",
+      "以年度水面面積曲線連動增減圖，測試多個分類門檻"
+    ],
+    "limitations": [
+      "難度中至高；本期未安裝或執行notebook，非台日準確率實證",
+      "frequency是清晰且有水/清晰觀測數，非像元內水面比例，也非一年積水天數比例；與JRC按月平均Occurrence不可直接互換",
+      "範例frequency>0.20是分析選擇，不是通用水體定義；陰影、濁水、植被及混合像元可能誤判",
+      "notebook最後測試2025-01-16，不當更新日；規格頁2024-11-01修改，不能據此聲稱最新影像截止年",
+      "程式Apache-2.0；DE Africa資料CC BY4.0；移植時台日輸入資料各依原授權"
+    ],
+    "implementation_sources": [
+      "https://docs.digitalearthafrica.org/en/latest/sandbox/notebooks/Real_world_examples/Water_extent_WOfS.html",
+      "https://docs.digitalearthafrica.org/en/latest/data_specs/Landsat_WOfS_specs.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.digitalearthafrica.org/en/latest/sandbox/notebooks/Real_world_examples/Water_extent_WOfS.html",
+        "supports": "年度面積、frequency門檻、基期與分析期增減圖、授權和最後測試日"
+      },
+      {
+        "url": "https://docs.digitalearthafrica.org/en/latest/data_specs/Landsat_WOfS_specs.html",
+        "supports": "wet/clear定義、count欄位、分類限制和非洲覆蓋；2024-11-01規格修改"
+      },
+      {
+        "url": "https://registry.opendata.aws/deafrica-wofs/",
+        "supports": "非洲網格公開S3與STAC入口、CC BY4.0及供應頻率；非台日網格來源"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；未核對所有分析程式",
+      "notes": "圖層目錄不足以判斷後端是否已用類似方法；建議補品質與跨期統計驗證，不是直接移植非洲資料。"
+    }
   }
 ]
