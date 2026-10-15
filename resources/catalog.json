@@ -3875,5 +3875,207 @@
       "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；未核對所有分析程式",
       "notes": "圖層目錄不足以判斷後端是否已用類似方法；建議補品質與跨期統計驗證，不是直接移植非洲資料。"
     }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有野生動物分布及保護區相關登錄；指定目錄未見TaiBIF／GBIF／CoordinateCleaner名稱，不代表全專案未使用。建議增量為來源去重、時間與定位品質。"
+    },
+    "id": "taibif-occurrence-api",
+    "title": "TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset"
+    ],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "environment",
+      "biodiversity",
+      "data-quality"
+    ],
+    "scope": "台灣生物出現紀錄與資料集目錄；混合標本及不同觀測來源，非完整物種普查",
+    "summary": "既有來源新收錄。小範圍API實測成功，但抽取3列皆顯示無法辨識授權，不能直接公開重製；TaiBIF與GBIF有來源重疊。",
+    "source_url": "https://portal.taibif.tw/zh-hant/taibif-api",
+    "data_details": {
+      "update_frequency": "隨發布者與平台更新，沒有本期驗證的固定頻率；eventDate與平台修改日分開",
+      "formats": [
+        "JSON"
+      ],
+      "access": "官方API可查bbox、物種、年份、授權；rows預設10，上限1000。實查rows=3回3列；limit不是文件指定分頁參數。",
+      "api": "https://portal.taibif.tw/api/v3/occurrence",
+      "license": "API頁標政府資料開放授權第1版，但內容政策與逐列license另列CC0、CC BY、CC BY-NC或未知；保守逐資料集確認，不套用統一授權",
+      "license_url": "https://portal.taibif.tw/zh-hant/data-policy"
+    },
+    "use_cases": [
+      "為既有保護區／野生動物圖層補可追溯觀測時序",
+      "以gbifID及原始來源ID避免重複計入GBIF資料"
+    ],
+    "limitations": [
+      "導入難度中；小樣本只驗證API與欄位，非覆蓋或準確率驗證",
+      "API頁最後修改標2025-01-24，變更表卻列2025-03；無單一可靠整體更新日，保留未知",
+      "bbox例查35筆、只取3筆，其license皆無法辨識授權，待回溯資料集",
+      "敏感物種座標可能模糊化，不反推精確位置；缺資料不等於物種不存在",
+      "僅使用官方API，不以頁面機械爬取替代"
+    ],
+    "evidence": [
+      {
+        "url": "https://portal.taibif.tw/zh-hant/taibif-api",
+        "supports": "查詢與分頁、ID、座標模糊化及日期欄位；日期標示不一致"
+      },
+      {
+        "url": "https://portal.taibif.tw/zh-hant/data-policy",
+        "supports": "逐來源與媒體授權、官方API使用界線"
+      },
+      {
+        "url": "https://portal.taibif.tw/api/v3/occurrence?boundedBy=121.1,22.1,121.2,22.2&rows=3",
+        "supports": "2026-10-15查詢成功、總數35、回3列，授權欄未知；不發布原始列"
+      }
+    ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有野生動物分布及保護區相關登錄；指定目錄未見TaiBIF／GBIF／CoordinateCleaner名稱，不代表全專案未使用。建議增量為來源去重、時間與定位品質。"
+    },
+    "id": "gbif-occurrence-maps",
+    "title": "GBIF：台日物種紀錄與分格觀測地圖",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "environment",
+      "biodiversity",
+      "data-quality"
+    ],
+    "scope": "全球生物出現紀錄，包含台日；跨年代與發布者的機會性資料，非統一抽樣",
+    "summary": "既有來源新收錄。台日各3列API抽樣成功；地圖可按年份／類群與格網呈現觀測量，但不可把紀錄數當生物多樣性或種群量。",
+    "source_url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+    "data_details": {
+      "update_frequency": "隨發布者更新及GBIF處理；觀測日期不等於索引日期",
+      "formats": [
+        "JSON",
+        "Darwin Core Archive",
+        "tab-delimited CSV",
+        "Mapbox Vector Tile",
+        "PNG"
+      ],
+      "access": "少量搜尋免帳號；每頁最高300、offset+limit上限100000，大量資料用需登入的非同步下載；本次未建立帳號或下載作業",
+      "api": "https://api.gbif.org/v1/occurrence/search",
+      "license": "逐紀錄／資料集核對；抽樣含CC BY4.0及CC BY-NC4.0，不能宣稱全部可商用；媒體另核對",
+      "license_url": "https://techdocs.gbif.org/en/data-use/download-formats"
+    },
+    "use_cases": [
+      "以相同時間、類群與品質條件比較台日資料覆蓋",
+      "借鑑Maps Toolbox點／方格／六角格與年份篩選，連動來源與品質卡"
+    ],
+    "limitations": [
+      "導入難度中；紀錄密度受觀測努力、可達性與發布者影響，不能直接推論豐度或棲地品質",
+      "hasCoordinate不代表精確、無缺誤或可公開精確位置；保留uncertainty與issues",
+      "不可將TaiBIF與GBIF直接相加，需來源ID去重",
+      "本期驗證搜尋回傳，未操作互動展示、下載MVT或完整批次資料；無本日新版本證據"
+    ],
+    "implementation_sources": [
+      "https://techdocs.gbif.org/en/openapi/v2/maps",
+      "https://api.gbif.org/v2/map/debug/ol/"
+    ],
+    "evidence": [
+      {
+        "url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+        "supports": "搜尋限制、非同步下載"
+      },
+      {
+        "url": "https://techdocs.gbif.org/en/data-use/download-formats",
+        "supports": "格式、逐筆授權與座標不確定性欄位"
+      },
+      {
+        "url": "https://techdocs.gbif.org/en/data-use/occurrence-issues-and-flags",
+        "supports": "定位與分類品質旗標，不等同無偏資料"
+      },
+      {
+        "url": "https://techdocs.gbif.org/en/openapi/v2/maps",
+        "supports": "點與分格、年份篩選、MVT／PNG；total為紀錄數"
+      },
+      {
+        "url": "https://api.gbif.org/v1/occurrence/search?country=TW&hasCoordinate=true&limit=3",
+        "supports": "10/15 HTTP200回3列；樣本CC BY-NC4.0"
+      },
+      {
+        "url": "https://api.gbif.org/v1/occurrence/search?country=JP&hasCoordinate=true&limit=3",
+        "supports": "10/15 HTTP200回3列；樣本混合CC BY4.0與CC BY-NC4.0"
+      }
+    ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master d5278b1acd88f58596c43670868d18dcb9a62941 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有野生動物分布及保護區相關登錄；指定目錄未見TaiBIF／GBIF／CoordinateCleaner名稱，不代表全專案未使用。建議增量為來源去重、時間與定位品質。"
+    },
+    "id": "coordinatecleaner-occurrence-quality",
+    "title": "CoordinateCleaner：先標記可疑生物座標再審核",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "environment",
+      "biodiversity",
+      "data-quality"
+    ],
+    "scope": "R套件的通用生物座標品質篩檢；需依物種類群、海陸及研究尺度設定",
+    "summary": "既有工具／方法新收錄。用可疑座標旗標保留審核理由，不把所有異常點直接刪掉；尤其不能將預設海域檢查直接用於海洋物種。",
+    "source_url": "https://ropensci.github.io/CoordinateCleaner/",
+    "use_cases": [
+      "以spatialvalid輸出逐項旗標，核對0/0、行政中心或機構位置疑點",
+      "顯示原始／通過／待審核分層，觀察品質篩選對空間分布的影響"
+    ],
+    "limitations": [
+      "難度中；本期只讀官方文件，未安裝執行或驗證台日準確率",
+      "GPL-3程式；輸入資料權利另計",
+      "預設包含seas；海洋物種須另訂規則，都市／機構附近也可能是真實紀錄",
+      "duplicates檢查預設關閉；同座標不同時間未必重複，不能只靠此函式做跨平台去重",
+      "旗標是經驗篩檢，不是錯誤真值，也無法補正觀測努力偏差",
+      "文件首頁版本3.0提示無精確日期，不據此稱為近期發布"
+    ],
+    "implementation_sources": [
+      "https://ropensci.github.io/CoordinateCleaner/reference/clean_coordinates.html",
+      "https://github.com/ropensci/CoordinateCleaner"
+    ],
+    "evidence": [
+      {
+        "url": "https://ropensci.github.io/CoordinateCleaner/",
+        "supports": "功能、GPL-3及2019方法論引用；首頁版本提示不作今日更新證據"
+      },
+      {
+        "url": "https://ropensci.github.io/CoordinateCleaner/reference/clean_coordinates.html",
+        "supports": "預設tests、spatialvalid逐旗標、duplicates預設關閉、seas條件與輸出"
+      }
+    ]
   }
 ]

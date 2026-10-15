@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 54 項：50 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-14（新增2項歷年水面與觀測品質資源；其餘保留各自查核日）。
+目前 57 項：53 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-15（新增3項生物觀測來源與品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
+
+- [TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)
 
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
@@ -55,6 +59,10 @@
 
 ### data_platform
 
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
+
+- [TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)
+
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
@@ -84,6 +92,8 @@
 
 ### analysis_method
 
+- [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
+
 - [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
@@ -112,6 +122,8 @@
 
 ### showcase
 
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
+
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [NASA VITALS：熱影像品質篩選與互動查值流程](#nasa-vitals-thermal-quality)
@@ -121,6 +133,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
 - [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
@@ -141,6 +155,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
+
+- [TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)
 
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
@@ -198,6 +216,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
@@ -262,6 +282,8 @@
 
 ### global
 
+- [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
+
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
 
 - [AppEEARS：按點位與區域抽取衛星時序](#nasa-appeears-subsetting)
@@ -304,6 +326,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
 - [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
 
@@ -527,6 +551,10 @@
 ### 2026-10-14 新增主題交叉索引
 
 - water／environment／remote-sensing／data-quality：[JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)、[WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
+
+### 2026-10-15 新增主題交叉索引
+
+- environment／biodiversity／data-quality：[TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)、[GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)、[CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
 ## 資源卡
 
@@ -1119,3 +1147,33 @@
 - 既有方法首次收錄；以wet/clear觀測比率和門檻製作年度面積與增減圖，保留觀測數及門檻敏感度，不把缺測當乾涸。
 - [官方或原始來源](https://docs.digitalearthafrica.org/en/latest/sandbox/notebooks/Real_world_examples/Water_extent_WOfS.html)；首次收錄／查核：2026-10-14；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-14.md#deafrica-wofs-water-frequency)
+
+<a id="taibif-occurrence-api"></a>
+
+### TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄
+
+- ID：taibif-occurrence-api
+- 類型：data_platform／dataset；地區：Taiwan；主題：environment、biodiversity、data-quality
+- 既有來源新收錄。小範圍API實測成功，但抽取3列皆顯示無法辨識授權，不能直接公開重製；TaiBIF與GBIF有來源重疊。
+- [官方或原始來源](https://portal.taibif.tw/zh-hant/taibif-api)；首次收錄／查核：2026-10-15；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-15.md#taibif-occurrence-api)
+
+<a id="gbif-occurrence-maps"></a>
+
+### GBIF：台日物種紀錄與分格觀測地圖
+
+- ID：gbif-occurrence-maps
+- 類型：data_platform／dataset／showcase；地區：global、Taiwan、Japan；主題：environment、biodiversity、data-quality
+- 既有來源新收錄。台日各3列API抽樣成功；地圖可按年份／類群與格網呈現觀測量，但不可把紀錄數當生物多樣性或種群量。
+- [官方或原始來源](https://techdocs.gbif.org/en/openapi/v1/occurrence)；首次收錄／查核：2026-10-15；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-15.md#gbif-occurrence-maps)
+
+<a id="coordinatecleaner-occurrence-quality"></a>
+
+### CoordinateCleaner：先標記可疑生物座標再審核
+
+- ID：coordinatecleaner-occurrence-quality
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：environment、biodiversity、data-quality
+- 既有工具／方法新收錄。用可疑座標旗標保留審核理由，不把所有異常點直接刪掉；尤其不能將預設海域檢查直接用於海洋物種。
+- [官方或原始來源](https://ropensci.github.io/CoordinateCleaner/)；首次收錄／查核：2026-10-15；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-15.md#coordinatecleaner-occurrence-quality)
