@@ -4077,5 +4077,231 @@
         "supports": "預設tests、spatialvalid逐旗標、duplicates預設關閉、seas條件與輸出"
       }
     ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-16",
+    "last_verified_at": "2026-10-16",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有台灣雨量站、雷達與累積雨量柵格及日本AMeDAS；指定目錄未見IMERG／GSMaP名稱。候選增量為台日及跨海域衛星降雨比較、時間窗與品質呈現，不代表全專案未使用。導入難度中。"
+    },
+    "id": "nasa-imerg-precipitation",
+    "title": "NASA IMERG：衛星降雨與Early／Late／Final版本",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "weather",
+      "water",
+      "hazards",
+      "data-quality"
+    ],
+    "scope": "0.1度、半小時降雨估計，涵蓋台灣、日本與周邊海域；網格不是測站或街廓尺度",
+    "summary": "既有資料新收錄；10/12官方案例比較7–9月累積、絕對與百分比距平，採Late Run初估。V07 Final紀錄止於2025/9，V08時程仍須依公告核對，不能把預定升版當已發布。",
+    "source_url": "https://gpm.nasa.gov/data/imerg",
+    "data_details": {
+      "update_frequency": "半小時；Early約4小時、Late約14小時延遲，Final為延後處理；目前另有版本過渡限制",
+      "formats": [
+        "HDF5",
+        "NetCDF",
+        "GeoTIFF"
+      ],
+      "access": "官方PPS／GES DISC供應；依入口需PPS或Earthdata登入，未建立帳號、提交下載或實測數值檔",
+      "api": "https://gpm.nasa.gov/data/directory",
+      "license": "GPM/TRMM資料免費提供，使用須標示資料來源、產品版本與引用；未宣稱統一CC授權",
+      "license_url": "https://gpm.nasa.gov/data/policy"
+    },
+    "use_cases": [
+      "台灣至日本周邊海域同尺度降雨比較",
+      "借鑑10/12案例並列累積量、絕對距平及百分比距平"
+    ],
+    "limitations": [
+      "首次發布與整體更新日未知；10/12是案例文章日，不是產品版本日",
+      "4/28公告V07 Final止於2025/9；8/6公告V08 Final預計秋季、Early／Late不早於冬季，查核未確認V08正式發布",
+      "Early／Late混合V07流程可能有不連續；不要直接跨版本做趨勢",
+      "半小時降雨率與GIS累積產品單位不同，需讀scale、fill及time bounds",
+      "衛星估計不等於地面真值；未下載台日網格或驗證誤差"
+    ],
+    "evidence": [
+      {
+        "url": "https://gpm.nasa.gov/data/imerg",
+        "supports": "產品、時效、單位與版本差異"
+      },
+      {
+        "url": "https://gpm.nasa.gov/data/policy",
+        "supports": "免費使用及引用要求"
+      },
+      {
+        "url": "https://gpm.nasa.gov/data/news/imerg-v08-transition-schedule",
+        "supports": "2026-04-28公告Final紀錄截止及hybrid過渡"
+      },
+      {
+        "url": "https://gpm.nasa.gov/data/news/update-imerg-v08-transition-schedule-aug-2026",
+        "supports": "2026-08-06修訂預定時程，非發布證明"
+      },
+      {
+        "url": "https://gpm.nasa.gov/data/articles/El-Nino-Sep-2026-update",
+        "supports": "2026-10-12近期案例，Late初估、距平與因果限制"
+      }
+    ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-16",
+    "last_verified_at": "2026-10-16",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有台灣雨量站、雷達與累積雨量柵格及日本AMeDAS；指定目錄未見IMERG／GSMaP名稱。候選增量為台日及跨海域衛星降雨比較、時間窗與品質呈現，不代表全專案未使用。導入難度中。"
+    },
+    "id": "jaxa-gsmap-rainfall-watch",
+    "title": "JAXA GSMaP：降雨版本目錄與時間窗展示",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan",
+      "global",
+      "Taiwan"
+    ],
+    "topics": [
+      "weather",
+      "water",
+      "hazards",
+      "data-quality"
+    ],
+    "scope": "日本提供的全球衛星降雨；台日可用。典型0.1度小時網格，覆蓋依產品與格式核對，不將容器90N–90S等同有效觀測",
+    "summary": "既有來源新收錄；v7標準與NRT已分別於5/31、6/29停更。NOW每30分鐘更新不等於每筆是半小時累積，接入應釘選版本與時間窗。",
+    "source_url": "https://sharaku.eorc.jaxa.jp/GSMaP/",
+    "data_details": {
+      "update_frequency": "小時降雨率；NOW每30分鐘更新。依產品版本有不同處理延遲",
+      "formats": [
+        "binary",
+        "CSV",
+        "NetCDF",
+        "HDF"
+      ],
+      "access": "公開網站可瀏覽；檔案下載依官方入口免費註冊，未註冊或下載；不可把PNG當分析網格",
+      "api": "https://sharaku.eorc.jaxa.jp/GSMaP/faq/GSMaP_faq01.html",
+      "license": "適用JAXA研究資料條款及顯名；商用須事先通知，指南另要求網路／刊物向多人分發前聯絡。不是無條件再散布",
+      "license_url": "https://earth.jaxa.jp/en/data/policy/"
+    },
+    "use_cases": [
+      "同時顯示觀測窗、資料延遲與版本",
+      "借鑑12／24／72h切換、雲與雨分層及透明度控制"
+    ],
+    "limitations": [
+      "首頁guide仍有v6敘述；以產品表與公告逐項核對，不推論全部最新v8",
+      "2026-06-16公告、7/29更新的v7停更是歷史變更；10/5公告的10/7–8維護不能當今日故障",
+      "NOW小時窗可能重疊，不能將每30分鐘更新的每筆小時雨量直接全部相加",
+      "日產品可能為日平均mm/h，不是mm；參照FAQ4",
+      "公開再散布前需完成官方程序，本期未聯絡第三方",
+      "只查文件與頁面控制元件，未驗證最新資料時間、互動或台日實檔"
+    ],
+    "evidence": [
+      {
+        "url": "https://sharaku.eorc.jaxa.jp/GSMaP/guide.html",
+        "supports": "小時網格、展示、更新與分發注意；指南頁更新2025-06-17，非全部產品更新日"
+      },
+      {
+        "url": "https://sharaku.eorc.jaxa.jp/GSMaP/faq/GSMaP_faq03.html",
+        "supports": "逐產品格式、解析度、時間窗及v7停止日期"
+      },
+      {
+        "url": "https://sharaku.eorc.jaxa.jp/GSMaP/faq/GSMaP_faq04.html",
+        "supports": "日平均雨率轉累積需乘24"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/GPM/en/news.html",
+        "supports": "v7標準及NRT停止、2026-10-05維護公告"
+      },
+      {
+        "url": "https://sharaku.eorc.jaxa.jp/GSMaP/registration.html",
+        "supports": "免費商用仍受研究資料條款約束"
+      },
+      {
+        "url": "https://earth.jaxa.jp/en/data/policy/",
+        "supports": "顯名、分發與商用事先通知條款"
+      },
+      {
+        "url": "https://sharaku.eorc.jaxa.jp/GSMaP_NOW/",
+        "supports": "12／24／72h、雲雨、透明度與區域控制介面"
+      }
+    ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-16",
+    "last_verified_at": "2026-10-16",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 公開正式發布 master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非所有後端、分支或線上驗收",
+      "notes": "已有台灣雨量站、雷達與累積雨量柵格及日本AMeDAS；指定目錄未見IMERG／GSMaP名稱。候選增量為台日及跨海域衛星降雨比較、時間窗與品質呈現，不代表全專案未使用。導入難度中。"
+    },
+    "id": "xarray-precipitation-window-completeness",
+    "title": "xarray雨量累積：時間窗、單位與完整度一起算",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "weather",
+      "water",
+      "data-quality"
+    ],
+    "scope": "通用規則時序降雨率／累積量處理；不限台日",
+    "summary": "既有工具新收錄；先辨別mm/h與mm、時間窗和重複，再以resample及min_count保留缺測，不把部分累積當完整一天。",
+    "source_url": "https://docs.xarray.dev/en/stable/generated/xarray.core.resample.DataArrayResample.sum.html",
+    "use_cases": [
+      "不重疊半小時雨率乘0.5小時後累積，48個唯一完整時段才標完整UTC日",
+      "同時輸出有效時段數、預期時段數、版本與時間起迄",
+      "地方日依台北UTC+8／日本UTC+9對齊，避免拿UTC日直接比測站地方日"
+    ],
+    "limitations": [
+      "難度中；min_count只數非空值，不檢查時戳重複或間隔規則",
+      "min_count需skipna=True；須先補齊預期時間軸並去重",
+      "不適用直接加總重疊滾動窗；已有mm累積不能再乘時長",
+      "xarray Apache-2.0；輸入資料仍依來源條款",
+      "本期只核對文件；執行環境未安裝xarray，未宣稱套件或真實網格運算驗收"
+    ],
+    "implementation_sources": [
+      "https://docs.xarray.dev/en/stable/generated/xarray.core.resample.DataArrayResample.sum.html",
+      "https://docs.xarray.dev/en/stable/generated/xarray.DataArray.resample.html",
+      "https://github.com/pydata/xarray"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.xarray.dev/en/stable/generated/xarray.core.resample.DataArrayResample.sum.html",
+        "supports": "skipna、min_count與缺值輸出"
+      },
+      {
+        "url": "https://docs.xarray.dev/en/stable/generated/xarray.DataArray.resample.html",
+        "supports": "重採樣時間邊界、origin與offset參數"
+      },
+      {
+        "url": "https://github.com/pydata/xarray/blob/main/LICENSE",
+        "supports": "Apache-2.0程式授權"
+      },
+      {
+        "url": "https://gpm.nasa.gov/data/imerg",
+        "supports": "半小時平均率解讀與插值極值風險"
+      }
+    ]
   }
 ]

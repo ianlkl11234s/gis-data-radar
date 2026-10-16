@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 57 項：53 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-15（新增3項生物觀測來源與品質資源；其餘保留各自查核日）。
+目前 60 項：56 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-16（新增3項衛星降雨與時間窗品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
+
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
 
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
@@ -59,6 +63,8 @@
 
 ### data_platform
 
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
+
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
 - [TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)
@@ -92,6 +98,8 @@
 
 ### analysis_method
 
+- [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
+
 - [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
 - [WOfS水面變化分析：把清晰觀測數放回分母](#deafrica-wofs-water-frequency)
@@ -122,6 +130,10 @@
 
 ### showcase
 
+- [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
+
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
+
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
@@ -133,6 +145,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 
 - [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
@@ -155,6 +169,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
+
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
 
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
@@ -216,6 +234,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
+
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
 
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
@@ -282,6 +304,10 @@
 
 ### global
 
+- [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
+
+- [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
+
 - [GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)
 
 - [JRC Global Surface Water v1.5：歷年水面與觀測品質](#jrc-global-surface-water)
@@ -326,6 +352,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 
 - [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
 
@@ -555,6 +583,11 @@
 ### 2026-10-15 新增主題交叉索引
 
 - environment／biodiversity／data-quality：[TaiBIF API：帶來源、授權與模糊化資訊的物種紀錄](#taibif-occurrence-api)、[GBIF：台日物種紀錄與分格觀測地圖](#gbif-occurrence-maps)、[CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
+
+### 2026-10-16 新增主題交叉索引
+
+- weather／water／data-quality：[NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)、[JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)、[xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
+- hazards：[IMERG](#nasa-imerg-precipitation)、[GSMaP](#jaxa-gsmap-rainfall-watch)
 
 ## 資源卡
 
@@ -1177,3 +1210,33 @@
 - 既有工具／方法新收錄。用可疑座標旗標保留審核理由，不把所有異常點直接刪掉；尤其不能將預設海域檢查直接用於海洋物種。
 - [官方或原始來源](https://ropensci.github.io/CoordinateCleaner/)；首次收錄／查核：2026-10-15；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-15.md#coordinatecleaner-occurrence-quality)
+
+<a id="nasa-imerg-precipitation"></a>
+
+### NASA IMERG：衛星降雨與Early／Late／Final版本
+
+- ID：nasa-imerg-precipitation
+- 類型：dataset／showcase；地區：global、Taiwan、Japan；主題：weather、water、hazards、data-quality
+- 既有資料新收錄；10/12官方案例比較7–9月累積、絕對與百分比距平，採Late Run初估。V07 Final紀錄止於2025/9，V08時程仍須依公告核對，不能把預定升版當已發布。
+- [官方或原始來源](https://gpm.nasa.gov/data/imerg)；首次收錄／查核：2026-10-16；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-16.md#nasa-imerg-precipitation)
+
+<a id="jaxa-gsmap-rainfall-watch"></a>
+
+### JAXA GSMaP：降雨版本目錄與時間窗展示
+
+- ID：jaxa-gsmap-rainfall-watch
+- 類型：data_platform／dataset／showcase；地區：Japan、global、Taiwan；主題：weather、water、hazards、data-quality
+- 既有來源新收錄；v7標準與NRT已分別於5/31、6/29停更。NOW每30分鐘更新不等於每筆是半小時累積，接入應釘選版本與時間窗。
+- [官方或原始來源](https://sharaku.eorc.jaxa.jp/GSMaP/)；首次收錄／查核：2026-10-16；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-16.md#jaxa-gsmap-rainfall-watch)
+
+<a id="xarray-precipitation-window-completeness"></a>
+
+### xarray雨量累積：時間窗、單位與完整度一起算
+
+- ID：xarray-precipitation-window-completeness
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：weather、water、data-quality
+- 既有工具新收錄；先辨別mm/h與mm、時間窗和重複，再以resample及min_count保留缺測，不把部分累積當完整一天。
+- [官方或原始來源](https://docs.xarray.dev/en/stable/generated/xarray.core.resample.DataArrayResample.sum.html)；首次收錄／查核：2026-10-16；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-16.md#xarray-precipitation-window-completeness)
