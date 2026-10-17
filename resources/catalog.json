@@ -4303,5 +4303,165 @@
         "supports": "半小時平均率解讀與插值極值風險"
       }
     ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": "2026-10-02",
+    "discovered_at": "2026-10-17",
+    "last_verified_at": "2026-10-17",
+    "id": "japan-gsi-typhoon25-flood-extent",
+    "title": "GSI台風25號浸水推定：有觀測時刻的災後範圍",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "water",
+      "transport"
+    ],
+    "scope": "日本北印旛沼事件範圍；本期關注2026-10-01 16:00觀測版本",
+    "summary": "10/2更新的事件資料本期首次收錄；推定範圍可輔助道路暴露篩選，但不能判定封路或橋梁失效。",
+    "source_url": "https://web2.gsi.go.jp/BOUSAI/R8_taihuu25gou.html",
+    "data_details": {
+      "update_frequency": "事件型、不定期；不是持續即時監測",
+      "formats": [
+        "GeoJSON (ZIP)",
+        "PDF"
+      ],
+      "access": "官方頁提供免登入下載與地理院地圖入口；本期核對頁面，未解析ZIP或操作地圖",
+      "api": null,
+      "license": "依國土地理院內容利用規約，來源顯名；不另授予統一授權",
+      "license_url": "https://web2.gsi.go.jp/BOUSAI/R8_taihuu25gou.html"
+    },
+    "use_cases": [
+      "道路或橋頭周邊可能暴露的人工複核清單"
+    ],
+    "limitations": [
+      "不是最大淹水範圍；可有漏判與誤判",
+      "輪廓GeoJSON不等於逐像元水深",
+      "不直接代表道路封閉或工程安全；導入低至中，需時間與高程判讀"
+    ],
+    "evidence": [
+      {
+        "url": "https://web2.gsi.go.jp/BOUSAI/R8_taihuu25gou.html",
+        "supports": "10/2更新、10/1觀測時刻、GeoJSON與PDF及使用限制"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅來源登錄對照，未驗收全部後端或部署",
+      "notes": "指定目錄未見此日本事件；既有淹水與道路災情圖層不可與推定事件範圍混稱。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-17",
+    "last_verified_at": "2026-10-17",
+    "id": "japan-mlit-n06-expressway",
+    "title": "日本N06高速道路：版本、供用狀態與使用條件",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "transport",
+      "infrastructure",
+      "data-quality"
+    ],
+    "scope": "日本全國高速道路線與IC/JCT點，2025-12-31基準；不含全部地方道路",
+    "summary": "既有來源新收錄。2025版於2026年4月更新；單年現況與時系列用途的授權條件不同，不能直接當完整導航路網。",
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N06-2025.html",
+    "data_details": {
+      "update_frequency": "按年度版本更新，精確下一次日期未知",
+      "formats": [
+        "GML",
+        "SHP",
+        "GeoJSON"
+      ],
+      "access": "官方ZIP下載；JGD2011。本期未下載或驗證拓樸",
+      "api": null,
+      "license": "2018年度以後各版作該年度現況使用：CC BY 4.0；作時系列使用：非商用。依資料頁特定條件判讀",
+      "license_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N06-2025.html"
+    },
+    "use_cases": [
+      "日本單年高速公路暴露篩選及與OSM路線對照"
+    ],
+    "limitations": [
+      "公開更新日期只到2026-04，精確日未知，日期欄保留null",
+      "無完整地方替代路網，須補資料且驗證連通",
+      "不是橋梁健康或通行狀況；導入難度中"
+    ],
+    "evidence": [
+      {
+        "url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N06-2025.html",
+        "supports": "2025基準、2026年4月更新、格式、供用狀態與差異授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅來源登錄對照，未驗收全部後端或部署",
+      "notes": "指定目錄未見N06；不推論其他分支／資料管線未使用。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-17",
+    "last_verified_at": "2026-10-17",
+    "id": "osmnx-road-disruption-quality",
+    "title": "OSMnx路網中斷分析：速度假設與不可達分開呈現",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "transport",
+      "infrastructure",
+      "data-quality"
+    ],
+    "scope": "通用道路圖方法，可用於台日；實際適用性由OSM覆蓋與通行規則決定",
+    "summary": "既有工具新收錄。將路段速度來源、替代路線及不可達起訖對分開核算，避免把自由車流模型解讀為真實旅時。",
+    "source_url": "https://osmnx.readthedocs.io/en/stable/user-reference.html",
+    "use_cases": [
+      "對既有路網情境做速度敏感度與邊界完整性檢查"
+    ],
+    "limitations": [
+      "文件為2.1.1；未確認精確發布日，也未安裝執行",
+      "需保留方向、平行邊及車種通行限制；預設drive不等同台灣機車路網",
+      "自由車流時間不含即時壅塞；失效後果不等於發生機率或風險",
+      "工具MIT；OSM資料ODbL與顯名義務另計；導入中至高"
+    ],
+    "implementation_sources": [
+      "https://osmnx.readthedocs.io/en/stable/user-reference.html#module-osmnx.routing",
+      "https://osmnx.readthedocs.io/en/stable/getting-started.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://osmnx.readthedocs.io/en/stable/user-reference.html",
+        "supports": "速度推估、自由車流時間、最短路徑無解回None與平行邊處理"
+      },
+      {
+        "url": "https://osmnx.readthedocs.io/en/stable/",
+        "supports": "MIT授權與文件版本"
+      },
+      {
+        "url": "https://www.openstreetmap.org/copyright",
+        "supports": "OSM資料ODbL與顯名"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅來源登錄對照，未驗收全部後端或部署",
+      "notes": "既有橋梁／路網分析不作全新功能宣稱；本候選是獨立品質驗收方法，未確認現有後端是否使用OSMnx。"
+    }
   }
 ]

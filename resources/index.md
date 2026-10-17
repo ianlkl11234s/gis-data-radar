@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 60 項：56 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-16（新增3項衛星降雨與時間窗品質資源；其餘保留各自查核日）。
+目前 63 項：59 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-17（新增3項道路暴露與路網品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
+
+- [GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
 
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
 
@@ -98,6 +102,8 @@
 
 ### analysis_method
 
+- [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
+
 - [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 
 - [CoordinateCleaner：先標記可疑生物座標再審核](#coordinatecleaner-occurrence-quality)
@@ -130,6 +136,8 @@
 
 ### showcase
 
+- [GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
+
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
 
 - [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
@@ -145,6 +153,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
 - [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 
@@ -234,6 +244,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
+
+- [GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
 
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
 
@@ -352,6 +366,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
 - [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 
@@ -588,6 +604,12 @@
 
 - weather／water／data-quality：[NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)、[JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)、[xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
 - hazards：[IMERG](#nasa-imerg-precipitation)、[GSMaP](#jaxa-gsmap-rainfall-watch)
+
+### 2026-10-17 新增主題交叉索引
+
+- hazards／water／transport：[GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
+- transport／infrastructure／data-quality：[日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
+- transport／infrastructure／data-quality：[OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
 ## 資源卡
 
@@ -1240,3 +1262,33 @@
 - 既有工具新收錄；先辨別mm/h與mm、時間窗和重複，再以resample及min_count保留缺測，不把部分累積當完整一天。
 - [官方或原始來源](https://docs.xarray.dev/en/stable/generated/xarray.core.resample.DataArrayResample.sum.html)；首次收錄／查核：2026-10-16；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-16.md#xarray-precipitation-window-completeness)
+
+<a id="japan-gsi-typhoon25-flood-extent"></a>
+
+### GSI台風25號浸水推定：有觀測時刻的災後範圍
+
+- ID：japan-gsi-typhoon25-flood-extent
+- 類型：dataset／showcase；地區：Japan；主題：hazards、water、transport
+- 10/2更新的事件資料本期首次收錄；推定範圍可輔助道路暴露篩選，但不能判定封路或橋梁失效。
+- [官方或原始來源](https://web2.gsi.go.jp/BOUSAI/R8_taihuu25gou.html)；首次收錄／查核：2026-10-17；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-17.md#japan-gsi-typhoon25-flood-extent)
+
+<a id="japan-mlit-n06-expressway"></a>
+
+### 日本N06高速道路：版本、供用狀態與使用條件
+
+- ID：japan-mlit-n06-expressway
+- 類型：dataset；地區：Japan；主題：transport、infrastructure、data-quality
+- 既有來源新收錄。2025版於2026年4月更新；單年現況與時系列用途的授權條件不同，不能直接當完整導航路網。
+- [官方或原始來源](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N06-2025.html)；首次收錄／查核：2026-10-17；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-17.md#japan-mlit-n06-expressway)
+
+<a id="osmnx-road-disruption-quality"></a>
+
+### OSMnx路網中斷分析：速度假設與不可達分開呈現
+
+- ID：osmnx-road-disruption-quality
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：transport、infrastructure、data-quality
+- 既有工具新收錄。將路段速度來源、替代路線及不可達起訖對分開核算，避免把自由車流模型解讀為真實旅時。
+- [官方或原始來源](https://osmnx.readthedocs.io/en/stable/user-reference.html)；首次收錄／查核：2026-10-17；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-17.md#osmnx-road-disruption-quality)
