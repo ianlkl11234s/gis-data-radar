@@ -4463,5 +4463,145 @@
       "checked_scope": "mini-taiwan-pulse 正式master 3182fcaccdbec7ab2733789611ff65d868d5028b 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅來源登錄對照，未驗收全部後端或部署",
       "notes": "既有橋梁／路網分析不作全新功能宣稱；本候選是獨立品質驗收方法，未確認現有後端是否使用OSMnx。"
     }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-18",
+    "last_verified_at": "2026-10-18",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 2d334ef7e2e65e0276314054ef103fd8b14ee73f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；只核對登錄，非全部後端、分支或線上驗收",
+      "notes": "既有全台土壤分類、250m土壤肥力與水庫水情登錄；指定兩份目錄未見SMAP或AMSR土壤水分來源，不等於全專案未用。候選增量是時間變動的區域乾濕程度。導入難度中；先做粗網格與缺測驗收。"
+    },
+    "id": "nasa-smap-l4-soil-moisture",
+    "title": "SMAP L4 v8：表層與根區土壤水分及重處理警示",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "agriculture",
+      "data-quality"
+    ],
+    "scope": "全球陸域9km EASE-Grid；台日可做區域尺度研究，不能解讀成田塊實測",
+    "summary": "既有資料新收錄。官方目前警示2026-05-14至07-28地理定位問題，L4仍在重處理；記錄版本與替換狀態，避免把產品修正當環境變化。",
+    "source_url": "https://nsidc.org/data/spl4smgp/versions/8",
+    "data_details": {
+      "update_frequency": "3小時平均模型場；不等於每3小時衛星實測或發布延遲保證",
+      "formats": [
+        "HDF5"
+      ],
+      "access": "免費Earthdata Login下載；本次只查官方文件，未登入、下載或驗證最新granule",
+      "api": "https://search.earthdata.nasa.gov/search?q=SPL4SMGP",
+      "license": "NASA NSIDC DAAC資料使用須引用產品DOI、版本、子集與存取日期；依官方政策，不另宣稱CC授權",
+      "license_url": "https://nsidc.org/data/data-policies"
+    },
+    "use_cases": [
+      "區域乾濕時間序列與雨量／水庫資料並列",
+      "在圖例揭露模型同化、網格與版本品質"
+    ],
+    "limitations": [
+      "根區為陸面模型同化估計，不是衛星直接穿透量測",
+      "官方定位警示發布日未知；未確認受影響檔案已全部替換",
+      "9km格網不等於9km獨立感測解析力；小島沿岸混合像元須驗收",
+      "地區土壤參數可能造成絕對值偏差；不直接制定灌溉或災害判定",
+      "v8引用年份2025但精確發布日未知"
+    ],
+    "evidence": [
+      {
+        "url": "https://nsidc.org/data/spl4smgp/versions/8",
+        "supports": "產品、格式、3小時平均、登入、DOI及目前定位重處理警示"
+      },
+      {
+        "url": "https://nsidc.org/data/smap/version-history",
+        "supports": "L4 Science Version ID含主要及次要版本，需保留檔案版本"
+      },
+      {
+        "url": "https://nsidc.org/data/user-resources/help-center/why-do-soil-moisture-values-smap-level-4-data-vary-what-i-expect-particular-region",
+        "supports": "先讀QA，區域土壤參數影響絕對值；2017年既有說明非新公告"
+      }
+    ]
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-18",
+    "last_verified_at": "2026-10-18",
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 2d334ef7e2e65e0276314054ef103fd8b14ee73f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；只核對登錄，非全部後端、分支或線上驗收",
+      "notes": "既有全台土壤分類、250m土壤肥力與水庫水情登錄；指定兩份目錄未見SMAP或AMSR土壤水分來源，不等於全專案未用。候選增量是時間變動的區域乾濕程度。導入難度中；先做粗網格與缺測驗收。"
+    },
+    "id": "jaxa-amsr-soil-moisture-viewer",
+    "title": "JAXA AMSR土壤水分與乾濕距平展示",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan",
+      "global",
+      "Taiwan"
+    ],
+    "topics": [
+      "water",
+      "environment",
+      "agriculture",
+      "data-quality"
+    ],
+    "scope": "日本提供的全球陸域近地表水分；約50km感測尺度，台灣沿岸及日本小島有效覆蓋需另查",
+    "summary": "既有來源新收錄。標準／研究產品及感測器不能混接；Viewer可切觀測、距平、氣候值與時間窗，下載須註冊。",
+    "source_url": "https://www.eorc.jaxa.jp/AMSR/datacatalog/land/",
+    "data_details": {
+      "update_frequency": "L2軌道與L3格網；Viewer提供每日、近5日、半月、月平均。研究產品相對標準產品約延後一個月",
+      "formats": [
+        "HDF5",
+        "NetCDF"
+      ],
+      "access": "標準產品G-Portal；研究產品另有服務；Viewer公開瀏覽，儲存資料需註冊。本次未下載或驗證實際台日有效像元",
+      "api": null,
+      "license": "標準產品依G-Portal條款（顯名、和平用途、商用事先通知）；研究產品及Viewer依JAXA研究資料條款。須依取得管道核對，不能統一授權",
+      "license_url": "https://www.gportal.jaxa.jp/gpr/index/eula?lang=en"
+    },
+    "use_cases": [
+      "借鑑同一位置切觀測／距平／氣候值及時間序列",
+      "先比較台灣與日本一處平原的有效覆蓋，而非直接發布全島精細圖"
+    ],
+    "limitations": [
+      "海岸、大湖濕地與濃密森林存在無法估計區域，缺值不可補零",
+      "標準產品採常年植被、研究產品採實際植被，跨版差異不一定是乾濕改變",
+      "AMSR3 01A於2026-06-30發布；AMSR2標準3.300.300於2017-03-01、研究1.300.001於2022-09-20，複合條目不硬填單一更新日",
+      "Viewer 2026-08-03已公告修正AMSR3每日距平影像錯位，非今日新故障",
+      "只讀頁面控制與文件；未操作下載或驗證互動回傳"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.eorc.jaxa.jp/AMSR/datacatalog/land/",
+        "supports": "土壤水分產品差異、尺度、格式、版本及植被／沿岸限制"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/AMSR/viewer/",
+        "supports": "控制元件與8/3已修正距平影像錯位公告"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/AMSR/viewer/term.html",
+        "supports": "Viewer下載註冊與研究資料條款"
+      },
+      {
+        "url": "https://earth.jaxa.jp/en/data/policy/",
+        "supports": "研究資料與衍生品顯名及其他使用條件"
+      },
+      {
+        "url": "https://www.gportal.jaxa.jp/gpr/index/eula?lang=en",
+        "supports": "標準產品條款與商用事先通知"
+      }
+    ]
   }
 ]

@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 63 項：59 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-17（新增3項道路暴露與路網品質資源；其餘保留各自查核日）。
+目前 65 項：61 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-18（新增2項土壤水分與品質展示資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
+- [SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)
 
 - [日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
 
@@ -66,6 +70,8 @@
 - [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
 
 ### data_platform
+
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
 - [JAXA GSMaP：降雨版本目錄與時間窗展示](#jaxa-gsmap-rainfall-watch)
 
@@ -136,6 +142,8 @@
 
 ### showcase
 
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
 - [GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
 
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
@@ -179,6 +187,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
+- [SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)
 
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
 
@@ -244,6 +256,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
+- [SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)
 
 - [日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
 
@@ -317,6 +333,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### global
+
+- [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
+- [SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)
 
 - [NASA IMERG：衛星降雨與Early／Late／Final版本](#nasa-imerg-precipitation)
 
@@ -610,6 +630,10 @@
 - hazards／water／transport：[GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
 - transport／infrastructure／data-quality：[日本N06高速道路：版本、供用狀態與使用條件](#japan-mlit-n06-expressway)
 - transport／infrastructure／data-quality：[OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
+
+### 2026-10-18 新增主題交叉索引
+
+- water、environment、agriculture、data-quality：[SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)、[JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
 ## 資源卡
 
@@ -1292,3 +1316,23 @@
 - 既有工具新收錄。將路段速度來源、替代路線及不可達起訖對分開核算，避免把自由車流模型解讀為真實旅時。
 - [官方或原始來源](https://osmnx.readthedocs.io/en/stable/user-reference.html)；首次收錄／查核：2026-10-17；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-17.md#osmnx-road-disruption-quality)
+
+<a id="nasa-smap-l4-soil-moisture"></a>
+
+### SMAP L4 v8：表層與根區土壤水分及重處理警示
+
+- ID：nasa-smap-l4-soil-moisture
+- 類型：dataset；地區：global、Taiwan、Japan；主題：water、environment、agriculture、data-quality
+- 既有資料新收錄。官方目前警示2026-05-14至07-28地理定位問題，L4仍在重處理；記錄版本與替換狀態，避免把產品修正當環境變化。
+- [官方或原始來源](https://nsidc.org/data/spl4smgp/versions/8)；首次收錄／查核：2026-10-18；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-18.md#nasa-smap-l4-soil-moisture)
+
+<a id="jaxa-amsr-soil-moisture-viewer"></a>
+
+### JAXA AMSR土壤水分與乾濕距平展示
+
+- ID：jaxa-amsr-soil-moisture-viewer
+- 類型：data_platform／dataset／showcase；地區：Japan、global、Taiwan；主題：water、environment、agriculture、data-quality
+- 既有來源新收錄。標準／研究產品及感測器不能混接；Viewer可切觀測、距平、氣候值與時間窗，下載須註冊。
+- [官方或原始來源](https://www.eorc.jaxa.jp/AMSR/datacatalog/land/)；首次收錄／查核：2026-10-18；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-18.md#jaxa-amsr-soil-moisture-viewer)
