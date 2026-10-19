@@ -4603,5 +4603,148 @@
         "supports": "標準產品條款與商用事先通知"
       }
     ]
+  },
+  {
+    "id": "jaxa-earthcare-l3-monthly",
+    "title": "EarthCARE L3 V01：月度雲垂直結構與輻射格網",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan",
+      "global",
+      "Taiwan"
+    ],
+    "topics": [
+      "weather",
+      "environment",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "全球觀測區域；2.5°格網、500m高度層，非城市或即時天氣解析度",
+    "summary": "2026-10-13新發布；將L2觀測整理為月度三維統計，可探索東亞雲垂直分布，必須同時讀取樣本數。",
+    "source_url": "https://www.eorc.jaxa.jp/EARTHCARE/data/L3/L3_GRD_j.html",
+    "published_at": "2026-10-13",
+    "source_updated_at": "2026-10-13",
+    "discovered_at": "2026-10-19",
+    "last_verified_at": "2026-10-19",
+    "data_details": {
+      "update_frequency": "月統計；實際到貨延遲與最新完整月份未驗證",
+      "formats": [
+        "NetCDF"
+      ],
+      "access": "JAXA EORC研究產品註冊入口；本期未註冊或下載",
+      "api": null,
+      "license": "JAXA EarthCARE條款：免費，含商用，須顯名；高次衍生品註明原始來源，不另賦予統一CC授權",
+      "license_url": "https://www.eorc.jaxa.jp/EARTHCARE/research_product/registration_j.html"
+    },
+    "use_cases": [
+      "台灣周邊與日本區域按高度比較月雲量",
+      "將有效樣本數與統計值同時呈現"
+    ],
+    "limitations": [
+      "2024年8月觀測較少；CPR中斷造成不同變數及月份樣本數不同",
+      "早期Doppler速度噪音與觀測模式變化影響跨期比較",
+      "不代表地面PM2.5，亦不能直接用來判斷當地空氣健康風險",
+      "導入中等：NetCDF分組、count欄位、尺度與版本驗收；未驗證實檔"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.eorc.jaxa.jp/EARTHCARE/data/L3/L3_GRD_j.html",
+        "supports": "V01日期、格式、格網與變數目錄"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/EARTHCARE/document/JAXAL3ProductList/ReleaseNote/Release_Note_JAXA_L3_GRD_V01_rev.pdf",
+        "supports": "高度解析度、樣本及速度品質限制"
+      },
+      {
+        "url": "https://www.eorc.jaxa.jp/EARTHCARE/research_product/registration_j.html",
+        "supports": "取得方式及各自授權"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master a6fae01460090ac6acaec6fc4d7658fda7c2f9bc 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "指定兩份目錄未見EarthCARE登錄；不證明所有服務都未使用。適合區域背景分析，非新增即時台灣空品圖。"
+    }
+  },
+  {
+    "id": "cams-global-composition-forecasts",
+    "title": "CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "model_tool",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "weather",
+      "environment",
+      "air-quality",
+      "data-quality"
+    ],
+    "scope": "全球0.4°ADS網格，涵蓋台日；區域模型非街道暴露",
+    "summary": "既有來源首次收錄；Pulse正式master已有CAMS沙塵登錄，增量是起報／有效時間、變數單位及按預報時效驗證。",
+    "source_url": "https://ads.atmosphere.copernicus.eu/datasets/cams-global-atmospheric-composition-forecasts?tab=overview",
+    "published_at": "2021-03-25",
+    "source_updated_at": null,
+    "discovered_at": "2026-10-19",
+    "last_verified_at": "2026-10-19",
+    "data_details": {
+      "update_frequency": "每日00／12 UTC起報，預報5日；單層每小時、多層每3小時",
+      "formats": [
+        "GRIB",
+        "NetCDF"
+      ],
+      "access": "ADS帳號、使用條款及API token；本期只讀公開文件，未下載預報或新增憑證",
+      "api": "https://ads.atmosphere.copernicus.eu/how-to-api",
+      "license": "ADS產品頁標示CC-BY；使用須依產品引用與授權條款",
+      "license_url": "https://ads.atmosphere.copernicus.eu/datasets/cams-global-atmospheric-composition-forecasts?tab=overview"
+    },
+    "use_cases": [
+      "在既有沙塵圖加入預報批次和時效",
+      "以同時同地測站資料驗證候選表面PM2.5預報"
+    ],
+    "limitations": [
+      "AOD無因次、PM2.5為kg/m³，不能直接互換；PM2.5轉µg/m³乘10^9",
+      "模型升版影響長期一致性",
+      "未核實今日最新起報是否到貨；起報時刻不等於可下載時間",
+      "導入中等，先驗證變數、時區、內插及有效樣本；未執行模型或品質測試"
+    ],
+    "implementation_sources": [
+      "https://ads.atmosphere.copernicus.eu/how-to-api",
+      "https://confluence.ecmwf.int/pages/viewpage.action?pageId=216491537"
+    ],
+    "evidence": [
+      {
+        "url": "https://ads.atmosphere.copernicus.eu/datasets/cams-global-atmospheric-composition-forecasts?tab=overview",
+        "supports": "範圍、粒度、格式、發布日、CC-BY及變數單位"
+      },
+      {
+        "url": "https://ads.atmosphere.copernicus.eu/how-to-api",
+        "supports": "帳號、token、條款與API實作"
+      },
+      {
+        "url": "https://confluence.ecmwf.int/pages/viewpage.action?pageId=216491537",
+        "supports": "預報到貨時間及作業說明"
+      },
+      {
+        "url": "https://atmosphere.copernicus.eu/charts/packages/cams/products/aerosol-forecasts/overview/projection?base_time=202609020000&valid_time=202609040300",
+        "supports": "展示控制項：區域、base time、valid time及氣膠類型；未驗收互動"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/a6fae01460090ac6acaec6fc4d7658fda7c2f9bc/src/data/layerManifest.ts",
+        "supports": "dustForecast及cams_atmosphere_forecast來源登錄"
+      }
+    ],
+    "integration": {
+      "status": "integrated",
+      "checked_scope": "mini-taiwan-pulse 正式master a6fae01460090ac6acaec6fc4d7658fda7c2f9bc 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
+      "notes": "僅沙塵來源部分原始碼登錄已整合；不代表所有CAMS變數、最新批次、部署或本期功能驗收。"
+    }
   }
 ]

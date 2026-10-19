@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 65 項：61 項 candidate、4 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-18（新增2項土壤水分與品質展示資源；其餘保留各自查核日）。
+目前 67 項：62 項 candidate、5 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-19（新增2項雲垂直統計與預報品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+
+- [EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
@@ -70,6 +74,8 @@
 - [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
 
 ### data_platform
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
@@ -142,6 +148,8 @@
 
 ### showcase
 
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
 - [GSI台風25號浸水推定：有觀測時刻的災後範圍](#japan-gsi-typhoon25-flood-extent)
@@ -161,6 +169,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
 - [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
@@ -187,6 +197,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+
+- [EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
@@ -256,6 +270,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+
+- [EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
@@ -333,6 +351,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### global
+
+- [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+
+- [EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
 
@@ -634,6 +656,12 @@
 ### 2026-10-18 新增主題交叉索引
 
 - water、environment、agriculture、data-quality：[SMAP L4 v8：表層與根區土壤水分及重處理警示](#nasa-smap-l4-soil-moisture)、[JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
+
+### 2026-10-19 新增主題交叉索引
+
+- weather／environment／data-quality：[EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)、[CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
+- remote-sensing：[EarthCARE L3](#jaxa-earthcare-l3-monthly)
+- air-quality：[CAMS](#cams-global-composition-forecasts)
 
 ## 資源卡
 
@@ -1336,3 +1364,23 @@
 - 既有來源新收錄。標準／研究產品及感測器不能混接；Viewer可切觀測、距平、氣候值與時間窗，下載須註冊。
 - [官方或原始來源](https://www.eorc.jaxa.jp/AMSR/datacatalog/land/)；首次收錄／查核：2026-10-18；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-18.md#jaxa-amsr-soil-moisture-viewer)
+
+<a id="jaxa-earthcare-l3-monthly"></a>
+
+### EarthCARE L3 V01：月度雲垂直結構與輻射格網
+
+- ID：jaxa-earthcare-l3-monthly
+- 類型：dataset；地區：Japan、global、Taiwan；主題：weather、environment、remote-sensing、data-quality
+- 2026-10-13新發布；將L2觀測整理為月度三維統計，可探索東亞雲垂直分布，必須同時讀取樣本數。
+- [官方或原始來源](https://www.eorc.jaxa.jp/EARTHCARE/data/L3/L3_GRD_j.html)；首次收錄／查核：2026-10-19；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-19.md#jaxa-earthcare-l3-monthly)
+
+<a id="cams-global-composition-forecasts"></a>
+
+### CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質
+
+- ID：cams-global-composition-forecasts
+- 類型：data_platform／dataset／model_tool／showcase；地區：global、Taiwan、Japan；主題：weather、environment、air-quality、data-quality
+- 既有來源首次收錄；Pulse正式master已有CAMS沙塵登錄，增量是起報／有效時間、變數單位及按預報時效驗證。
+- [官方或原始來源](https://ads.atmosphere.copernicus.eu/datasets/cams-global-atmospheric-composition-forecasts?tab=overview)；首次收錄／查核：2026-10-19；狀態：integrated
+- [適用情境、限制與接入判讀](../reports/2026-10-19.md#cams-global-composition-forecasts)
