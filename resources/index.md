@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 67 項：62 項 candidate、5 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-19（新增2項雲垂直統計與預報品質資源；其餘保留各自查核日）。
+目前 69 項：63 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-20（新增2項海底地形與來源品質資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
@@ -75,6 +77,8 @@
 
 ### data_platform
 
+- [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
+
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
@@ -114,6 +118,8 @@
 
 ### analysis_method
 
+- [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
+
 - [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
 - [xarray雨量累積：時間窗、單位與完整度一起算](#xarray-precipitation-window-completeness)
@@ -148,6 +154,8 @@
 
 ### showcase
 
+- [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
+
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
 - [JAXA AMSR土壤水分與乾濕距平展示](#jaxa-amsr-soil-moisture-viewer)
@@ -169,6 +177,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
@@ -197,6 +207,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
@@ -270,6 +282,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
@@ -352,6 +366,8 @@
 
 ### global
 
+- [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
+
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 
 - [EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)
@@ -408,6 +424,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
 - [OSMnx路網中斷分析：速度假設與不可達分開呈現](#osmnx-road-disruption-quality)
 
@@ -662,6 +680,10 @@
 - weather／environment／data-quality：[EarthCARE L3 V01：月度雲垂直結構與輻射格網](#jaxa-earthcare-l3-monthly)、[CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
 - remote-sensing：[EarthCARE L3](#jaxa-earthcare-l3-monthly)
 - air-quality：[CAMS](#cams-global-composition-forecasts)
+
+### 2026-10-20 新增主題交叉索引
+
+- ocean／terrain／data-quality：[GEBCO地形與TID](#gebco-bathymetry-tid)、[TID品質疊圖](#gebco-tid-quality-overlay)
 
 ## 資源卡
 
@@ -1384,3 +1406,23 @@
 - 既有來源首次收錄；Pulse正式master已有CAMS沙塵登錄，增量是起報／有效時間、變數單位及按預報時效驗證。
 - [官方或原始來源](https://ads.atmosphere.copernicus.eu/datasets/cams-global-atmospheric-composition-forecasts?tab=overview)；首次收錄／查核：2026-10-19；狀態：integrated
 - [適用情境、限制與接入判讀](../reports/2026-10-19.md#cams-global-composition-forecasts)
+
+<a id="gebco-bathymetry-tid"></a>
+
+### GEBCO海底地形：2026版本與來源類型格網
+
+- ID：gebco-bathymetry-tid
+- 類型：dataset／data_platform；地區：global、Taiwan、Japan；主題：ocean、terrain、data-quality
+- 既有來源首次收錄；Pulse已登錄GEBCO 2025等深線，官方2026版已於4/27發布，升版與TID品質覆蓋仍待評估。
+- [官方或原始來源](https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid)；首次收錄／查核：2026-10-20；狀態：integrated
+- [適用情境、限制與接入判讀](../reports/2026-10-20.md#gebco-bathymetry-tid)
+
+<a id="gebco-tid-quality-overlay"></a>
+
+### TID來源品質疊圖：分開實測、推估與混合來源
+
+- ID：gebco-tid-quality-overlay
+- 類型：analysis_method／showcase／model_tool；地區：not_region_specific；主題：ocean、terrain、data-quality
+- 既有方法新收錄；借鑑GEBCO TID展示，以分類疊圖說明海底細節的來源差異，避免把平滑地形都當實測。
+- [官方或原始來源](https://www.gebco.net/gebco-tid-grid)；首次收錄／查核：2026-10-20；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-20.md#gebco-tid-quality-overlay)

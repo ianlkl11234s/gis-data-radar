@@ -4746,5 +4746,130 @@
       "checked_scope": "mini-taiwan-pulse 正式master a6fae01460090ac6acaec6fc4d7658fda7c2f9bc 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部後端、所有分支或線上驗收",
       "notes": "僅沙塵來源部分原始碼登錄已整合；不代表所有CAMS變數、最新批次、部署或本期功能驗收。"
     }
+  },
+  {
+    "id": "gebco-bathymetry-tid",
+    "title": "GEBCO海底地形：2026版本與來源類型格網",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "terrain",
+      "data-quality"
+    ],
+    "scope": "全球15角秒地形，涵蓋台灣與日本海域；格距不等於實測精度",
+    "summary": "既有來源首次收錄；Pulse已登錄GEBCO 2025等深線，官方2026版已於4/27發布，升版與TID品質覆蓋仍待評估。",
+    "source_url": "https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid",
+    "published_at": "2026-04-27",
+    "source_updated_at": null,
+    "discovered_at": "2026-10-20",
+    "last_verified_at": "2026-10-20",
+    "data_details": {
+      "update_frequency": "年度版本；非即時海床變化",
+      "formats": [
+        "NetCDF",
+        "GeoTIFF",
+        "Esri ASCII"
+      ],
+      "access": "可用官方範圍下載或OPeNDAP；本期只核對文件，未取網格",
+      "api": "https://www.gebco.net/data-products/gridded-bathymetry-data",
+      "license": "Public domain；仍須依GEBCO條款顯名、不得暗示官方背書，不供導航或海上安全用途",
+      "license_url": "https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid"
+    },
+    "use_cases": [
+      "台灣海峽與琉球海域地形背景",
+      "比較既有2025與2026版本，分開來源更新與地貌變化"
+    ],
+    "limitations": [
+      "正值高程、負值水深；近岸垂直基準不完全一致",
+      "TID為來源種類而非誤差或置信度；混合來源不可都當實測",
+      "導入中等：同版地形與TID對齊、原始版本保存；未驗證下載或線上效果"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.gebco.net/news/release-gebco2026-grid",
+        "supports": "4/27發布日期"
+      },
+      {
+        "url": "https://www.gebco.net/data-products/gridded-bathymetry-data",
+        "supports": "範圍下載、OPeNDAP與格式"
+      },
+      {
+        "url": "https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid",
+        "supports": "版本內容、數值、基準、TID、使用條款"
+      },
+      {
+        "url": "https://github.com/ianlkl11234s/mini-taiwan-pulse/blob/80f3150ebda15cc04463ff7b797e401e2d87d80f/src/data/layerManifest.ts",
+        "supports": "既有GEBCO 2025與gebco_isobath登錄"
+      }
+    ],
+    "integration": {
+      "status": "integrated",
+      "checked_scope": "mini-taiwan-pulse 正式master 80f3150ebda15cc04463ff7b797e401e2d87d80f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
+      "notes": "僅2025海底等深線原始碼登錄已整合；2026升版與TID未驗收，不稱為已上線"
+    }
+  },
+  {
+    "id": "gebco-tid-quality-overlay",
+    "title": "TID來源品質疊圖：分開實測、推估與混合來源",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "showcase",
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "ocean",
+      "terrain",
+      "data-quality"
+    ],
+    "scope": "通用類別網格與地形疊合方法，適用台日海域",
+    "summary": "既有方法新收錄；借鑑GEBCO TID展示，以分類疊圖說明海底細節的來源差異，避免把平滑地形都當實測。",
+    "source_url": "https://www.gebco.net/gebco-tid-grid",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-20",
+    "last_verified_at": "2026-10-20",
+    "use_cases": [
+      "等深線旁加來源類別切換與說明",
+      "按相同海域範圍比較版本來源組成"
+    ],
+    "limitations": [
+      "TID 70混合來源與71未知須保留，不宜二分可靠／不可靠",
+      "類別重採樣不能用雙線性；最近鄰保留碼值但不保證聚合面積比例",
+      "工具與展示均未在本期實跑；GDAL授權與GEBCO資料權利分開"
+    ],
+    "implementation_sources": [
+      "https://gdal.org/en/stable/programs/gdalwarp.html",
+      "https://www.gebco.net/gebco-tid-grid"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.gebco.net/gebco-tid-grid",
+        "supports": "來源覆蓋示例與TID分類"
+      },
+      {
+        "url": "https://www.gebco.net/news/gebco-tid-grid-storymap",
+        "supports": "2024-06-12既有StoryMap公告；非近期新聞"
+      },
+      {
+        "url": "https://gdal.org/en/stable/programs/gdalwarp.html",
+        "supports": "重投影、最近鄰與其他重採樣選項"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 80f3150ebda15cc04463ff7b797e401e2d87d80f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
+      "notes": "指定目錄未見TID登錄；不能推論其他服務未使用。導入低至中，先在台灣海峽單一範圍驗證類別與像元對齊。"
+    }
   }
 ]
