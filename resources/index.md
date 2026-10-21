@@ -1,12 +1,16 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 69 項：63 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-20（新增2項海底地形與來源品質資源；其餘保留各自查核日）。
+目前 72 項：66 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-21（新增3項颱風歷史影像與驗證資源；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
+
+- [Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)
 
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
@@ -77,6 +81,8 @@
 
 ### data_platform
 
+- [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
+
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
@@ -117,6 +123,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
 - [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
@@ -178,6 +186,8 @@
 
 ### model_tool
 
+- [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
+
 - [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
@@ -207,6 +217,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
+
+- [Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)
 
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
@@ -282,6 +296,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
+
+- [Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)
 
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
@@ -366,6 +384,8 @@
 
 ### global
 
+- [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
+
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
@@ -424,6 +444,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
 - [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
@@ -684,6 +706,10 @@
 ### 2026-10-20 新增主題交叉索引
 
 - ocean／terrain／data-quality：[GEBCO地形與TID](#gebco-bathymetry-tid)、[TID品質疊圖](#gebco-tid-quality-overlay)
+
+### 2026-10-21 新增主題交叉索引
+
+- weather／hazards：[Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)、[IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)、[pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
 ## 資源卡
 
@@ -1426,3 +1452,33 @@
 - 既有方法新收錄；借鑑GEBCO TID展示，以分類疊圖說明海底細節的來源差異，避免把平滑地形都當實測。
 - [官方或原始來源](https://www.gebco.net/gebco-tid-grid)；首次收錄／查核：2026-10-20；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-20.md#gebco-tid-quality-overlay)
+
+<a id="digital-typhoon-v3"></a>
+
+### Digital Typhoon V3：多光譜歷史颱風影像與版本差異
+
+- ID：digital-typhoon-v3
+- 類型：dataset；地區：Japan、Taiwan；主題：weather、hazards、remote-sensing、data-quality
+- 10/16發布V3-2025.R2；論文10/15預印本用未公開R1，不能直接將R2實驗與原基準視為同資料。
+- [官方或原始來源](https://agora.ex.nii.ac.jp/digital-typhoon/dataset/V3/)；首次收錄／查核：2026-10-21；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-21.md#digital-typhoon-v3)
+
+<a id="noaa-ibtracs-best-track"></a>
+
+### IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡
+
+- ID：noaa-ibtracs-best-track
+- 類型：data_platform／dataset；地區：global、Taiwan、Japan；主題：weather、hazards、data-quality
+- 既有來源首次收錄。適合對照事後最佳路徑與當時預報；保留機關、暫定／最佳路徑類型，不將不同風速平均期間混比。
+- [官方或原始來源](https://www.ncei.noaa.gov/products/international-best-track-archive)；首次收錄／查核：2026-10-21；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-21.md#noaa-ibtracs-best-track)
+
+<a id="pyphoon3-typhoon-evaluation"></a>
+
+### pyphoon3：按颱風或季節切分的影像模型驗證
+
+- ID：pyphoon3-typhoon-evaluation
+- 類型：model_tool／analysis_method；地區：not_region_specific；主題：weather、hazards、machine-learning、data-quality
+- 配套工具新收錄；按事件／季節隔離訓練與測試，另按強度檢視偏差。多通道未必優於單通道，不直接當即時預警模型。
+- [官方或原始來源](https://github.com/kitamoto-lab/pyphoon3)；首次收錄／查核：2026-10-21；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-21.md#pyphoon3-typhoon-evaluation)

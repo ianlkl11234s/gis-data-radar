@@ -4871,5 +4871,187 @@
       "checked_scope": "mini-taiwan-pulse 正式master 80f3150ebda15cc04463ff7b797e401e2d87d80f 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
       "notes": "指定目錄未見TID登錄；不能推論其他服務未使用。導入低至中，先在台灣海峽單一範圍驗證類別與像元對齊。"
     }
+  },
+  {
+    "published_at": "2026-10-16",
+    "source_updated_at": null,
+    "discovered_at": "2026-10-21",
+    "last_verified_at": "2026-10-21",
+    "id": "digital-typhoon-v3",
+    "title": "Digital Typhoon V3：多光譜歷史颱風影像與版本差異",
+    "primary_type": "dataset",
+    "secondary_types": [],
+    "regions": [
+      "Japan",
+      "Taiwan"
+    ],
+    "topics": [
+      "weather",
+      "hazards",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "西北太平洋WP與澳洲周邊AU；颱風中心影像，並非台日連續地表網格；資料至2025季",
+    "summary": "10/16發布V3-2025.R2；論文10/15預印本用未公開R1，不能直接將R2實驗與原基準視為同資料。",
+    "source_url": "https://agora.ex.nii.ac.jp/digital-typhoon/dataset/V3/",
+    "data_details": {
+      "update_frequency": "季後版本更新，可能修訂過去季節；非即時",
+      "formats": [
+        "HDF5",
+        "CSV",
+        "JSON"
+      ],
+      "access": "公開分流域／通道下載與SHA256；本期未取影像。導入中至高，先用工具37MB樣本驗證，不下載231.3GB全量。",
+      "api": null,
+      "license": "CC BY 4.0，依官方指定方式顯名；不涵蓋其他網站全部影像。",
+      "license_url": "https://agora.ex.nii.ac.jp/digital-typhoon/dataset/V3/"
+    },
+    "use_cases": [
+      "台日附近歷史颱風的影像與強度回顧",
+      "選一個WP颱風對照既有軌跡與觀測"
+    ],
+    "limitations": [
+      "R2與論文R1不同；各通道涵蓋不一致",
+      "研究資料不是官方即時預報或警報",
+      "本期未驗證下載、投影或台日個案"
+    ],
+    "evidence": [
+      {
+        "url": "https://agora.ex.nii.ac.jp/digital-typhoon/dataset/V3/",
+        "supports": "10/16發布、季後更新、版本／檔案／授權"
+      },
+      {
+        "url": "https://github.com/kitamoto-lab/pyphoon3",
+        "supports": "HDF5與metadata、37MB樣本及版本修正"
+      },
+      {
+        "url": "https://arxiv.org/abs/2610.21654",
+        "supports": "10/15預印本與強颱風系統性低估"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
+      "notes": "指定目錄已有即時颱風軌跡及NCDR多機關預報，未見V3登錄；增量為歷史驗證，不代表所有後端均未使用。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-21",
+    "last_verified_at": "2026-10-21",
+    "id": "noaa-ibtracs-best-track",
+    "title": "IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "weather",
+      "hazards",
+      "data-quality"
+    ],
+    "scope": "全球熱帶氣旋，提供WP子集；歷史早期觀測較不完整",
+    "summary": "既有來源首次收錄。適合對照事後最佳路徑與當時預報；保留機關、暫定／最佳路徑類型，不將不同風速平均期間混比。",
+    "source_url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+    "data_details": {
+      "update_frequency": "目前主頁列通常每週日／二／四；舊段落另寫weekly，應以實檔時間核對",
+      "formats": [
+        "NetCDF",
+        "CSV",
+        "SHP"
+      ],
+      "access": "官方公開下載，可選WP／近3年等子集；本期未下載軌跡。導入中等，需風暴ID與時間配對。",
+      "api": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+      "license": "官方使用條件要求引用資料集與論文，無準確性保證；未宣稱為統一CC授權。",
+      "license_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc%3AC01552"
+    },
+    "use_cases": [
+      "單一台日颱風預報誤差回顧",
+      "比較不同來源位置與強度差異"
+    ],
+    "limitations": [
+      "v4r01發布僅知2024年6月，日未知故日期欄保留null",
+      "3小時間隔可能由6小時資料內插，不等於新增觀測",
+      "不同機關風速平均時間及早期觀測制度不同",
+      "不是即時安全決策來源；未驗證最新檔案供應"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.ncei.noaa.gov/products/international-best-track-archive",
+        "supports": "版本、更新節奏、子集與下載格式"
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/sites/default/files/2025-04/IBTrACS_version4r01_Technical_Details.pdf",
+        "supports": "內插、機關風速期間及資料類型差異"
+      },
+      {
+        "url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc%3AC01552",
+        "supports": "使用條件、引用與免責"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
+      "notes": "指定目錄未見IBTrACS；已有JMA／CWA即時位置，不可用事後資料取代原始預報快照。"
+    }
+  },
+  {
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-21",
+    "last_verified_at": "2026-10-21",
+    "id": "pyphoon3-typhoon-evaluation",
+    "title": "pyphoon3：按颱風或季節切分的影像模型驗證",
+    "primary_type": "model_tool",
+    "secondary_types": [
+      "analysis_method"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "weather",
+      "hazards",
+      "machine-learning",
+      "data-quality"
+    ],
+    "scope": "Digital Typhoon V3的PyTorch讀取與回歸基準流程；通用切分原則可借鑑",
+    "summary": "配套工具新收錄；按事件／季節隔離訓練與測試，另按強度檢視偏差。多通道未必優於單通道，不直接當即時預警模型。",
+    "source_url": "https://github.com/kitamoto-lab/pyphoon3",
+    "use_cases": [
+      "先以官方樣本做資料讀取測試",
+      "用留出季節評估台日相關颱風強度回歸"
+    ],
+    "limitations": [
+      "MIT軟體授權與CC BY資料權利分開",
+      "公開R2修正R1影像；論文分數不能直接當R2驗收基準",
+      "替代校正係數影像的亮溫準確性未知",
+      "樣本僅供流程測試；未安裝或訓練，沒有台日精度結論"
+    ],
+    "implementation_sources": [
+      "https://github.com/kitamoto-lab/pyphoon3",
+      "https://arxiv.org/abs/2610.21654"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/kitamoto-lab/pyphoon3",
+        "supports": "MIT、樣本、事件／季節切分、替代校正與R1／R2差異"
+      },
+      {
+        "url": "https://arxiv.org/abs/2610.21654",
+        "supports": "多光譜比較與強颱風偏差，預印本不是產品驗收"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
+      "notes": "指定目錄未見此工具；導入中至高，先驗證小樣本、資料版本及切分，再決定是否值得建模。"
+    }
   }
 ]
