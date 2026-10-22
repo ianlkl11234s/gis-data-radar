@@ -1,8 +1,8 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 72 項：66 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-21（新增3項颱風歷史影像與驗證資源；其餘保留各自查核日）。
+目前 74 項：68 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-22（新增2項聯邦目錄與修訂同步資源；其餘保留各自查核日）。
 
 ## 依類型
 
@@ -81,6 +81,8 @@
 
 ### data_platform
 
+- [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
+
 - [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
 
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
@@ -124,6 +126,8 @@
 
 ### analysis_method
 
+- [CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
+
 - [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
 - [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
@@ -162,6 +166,8 @@
 
 ### showcase
 
+- [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
+
 - [TID來源品質疊圖：分開實測、推估與混合來源](#gebco-tid-quality-overlay)
 
 - [CAMS全球大氣成分預報：已用沙塵來源的時間與單位品質](#cams-global-composition-forecasts)
@@ -185,6 +191,8 @@
 - [NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
 ### model_tool
+
+- [CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
 
 - [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
@@ -217,6 +225,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
 
 - [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
 
@@ -296,6 +306,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
 
 - [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
 
@@ -384,6 +396,8 @@
 
 ### global
 
+- [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
+
 - [IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)
 
 - [GEBCO海底地形：2026版本與來源類型格網](#gebco-bathymetry-tid)
@@ -444,6 +458,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
 
 - [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
@@ -710,6 +726,10 @@
 ### 2026-10-21 新增主題交叉索引
 
 - weather／hazards：[Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)、[IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)、[pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
+
+### 2026-10-22 新增主題交叉索引
+
+- environment／weather／data-quality／metadata：[DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)、[CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
 
 ## 資源卡
 
@@ -1482,3 +1502,23 @@
 - 配套工具新收錄；按事件／季節隔離訓練與測試，另按強度檢視偏差。多通道未必優於單通道，不直接當即時預警模型。
 - [官方或原始來源](https://github.com/kitamoto-lab/pyphoon3)；首次收錄／查核：2026-10-21；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-21.md#pyphoon3-typhoon-evaluation)
+
+<a id="destine-data-exploitation-hub"></a>
+
+### DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示
+
+- ID：destine-data-exploitation-hub
+- 類型：data_platform／showcase；地區：global、Taiwan、Japan；主題：environment、weather、data-quality、metadata
+- 10/19公告預定10/20部署CDSE聯邦目錄與處理任務詳情改善；本次核對公告及文件，未登入確認部署完成。
+- [官方或原始來源](https://platform.destine.eu/services/service/data-exploitation-hub/)；首次收錄／查核：2026-10-22；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-22.md#destine-data-exploitation-hub)
+
+<a id="cmr-revision-aware-harvesting"></a>
+
+### CMR增量盤點：觀測時間、修訂與刪除分開追蹤
+
+- ID：cmr-revision-aware-harvesting
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：environment、weather、data-quality、metadata
+- 既有方法新收錄。10/20官方公告部分DAAC將於10/28–30暫停新資料匯入，提醒將上游延遲、metadata修訂與真正缺觀測分開。
+- [官方或原始來源](https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html)；首次收錄／查核：2026-10-22；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-22.md#cmr-revision-aware-harvesting)

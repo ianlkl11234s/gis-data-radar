@@ -5053,5 +5053,133 @@
       "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；非全部服務或部署驗收",
       "notes": "指定目錄未見此工具；導入中至高，先驗證小樣本、資料版本及切分，再決定是否值得建模。"
     }
+  },
+  {
+    "id": "destine-data-exploitation-hub",
+    "title": "DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "environment",
+      "weather",
+      "data-quality",
+      "metadata"
+    ],
+    "scope": "跨來源目錄；台日覆蓋、解析度與更新頻率取決於選定collection，不能由平台名稱推定",
+    "summary": "10/19公告預定10/20部署CDSE聯邦目錄與處理任務詳情改善；本次核對公告及文件，未登入確認部署完成。",
+    "source_url": "https://platform.destine.eu/services/service/data-exploitation-hub/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-22",
+    "last_verified_at": "2026-10-22",
+    "data_details": {
+      "update_frequency": "各來源各自更新；本次平台公告為2026-10-19，預定部署10/20",
+      "formats": [
+        "STAC JSON",
+        "OpenSearch",
+        "WMS"
+      ],
+      "access": "文件列collections清單免認證，search/items及資料取得需認證；一般用戶註冊後僅有部分功能。未註冊或取得token。",
+      "api": "https://platform.destine.eu/docs/data-exploitation-hub/doc/index.html",
+      "license": "平台存取政策與各資料授權分開；不是統一開放授權，取得collection前需逐筆核對再散布條款",
+      "license_url": "https://platform.destine.eu/support-pages/access-policy/"
+    },
+    "use_cases": [
+      "台日衛星候選資料的多來源發現",
+      "借鑑地圖範圍搜尋、footprint、產品資訊與處理任務狀態"
+    ],
+    "limitations": [
+      "服務頁仍標Beta Testing／1.0.0，未驗證新版實際部署",
+      "文件說明不支援Zarr檔案下載，不能把可搜尋當可下載",
+      "收藏存在瀏覽器cache，不是永久資源庫",
+      "本次未確認台日特定collection的可用性或授權"
+    ],
+    "evidence": [
+      {
+        "url": "https://platform.destine.eu/technical/data-exploitation-hub-new-release-live-on-20-october/",
+        "supports": "10/19公告：CDSE聯邦目錄、任務參數詳情及預定10/20部署"
+      },
+      {
+        "url": "https://platform.destine.eu/docs/data-exploitation-hub/doc/index.html",
+        "supports": "STAC認證差異、WMS與footprint互動、cache收藏及Zarr限制"
+      },
+      {
+        "url": "https://platform.destine.eu/services/service/data-exploitation-hub/",
+        "supports": "平台範圍及Beta Testing狀態"
+      },
+      {
+        "url": "https://platform.destine.eu/support-pages/access-policy/",
+        "supports": "一般用戶與升級權限分層，不代表所有服務自動可用"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "本次兩份目錄未找到此Hub；不代表所有後端未使用。導入中：先查單一台日collection、權限和原始授權，再決定是否採用；展示設計可先參考。"
+    }
+  },
+  {
+    "id": "cmr-revision-aware-harvesting",
+    "title": "CMR增量盤點：觀測時間、修訂與刪除分開追蹤",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "environment",
+      "weather",
+      "data-quality",
+      "metadata"
+    ],
+    "scope": "NASA CMR metadata同步方法，可用於台日區域的collection／granule查詢；非原始影像分析或全球資料同步成果",
+    "summary": "既有方法新收錄。10/20官方公告部分DAAC將於10/28–30暫停新資料匯入，提醒將上游延遲、metadata修訂與真正缺觀測分開。",
+    "source_url": "https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-22",
+    "last_verified_at": "2026-10-22",
+    "use_cases": [
+      "先用單一collection及台日bbox建立可重跑的metadata增量盤點",
+      "在圖層顯示觀測時間、來源修訂與本地取得時間"
+    ],
+    "limitations": [
+      "updated_since查metadata修訂，不是觀測時間或檔案到貨保證",
+      "需另外查deleted-granules，單靠新增查詢不能完整同步",
+      "CMR metadata可讀不等於原始資料無須Earthdata登入或可任意再散布",
+      "未執行API或補抓測試，未確認Pulse實際受公告影響"
+    ],
+    "implementation_sources": [
+      "https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html",
+      "https://wiki.earthdata.nasa.gov/spaces/CMR/pages/84215220/CMR%2BHarvesting%2BBest%2BPractices"
+    ],
+    "evidence": [
+      {
+        "url": "https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html",
+        "supports": "temporal、created_at、production_date、updated_since及deleted-granules區別"
+      },
+      {
+        "url": "https://wiki.earthdata.nasa.gov/spaces/CMR/pages/84215220/CMR%2BHarvesting%2BBest%2BPractices",
+        "supports": "Search-After分頁與修訂／刪除metadata同步流程"
+      },
+      {
+        "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=8327",
+        "supports": "10/20官方公告：PO.DAAC、ASF DAAC、GES DISC預定匯入中斷，既有搜尋下載預期維持"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "現有GIBS雪覆蓋直連WMTS不等於使用此CMR同步方法；本次未查全部後端。導入低至中，先做metadata小試，不新增生產排程或下載原始影像。"
+    }
   }
 ]
