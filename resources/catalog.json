@@ -5181,5 +5181,148 @@
       "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
       "notes": "現有GIBS雪覆蓋直連WMTS不等於使用此CMR同步方法；本次未查全部後端。導入低至中，先做metadata小試，不新增生產排程或下載原始影像。"
     }
+  },
+  {
+    "id": "usgs-shakemap-uncertainty",
+    "title": "USGS ShakeMap：事件震動、版本與不確定度",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "analysis_method",
+      "showcase"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "earthquake",
+      "data-quality"
+    ],
+    "scope": "全球有產製ShakeMap的地震事件；台日需逐事件確認產品存在，非每場地震均有網格",
+    "summary": "既有來源新收錄。將事件震動網格、測站與不確定度並列，避免把推估震動或波前動畫當成實測；保留產品修訂與情境類型。",
+    "source_url": "https://earthquake.usgs.gov/data/shakemap/",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-23",
+    "last_verified_at": "2026-10-23",
+    "data_details": {
+      "update_frequency": "事件驅動；隨資料與處理修訂，不保證每場地震或固定時效",
+      "formats": [
+        "XML",
+        "KML",
+        "ESRI raster",
+        "SHP"
+      ],
+      "access": "官方事件產品頁下載；本期只核對文件，未下載事件網格",
+      "api": "https://earthquake.usgs.gov/data/shakemap/",
+      "license": "USGS自製資料通常屬美國公有領域，請顯名；第三方來源或特別標示須另核對，不能套統一CC授權",
+      "license_url": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted"
+    },
+    "use_cases": [
+      "替既有台灣地震回放補來源、修訂、實測／推估標記",
+      "先選一場台日歷史事件驗證網格欄位與單位"
+    ],
+    "limitations": [
+      "MMI、CWA與JMA震度不可直接當相同數值色階",
+      "PGA與PGV單位不同；uncertainty中震動量與MMI的標準差尺度不同，須讀欄位定義",
+      "網格欄位順序與可用參數可變，不能硬編欄位索引",
+      "未驗證當前事件檔或台日實際覆蓋；歷史格式說明不保證所有新版檔案相同",
+      "不是地震預報或建物安全鑑定"
+    ],
+    "implementation_sources": [
+      "https://earthquake.usgs.gov/product/shakemap/us10004atb/us/1455316198397/about_formats.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://earthquake.usgs.gov/data/shakemap/",
+        "supports": "官方事件產品與歷史／情境入口"
+      },
+      {
+        "url": "https://earthquake.usgs.gov/product/shakemap/us10004atb/us/1455316198397/about_formats.html",
+        "supports": "grid_field、版本、事件類型、單位與uncertainty格式；歷史事件說明"
+      },
+      {
+        "url": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted",
+        "supports": "USGS自製與第三方材料權利須區分"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全後端或部署驗收",
+      "notes": "已有USGS全球事件、CWA回放及等震度網格；未在本次目錄確認ShakeMap uncertainty接入。增量為品質標記而非重建地震圖。導入中，先單事件驗證，未改產品。"
+    }
+  },
+  {
+    "id": "japan-jshis-hazard-api",
+    "title": "J-SHIS：日本長期地震機率與地盤網格",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "earthquake",
+      "data-quality"
+    ],
+    "scope": "日本250m地震危害／表層地盤網格及其他尺度產品；非台灣資料，也不是即時地震觀測",
+    "summary": "既有來源新收錄。可比較不同震度門檻的30年超越機率；需保留模型基準年、期間與尺度，並先核對禁止原樣再散布及銷售詢問條件。",
+    "source_url": "https://www.j-shis.bosai.go.jp/api-list",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-23",
+    "last_verified_at": "2026-10-23",
+    "data_details": {
+      "update_frequency": "隨模型／資料版本更新；非即時，無本期確認的固定更新頻率",
+      "formats": [
+        "GeoJSON",
+        "GML",
+        "JSON",
+        "XML"
+      ],
+      "access": "官方REST GET文件與URL builder；本期未呼叫資料API或下載",
+      "api": "https://www.j-shis.bosai.go.jp/api-list",
+      "license": "J-SHIS專屬條款：需出處與適用引用；禁止原樣複製（含僅轉格式）向第三方散布；成果銷售須先詢問，可能需申請",
+      "license_url": "https://www.j-shis.bosai.go.jp/agreement"
+    },
+    "use_cases": [
+      "日本地點卡分開呈現長期危害與已發生事件",
+      "借鑑地點查值、危害曲線與機率門檻選擇"
+    ],
+    "limitations": [
+      "不能將30年機率當下一次地震時間或短期預警",
+      "250m是代表網格，不是每棟建物的精度保證",
+      "不把JMA震度與台灣震度直接對比",
+      "轉成GeoJSON或PMTiles並公開並不自動解除再散布限制",
+      "未操作展示介面或驗證API回應；不宣稱可直接公開上架"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.j-shis.bosai.go.jp/api-list",
+        "supports": "REST、資料類別、250m網格與回傳格式"
+      },
+      {
+        "url": "https://www.j-shis.bosai.go.jp/category/opencat/api",
+        "supports": "30年震度門檻機率與危害曲線服務"
+      },
+      {
+        "url": "https://www.j-shis.bosai.go.jp/agreement",
+        "supports": "基準年月、代表網格與誤差、顯名、再散布及銷售限制"
+      },
+      {
+        "url": "https://www.j-shis.bosai.go.jp/usage",
+        "supports": "地圖操作與地點查詢展示入口"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全後端或部署驗收",
+      "notes": "現有日本JMA事件與台灣回放不是此長期危害產品；本次未在兩份目錄確認J-SHIS。導入中至高，權利審核先於公開代理或轉檔。未聯絡第三方。"
+    }
   }
 ]
