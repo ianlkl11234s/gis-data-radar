@@ -1,7 +1,7 @@
 [
   {
     "id": "overture-maps",
-    "title": "Overture Maps 2026 年 9 月版",
+    "title": "Overture Maps：月度向量資料與2026年10月版",
     "primary_type": "data_platform",
     "secondary_types": [],
     "regions": [
@@ -18,12 +18,12 @@
       "版本相容性"
     ],
     "scope": "全球向量；台日各地覆蓋與定位品質不一致，無統一公尺精度保證",
-    "summary": "本週更新：9/23 版本新增台灣三縣市地址來源（發布說明未列名稱）；目前有 2026-09-23.1 修正版。Schema v2 移除 places.categories，改用 taxonomy 或 basic_category。",
-    "source_url": "https://docs.overturemaps.org/blog/2026/09/23/release-notes/",
+    "summary": "10/21發布2026-10-21.0、schema v2.0.0；Places增長主要來自來源擴充，Buildings沿用9月。不能把新增記錄直接當新開店或新建物。",
+    "source_url": "https://docs.overturemaps.org/blog/2026/10/21/release-notes/",
     "published_at": "2026-09-23",
-    "source_updated_at": null,
+    "source_updated_at": "2026-10-21",
     "discovered_at": "2026-09-30",
-    "last_verified_at": "2026-09-30",
+    "last_verified_at": "2026-10-24",
     "data_details": {
       "update_frequency": "每月；另有不定期修補",
       "formats": [
@@ -34,7 +34,7 @@
       ],
       "access": "雲端公開讀取；Explorer 無須帳號，可下載視窗範圍 GeoJSON",
       "api": "https://docs.overturemaps.org/getting-data/",
-      "license": "依 theme／來源不同；Places 列 CDLA Permissive 2.0，地址需逐來源核對顯名與條件，不可當成統一授權",
+      "license": "依theme與來源分別核對；Places含CDLA Permissive 2.0、Apache 2.0與CC0來源，其他主題可能ODbL；地址保留來源顯名／特殊條件",
       "license_url": "https://docs.overturemaps.org/attribution/"
     },
     "use_cases": [
@@ -42,10 +42,11 @@
       "先以一縣市／城市裁切，與現有官方設施資料比較"
     ],
     "limitations": [
-      "Addresses 仍是 alpha",
-      "2026-09-23.1 修正 base 和 building_parts GERS ID；補丁發布日期未單獨確認",
-      "schema breaking changes 需處理",
-      "未抽樣驗證台日實際覆蓋與下載檔"
+      "Addresses仍是alpha",
+      "10月Buildings重用9月，不能按發布日推論新建物觀測",
+      "Places來源組合變動；台日實際新增與品質未抽樣驗證",
+      "公開release最多保留60天；版本changelog與bridgefiles可另保留，仍依官方政策與原授權",
+      "schema v2已移除places.categories，改用taxonomy或basic_category"
     ],
     "evidence": [
       {
@@ -63,12 +64,20 @@
       {
         "url": "https://docs.overturemaps.org/attribution/",
         "supports": "各主題與來源授權"
+      },
+      {
+        "url": "https://docs.overturemaps.org/blog/2026/10/21/release-notes/",
+        "supports": "10/21版本、來源增長、Buildings未變與schema版本"
+      },
+      {
+        "url": "https://docs.overturemaps.org/gers/changelog/",
+        "supports": "新增／移除為資料庫變動，不等於現實新生／消失；來源變更不在changelog比較欄位"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse master 57aa50547459e9cd060adc2bfb1545f987fe5584 的 src/data/layerManifest.ts 全文；僅核對登錄來源，未核對全部資料檔、分支或部署",
-      "notes": "本次未在 manifest 找到對應來源；不等於證明整個專案完全未使用。整合成本估計中：分類映射、同址去重、權利核對及版本釘選。"
+      "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "兩份目錄未確認Overture直連；現有建物為GBA／OSM融合、日本PLATEAU，勿當待新增的全新主題。成本中：小區域POI來源去重、版本釘選及授權映射。保留首次發布欄2026-09-23及發現日2026-09-30，10月版記於更新日。"
     }
   },
   {
@@ -5323,6 +5332,138 @@
       "status": "candidate",
       "checked_scope": "mini-taiwan-pulse 正式master 74ec8ea9a8d1e53c540099b7faa11cd919af1002 的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全後端或部署驗收",
       "notes": "現有日本JMA事件與台灣回放不是此長期危害產品；本次未在兩份目錄確認J-SHIS。導入中至高，權利審核先於公開代理或轉檔。未聯絡第三方。"
+    }
+  },
+  {
+    "id": "overture-gers-change-audit",
+    "title": "GERS變更稽核：資料庫增減與真實變化分開",
+    "primary_type": "analysis_method",
+    "secondary_types": [
+      "model_tool"
+    ],
+    "regions": [
+      "not_region_specific"
+    ],
+    "topics": [
+      "urban",
+      "transport",
+      "data-quality",
+      "metadata"
+    ],
+    "scope": "Overture六主題的逐版Parquet變更目錄；方法可用於台日小區域，無特定地區限制",
+    "summary": "既有方法本期新收錄；用change_type及columns_changed縮小複核範圍，另比對sources／confidence，避免將來源切換解讀成城市變化。",
+    "source_url": "https://docs.overturemaps.org/gers/changelog/",
+    "published_at": null,
+    "source_updated_at": "2026-10-21",
+    "discovered_at": "2026-10-24",
+    "last_verified_at": "2026-10-24",
+    "use_cases": [
+      "台日POI月度增減的來源品質稽核",
+      "維護官方設施與Overture的跨來源ID對照"
+    ],
+    "limitations": [
+      "added不代表新開店，removed不代表歇業",
+      "sources及confidence不參與changelog比較，unchanged仍可能換來源",
+      "非所有UUID都有GERS穩定性承諾；base與addresses雖有changelog，不能一概當穩定GERS",
+      "拆分／合併沒有獨立change_type；失效匹配需重審",
+      "本期未執行雲端Parquet查詢、未驗證台日樣本；工具效能與精度未實測"
+    ],
+    "implementation_sources": [
+      "https://docs.overturemaps.org/gers/changelog/",
+      "https://docs.overturemaps.org/getting-data/"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.overturemaps.org/gers/changelog/",
+        "supports": "Parquet分區、差異欄位、來源排除與DuckDB實作入口；頁面更新10/21"
+      },
+      {
+        "url": "https://docs.overturemaps.org/gers/",
+        "supports": "registry決定ID穩定性承諾；識別碼本身不編碼空間"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "導入低至中；先選台北／東京小bbox與依賴欄位，不跑全球全量，不修改產品。既有CMR盤點方法處理影像metadata，本項針對向量實體ID與來源變動，兩者不重複。"
+    }
+  },
+  {
+    "id": "copernicus-sentinel1-processing-quality",
+    "title": "Sentinel-1：SAR處理版本與海洋品質註記",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "data_platform"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "hazards",
+      "remote-sensing",
+      "data-quality"
+    ],
+    "scope": "全球Sentinel-1可用觀測；台日須逐場景確認軌道、模式、極化、日期與產品覆蓋，非逐地即時服務",
+    "summary": "10/22公告處理器4.1.1已於10/21部署；新增L1品質註記並調整L2海洋產品。跨期分析先記錄處理版本，不把演算法差異當環境變化。",
+    "source_url": "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html",
+    "published_at": null,
+    "source_updated_at": "2026-10-22",
+    "discovered_at": "2026-10-24",
+    "last_verified_at": "2026-10-24",
+    "data_details": {
+      "update_frequency": "隨衛星取得與地面處理發布；非全區固定更新，當地重訪與可用產品需逐場景查核",
+      "formats": [
+        "SAFE",
+        "GeoTIFF",
+        "COG_SAFE（GRD）",
+        "NetCDF（L2 OCN）",
+        "XML metadata"
+      ],
+      "access": "CDSE目錄／Browser及API；資料取得依帳號、配額與產品供應規定。本期僅文件查核，未登入或下載場景",
+      "api": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-1",
+      "license": "Copernicus Sentinel Data Legal Notice；資料free/full/open不等於網站所有內容同授權；OCN manifest另列ECMWF顯名與授權",
+      "license_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+    },
+    "use_cases": [
+      "海岸／海面風浪研究先讀品質註記與處理版本",
+      "比較災前災後SAR時保存觀測與處理時間，建立版本品質卡"
+    ],
+    "limitations": [
+      "4.1.1適用部署後生成產品，公告未宣稱整個歷史庫已回溯重處理",
+      "SM定位修正不能概括所有模式；GRD與OCN格式及物理量不同",
+      "GRD失去相位，不能直接當InSAR位移產品",
+      "GFW衍生偵測不等於直接使用Sentinel-1新處理器；其上游影響未核實",
+      "未驗證台日場景、下載或新欄位實檔；不直接作災害即時判定"
+    ],
+    "implementation_sources": [
+      "https://sentiwiki.copernicus.eu/web/s1-products",
+      "https://documentation.dataspace.copernicus.eu/Data/Others/Sentinel1_COG.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://dataspace.copernicus.eu/news/2026-10-22-copernicus-sentinel-1-l1-and-l2-products-new-processing-baseline",
+        "supports": "10/22公告、10/21部署、4.1.1版本與L1/L2註記變更；非歷史庫全面重處理聲明"
+      },
+      {
+        "url": "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html",
+        "supports": "全球GRD供應、SAFE／COG_SAFE與GRD無相位"
+      },
+      {
+        "url": "https://sentiwiki.copernicus.eu/web/s1-products",
+        "supports": "SAFE manifest與OCN NetCDF結構"
+      },
+      {
+        "url": "https://dataspace.copernicus.eu/terms-and-conditions",
+        "supports": "Sentinel資料授權與網站材料、帳號取得條件分開"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "現有GFW SAR未匹配格網、GNSS與下陷等值線，不等同原始S1處理流程。導入中至高；先單場景讀manifest，未建立下載排程、憑證或模型。"
     }
   }
 ]

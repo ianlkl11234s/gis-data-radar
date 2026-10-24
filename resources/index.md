@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 76 項：70 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-23（新增2項地震震動與長期危害資源；其餘保留各自查核日）。
+目前 78 項：72 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-24（新增2項、更新Overture月版；其餘保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
 - [J-SHIS：日本長期地震機率與地盤網格](#japan-jshis-hazard-api)
 
@@ -85,6 +87,8 @@
 
 ### data_platform
 
+- [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
+
 - [J-SHIS：日本長期地震機率與地盤網格](#japan-jshis-hazard-api)
 
 - [DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)
@@ -125,12 +129,14 @@
 
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
 
-- [Overture Maps 2026 年 9 月版](#overture-maps)
+- [Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### analysis_method
+
+- [GERS變更稽核：資料庫增減與真實變化分開](#overture-gers-change-audit)
 
 - [USGS ShakeMap：事件震動、版本與不確定度](#usgs-shakemap-uncertainty)
 
@@ -204,6 +210,8 @@
 
 ### model_tool
 
+- [GERS變更稽核：資料庫增減與真實變化分開](#overture-gers-change-audit)
+
 - [CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
 
 - [pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
@@ -237,6 +245,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
 - [USGS ShakeMap：事件震動、版本與不確定度](#usgs-shakemap-uncertainty)
 
@@ -292,7 +302,7 @@
 
 - [台灣淹水潛勢：多降雨情境與資源版本](#taiwan-wra-flood-scenarios)
 
-- [Overture Maps 2026 年 9 月版](#overture-maps)
+- [Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - [115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)
 
@@ -320,6 +330,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
 - [J-SHIS：日本長期地震機率與地盤網格](#japan-jshis-hazard-api)
 
@@ -389,7 +401,7 @@
 
 - [PLATEAU VIEW 與日本 3D 都市模型配信](#japan-plateau-view-platform)
 
-- [Overture Maps 2026 年 9 月版](#overture-maps)
+- [Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - [NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
 
@@ -413,6 +425,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### global
+
+- [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
 - [USGS ShakeMap：事件震動、版本與不確定度](#usgs-shakemap-uncertainty)
 
@@ -458,7 +472,7 @@
 
 - [Mapbox Standard：高倍率車道細節與立體道路](#mapbox-standard-hd-roads)
 
-- [Overture Maps 2026 年 9 月版](#overture-maps)
+- [Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - [NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
 
@@ -478,6 +492,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### not_region_specific
+
+- [GERS變更稽核：資料庫增減與真實變化分開](#overture-gers-change-audit)
 
 - [CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
 
@@ -542,7 +558,7 @@
 
 - 2SFCA：[兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
-- POI：[Overture Maps 2026 年 9 月版](#overture-maps)
+- POI：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - annotation：[SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
@@ -588,9 +604,9 @@
 
 - time-series：[NASA Worldview：衛星時間軸與事件展示](#nasa-worldview-showcase)
 
-- transport：[Overture Maps 2026 年 9 月版](#overture-maps)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+- transport：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
 
-- urban：[Overture Maps 2026 年 9 月版](#overture-maps)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)、[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
+- urban：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)、[JAXA 日本 10m 土地覆蓋 v25.04](#jaxa-japan-hrlulc)、[台灣村里每月單齡人口與戶數](#taiwan-village-single-age-population)、[臺北捷運每日分時站間 OD](#taipei-metro-hourly-od)
 
 - vectorization：[SamGeo：將 SAM 2 分割結果轉成 GIS 圖層](#samgeo-sam2)
 
@@ -602,7 +618,7 @@
 
 - 土石流：[115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)
 
-- 地址：[Overture Maps 2026 年 9 月版](#overture-maps)
+- 地址：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - 坡地災害：[115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)
 
@@ -610,7 +626,7 @@
 
 - 崩塌：[115 年土石流與大規模崩塌潛勢](#taiwan-debris-landslide)
 
-- 建物：[Overture Maps 2026 年 9 月版](#overture-maps)
+- 建物：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - 森林火災：[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
 
@@ -628,7 +644,7 @@
 
 - 熱異常：[NASA FIRMS 衛星熱異常](#nasa-firms-viirs)
 
-- 版本相容性：[Overture Maps 2026 年 9 月版](#overture-maps)
+- 版本相容性：[Overture Maps：月度向量資料與2026年10月版](#overture-maps)
 
 - 珊瑚環境：[JAXA GCOM-C 海表溫度](#jaxa-gcomc-sst)
 
@@ -747,6 +763,11 @@
 
 - weather／hazards：[Digital Typhoon V3：多光譜歷史颱風影像與版本差異](#digital-typhoon-v3)、[IBTrACS v4r01：保留機關與平均風速期間的歷史軌跡](#noaa-ibtracs-best-track)、[pyphoon3：按颱風或季節切分的影像模型驗證](#pyphoon3-typhoon-evaluation)
 
+### 2026-10-24 新增／更新主題交叉索引
+
+- urban／transport／metadata：[Overture月版](#overture-maps)、[GERS稽核](#overture-gers-change-audit)
+- ocean／hazards／remote-sensing：[Sentinel-1處理品質](#copernicus-sentinel1-processing-quality)
+
 ### 2026-10-23 新增主題交叉索引
 
 - hazards／earthquake／data-quality：[ShakeMap](#usgs-shakemap-uncertainty)、[J-SHIS](#japan-jshis-hazard-api)
@@ -764,15 +785,13 @@
 
 <a id="overture-maps"></a>
 
-### Overture Maps 2026 年 9 月版
+### Overture Maps：月度向量資料與2026年10月版
 
 - ID：overture-maps
-
-- 類型：data_platform；地區：global, Taiwan, Japan；主題：urban、transport、地址、POI、建物、版本相容性
-
-- 本週更新：9/23 版本新增台灣三縣市地址來源（發布說明未列名稱）；目前有 2026-09-23.1 修正版。Schema v2 移除 places.categories，改用 taxonomy 或 basic_category。
-
-- [官方來源](https://docs.overturemaps.org/blog/2026/09/23/release-notes/)；首次收錄：2026-09-30；最近核對：2026-09-30；狀態：candidate
+- 類型：data_platform；地區：global、Taiwan、Japan；主題：urban、transport、地址、POI、建物、版本相容性
+- 10/21發布2026-10-21.0、schema v2.0.0；Places增長主要來自來源擴充，Buildings沿用9月。不能把新增記錄直接當新開店或新建物。
+- [官方來源](https://docs.overturemaps.org/blog/2026/10/21/release-notes/)；首次收錄：2026-09-30；最近核對：2026-10-24；狀態：candidate
+- [本期版本、限制與接入判讀](../reports/2026-10-24.md#overture-maps)
 
 <a id="taiwan-debris-landslide"></a>
 
@@ -1566,3 +1585,23 @@
 - 既有來源新收錄。可比較不同震度門檻的30年超越機率；需保留模型基準年、期間與尺度，並先核對禁止原樣再散布及銷售詢問條件。
 - [官方或原始來源](https://www.j-shis.bosai.go.jp/api-list)；首次收錄／查核：2026-10-23；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-23.md#japan-jshis-hazard-api)
+
+<a id="overture-gers-change-audit"></a>
+
+### GERS變更稽核：資料庫增減與真實變化分開
+
+- ID：overture-gers-change-audit
+- 類型：analysis_method／model_tool；地區：not_region_specific；主題：urban、transport、data-quality、metadata
+- 既有方法本期新收錄；用change_type及columns_changed縮小複核範圍，另比對sources／confidence，避免將來源切換解讀成城市變化。
+- [官方或原始來源](https://docs.overturemaps.org/gers/changelog/)；首次收錄／查核：2026-10-24；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-24.md#overture-gers-change-audit)
+
+<a id="copernicus-sentinel1-processing-quality"></a>
+
+### Sentinel-1：SAR處理版本與海洋品質註記
+
+- ID：copernicus-sentinel1-processing-quality
+- 類型：dataset／data_platform；地區：global、Taiwan、Japan；主題：ocean、hazards、remote-sensing、data-quality
+- 10/22公告處理器4.1.1已於10/21部署；新增L1品質註記並調整L2海洋產品。跨期分析先記錄處理版本，不把演算法差異當環境變化。
+- [官方或原始來源](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html)；首次收錄／查核：2026-10-24；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-24.md#copernicus-sentinel1-processing-quality)
