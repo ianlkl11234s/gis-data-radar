@@ -5465,5 +5465,145 @@
       "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts 與 src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部服務或部署驗收",
       "notes": "現有GFW SAR未匹配格網、GNSS與下陷等值線，不等同原始S1處理流程。導入中至高；先單場景讀manifest，未建立下載排程、憑證或模型。"
     }
+  },
+  {
+    "id": "nasa-enso-multivariable-showcase",
+    "title": "NASA ENSO展示：跨年同步比較海溫、海色與海面高度",
+    "primary_type": "showcase",
+    "secondary_types": [
+      "analysis_method"
+    ],
+    "regions": [
+      "global",
+      "Taiwan",
+      "Japan"
+    ],
+    "topics": [
+      "ocean",
+      "weather",
+      "climate",
+      "data-quality"
+    ],
+    "scope": "熱帶太平洋比較；可啟發台日氣候背景呈現，不能直接推論地方災情",
+    "summary": "10/23新案例比較1997／2015／2026海面高度；配套SVS於10/15發布、10/21更新。借鑑同季節、多變數並列，而非只播放海溫。",
+    "source_url": "https://svs.gsfc.nasa.gov/5683/",
+    "published_at": "2026-10-15",
+    "source_updated_at": "2026-10-21",
+    "discovered_at": "2026-10-25",
+    "last_verified_at": "2026-10-25",
+    "use_cases": [
+      "既有海溫圖層旁呈現同月份跨年對照",
+      "用獨立單位／色階區分海溫距平、海色及海面高度距平"
+    ],
+    "limitations": [
+      "影片／JPEG不是可直接量測的GIS原始資料；未下載影片或觀測檔",
+      "比較須保留觀測時刻、基準期、去趨勢處理及產品版本；資料共變不等於因果",
+      "NASA素材依媒體條款及逐項credits，不含第三方素材的自動再授權；不得暗示背書",
+      "不能由赤道太平洋訊號直接斷言台日特定地方將淹水或缺水"
+    ],
+    "implementation_sources": [
+      "https://svs.gsfc.nasa.gov/5683/",
+      "https://svs.gsfc.nasa.gov/5663/"
+    ],
+    "evidence": [
+      {
+        "url": "https://svs.gsfc.nasa.gov/5683/",
+        "supports": "發布與更新日、多變數同步、影像／影片／色階分件下載"
+      },
+      {
+        "url": "https://science.nasa.gov/earth/earth-observatory/el-nino-then-and-now/",
+        "supports": "10/23新案例，跨事件海面高度比較與去季節／長期趨勢處理"
+      },
+      {
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "supports": "來源顯名、第三方素材與不得暗示背書"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "已登錄jmaSst日別0.1°海溫；未在兩份目錄確認本項ENSO多變數同步比較。導入展示低至中、重建科學資料鏈中至高；不是新的每日海溫主題。"
+    }
+  },
+  {
+    "id": "jma-enso-monitoring-indices",
+    "title": "JMA ENSO指數：海域、基準期與初步值分開",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset"
+    ],
+    "regions": [
+      "Japan",
+      "global",
+      "Taiwan"
+    ],
+    "topics": [
+      "ocean",
+      "weather",
+      "climate",
+      "data-quality"
+    ],
+    "scope": "熱帶太平洋與印度洋指定海域的月指數；SST自1949-01起，SOI自1946-01起；不是台日地方格網",
+    "summary": "既有來源新收錄。月資料10/9更新、旬資料10/15，固定1991–2020 anomaly與滑動30年deviation分檔；不能與NOAA RONI直接混比。",
+    "source_url": "https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/index.html",
+    "published_at": null,
+    "source_updated_at": "2026-10-09",
+    "discovered_at": "2026-10-25",
+    "last_verified_at": "2026-10-25",
+    "data_details": {
+      "update_frequency": "月平均；另有旬產品，發布日期逐產品核對",
+      "formats": [
+        "ASCII",
+        "TXT",
+        "HTML",
+        "PDF"
+      ],
+      "access": "公開文字下載，年份逐列月份逐欄；本期核對Niño3 deviation與SOI至2026-09，未建立生產同步",
+      "api": null,
+      "license": "JMA Public Data License 1.0；須顯名與揭示改作，第三方權利及另列條件除外，預報／警報另有法規",
+      "license_url": "https://www.jma.go.jp/jma/en/copyright.html"
+    },
+    "use_cases": [
+      "既有海溫旁加大尺度氣候背景時間線",
+      "先標示Niño3海域與月資料，再研究台日季節背景"
+    ],
+    "limitations": [
+      "99.9／99.90是未確定值，不是溫度；最新值可修訂",
+      "Niño3與Niño3.4、月值與移動平均、固定與滑動基期不可混用",
+      "歷史速報是當時判斷，不保證包含後續定稿修訂",
+      "NINO.WEST英文預報圖說與資料README緯界有不一致，擴展到該區需核對",
+      "10/9為月指數頁標示日期，原始文字檔未標獨立發布時間；不代表所有子產品同日更新"
+    ],
+    "implementation_sources": [
+      "https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/Readme.txt",
+      "https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/sstindex/sliding_30year_period/Nino_3/deviation"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.data.jma.go.jp/cpd/data/elnino/index/dattab.html",
+        "supports": "10/9月資料、海域與基準定義；總頁10/15不等於月資料更新日"
+      },
+      {
+        "url": "https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/Readme.txt",
+        "supports": "ASCII格式、缺值、基期與時序說明"
+      },
+      {
+        "url": "https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/soi",
+        "supports": "SOI實檔起始1946年與最新月份"
+      },
+      {
+        "url": "https://www.jma.go.jp/jma/en/copyright.html",
+        "supports": "授權、顯名與改作及法規限制"
+      },
+      {
+        "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/",
+        "supports": "NOAA現行ERSSTv6 RONI定義與修訂，不能直接混比"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部服務或部署驗收",
+      "notes": "已有jmaSst每日西太平洋海溫，未在兩份目錄確認本項ENSO月指數。導入低至中：解析小型文字檔、處理缺值及修訂，再加海域／基期卡；未接生產。"
+    }
   }
 ]

@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 78 項：72 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-24（新增2項、更新Overture月版；其餘保留各自查核日）。
+目前 80 項：74 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-25（新增2項ENSO資料與展示；原78項保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
 
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
@@ -87,6 +89,8 @@
 
 ### data_platform
 
+- [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
+
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
 - [J-SHIS：日本長期地震機率與地盤網格](#japan-jshis-hazard-api)
@@ -136,6 +140,8 @@
 
 ### analysis_method
 
+- [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
+
 - [GERS變更稽核：資料庫增減與真實變化分開](#overture-gers-change-audit)
 
 - [USGS ShakeMap：事件震動、版本與不確定度](#usgs-shakemap-uncertainty)
@@ -179,6 +185,8 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ### showcase
+
+- [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
 - [J-SHIS：日本長期地震機率與地盤網格](#japan-jshis-hazard-api)
 
@@ -245,6 +253,10 @@
 ## 依地區
 
 ### Taiwan
+
+- [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
+
+- [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
@@ -330,6 +342,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
+
+- [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
@@ -425,6 +441,10 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### global
+
+- [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
+
+- [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
 
@@ -538,6 +558,8 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ## 依主題
+
+- ocean／weather／climate／data-quality：[NASA多變數展示](#nasa-enso-multivariable-showcase)、[JMA ENSO指數](#jma-enso-monitoring-indices)
 
 - ocean／hazards／transport：[海しるAPI與沿岸展示](#japan-msil-api-v3)、[臺灣海嘯溢淹潛勢](#taiwan-ncdr-tsunami-inundation-2025)
 - ocean／environment／remote-sensing：[CoastSeg岸線時間序列](#coastseg-shoreline-time-series)
@@ -1605,3 +1627,23 @@
 - 10/22公告處理器4.1.1已於10/21部署；新增L1品質註記並調整L2海洋產品。跨期分析先記錄處理版本，不把演算法差異當環境變化。
 - [官方或原始來源](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html)；首次收錄／查核：2026-10-24；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-24.md#copernicus-sentinel1-processing-quality)
+
+<a id="nasa-enso-multivariable-showcase"></a>
+
+### NASA ENSO展示：跨年同步比較海溫、海色與海面高度
+
+- ID：nasa-enso-multivariable-showcase
+- 類型：showcase／analysis_method；地區：global、Taiwan、Japan；主題：ocean、weather、climate、data-quality
+- 10/23新案例比較1997／2015／2026海面高度；配套SVS於10/15發布、10/21更新。借鑑同季節、多變數並列，而非只播放海溫。
+- [官方或原始來源](https://svs.gsfc.nasa.gov/5683/)；首次收錄／查核：2026-10-25；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-25.md#nasa-enso-multivariable-showcase)
+
+<a id="jma-enso-monitoring-indices"></a>
+
+### JMA ENSO指數：海域、基準期與初步值分開
+
+- ID：jma-enso-monitoring-indices
+- 類型：data_platform／dataset；地區：Japan、global、Taiwan；主題：ocean、weather、climate、data-quality
+- 既有來源新收錄。月資料10/9更新、旬資料10/15，固定1991–2020 anomaly與滑動30年deviation分檔；不能與NOAA RONI直接混比。
+- [官方或原始來源](https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/index.html)；首次收錄／查核：2026-10-25；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-25.md#jma-enso-monitoring-indices)
