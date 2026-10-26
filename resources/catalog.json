@@ -5605,5 +5605,135 @@
       "checked_scope": "mini-taiwan-pulse 正式master 9f58ac6a64225eb45fc51734347e93421c0283da（v2.13.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部服務或部署驗收",
       "notes": "已有jmaSst每日西太平洋海溫，未在兩份目錄確認本項ENSO月指數。導入低至中：解析小型文字檔、處理缺值及修訂，再加海域／基期卡；未接生產。"
     }
+  },
+  {
+    "id": "japan-retail-price-spatial-statistics",
+    "title": "日本小賣物價統計：城市月價與年度地域價差",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "dataset",
+      "analysis_method"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "urban",
+      "statistics",
+      "prices",
+      "data-quality"
+    ],
+    "scope": "日本主要調查城市月度零售價格；另有年度地域價差指數。不是逐店價格或全市町村普查。",
+    "summary": "10/23發布2026-09主要品目城市零售價格。動向編適合區域內時序，地域比較另看構造編；GIS化應保存品目、規格、單位與行政區版本。",
+    "source_url": "https://www.stat.go.jp/data/kouri/",
+    "published_at": null,
+    "source_updated_at": "2026-10-23",
+    "discovered_at": "2026-10-26",
+    "last_verified_at": "2026-10-26",
+    "data_details": {
+      "update_frequency": "動向編每月；構造編每年。各子產品發布日不同",
+      "formats": [
+        "HTML",
+        "Excel（品目／規格與部分歷史表）",
+        "e-Stat統計表；本期未驗證最新結果實檔格式"
+      ],
+      "access": "官方結果頁連到e-Stat；本次取得文件但e-Stat文字回應未顯示最新月份，不宣稱已下載2026-09表",
+      "api": null,
+      "license": "統計局PDL1.0，須顯名及揭示加工；另列第三方內容除外。API接入資格與個別統計表需另確認",
+      "license_url": "https://www.stat.go.jp/info/riyou.html"
+    },
+    "use_cases": [
+      "城市生活成本的同品目月度時間線",
+      "將年度地域價差接行政區，保留原統計地理範圍"
+    ],
+    "limitations": [
+      "價格含稅；不同規格、容量或調查品目不能直接合併比較",
+      "時間CPI與地域價差指數目的不同，不能用各城自身基期100當物價水準排名",
+      "2025年結果起構造編改用2025年基準，跨基期須檢查可比性",
+      "9/18公告津市2026-08約50價格未確認正確性而排除，7月以前仍待精查；本期未驗證後續修訂已完成",
+      "本期未下載最新表、呼叫API或建立地圖；最新表數值與城市代碼仍待小試"
+    ],
+    "implementation_sources": [
+      "https://www.stat.go.jp/data/kouri/doukou/3.html",
+      "https://www.stat.go.jp/data/kouri/kouzou/shuukei.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.stat.go.jp/data/kouri/doukou/index.html",
+        "supports": "10/23發布9月城市價格與月度性質"
+      },
+      {
+        "url": "https://www.stat.go.jp/data/kouri/kouzou/gaiyou.html",
+        "supports": "2025年度結果於2026-09-18發布，與月度結果分開"
+      },
+      {
+        "url": "https://www.stat.go.jp/data/kouri/doukou/3.html",
+        "supports": "含稅價格、歷史資料與品目規格對照入口"
+      },
+      {
+        "url": "https://www.stat.go.jp/data/seigo/kouri/osirase20260918.html",
+        "supports": "津市2026-08排除約50價格及歷史精查註記"
+      },
+      {
+        "url": "https://www.stat.go.jp/data/kouri/kouzou/shuukei.html",
+        "supports": "2025年基準、品目合算與官方方法入口"
+      },
+      {
+        "url": "https://www.stat.go.jp/info/riyou.html",
+        "supports": "PDL1.0、顯名與加工揭示"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅原始碼目錄，非全部後端或部署驗收",
+      "notes": "未在兩份目錄確認本項日本城市零售價格。導入中：先少數城市同品目小試，地區碼接邊界，不將城市均價下推街區。"
+    }
+  },
+  {
+    "id": "taiwan-prtr-query-showcase",
+    "title": "台灣PRTR：地點、申報量與裁處分開查詢",
+    "primary_type": "showcase",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "environment",
+      "urban",
+      "pollution",
+      "data-quality"
+    ],
+    "scope": "台灣列管污染源公開查詢介面；借鑑多入口查詢，不代表本期取得新的全量資料",
+    "summary": "既有網站新收錄。從地址／地標、污染物申報量與期間、裁處或產業園區切入；可改善既有設施圖層的查詢與來源解讀。",
+    "source_url": "https://prtr.moenv.gov.tw/location.html",
+    "published_at": null,
+    "source_updated_at": null,
+    "discovered_at": "2026-10-26",
+    "last_verified_at": "2026-10-26",
+    "use_cases": [
+      "既有列管設施旁提供官方查詢入口",
+      "分開顯示設施身分、申報期間及裁處事件，不合併為單一污染分數"
+    ],
+    "limitations": [
+      "公開可瀏覽不等於網站資料可全量再散布；本期未核實專屬再利用授權",
+      "申報資料需主管機關審查確認，不能一律當最終實際排放",
+      "未操作地圖、查詢地址、下載資料或驗證API；只有公開頁面結構查核",
+      "不從列管身分、裁處或距離直接推論個人暴露或健康風險"
+    ],
+    "evidence": [
+      {
+        "url": "https://prtr.moenv.gov.tw/location.html",
+        "supports": "地址／地標查詢入口與資料性質說明"
+      },
+      {
+        "url": "https://prtr.moenv.gov.tw/declaration.html",
+        "supports": "污染物、申報量、日期篩選與裁處資料來源說明"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅原始碼目錄，非全部後端或部署驗收",
+      "notes": "Pulse已有列管設施及EMS_P_46裁處圖層；本項僅新收錄展示流程，不能當新污染資料集或已接入PRTR網站。導入來源連結低、重建跨來源關聯中；不改產品。"
+    }
   }
 ]

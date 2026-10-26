@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-26 日報](../reports/2026-10-26.md) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 80 項：74 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-25（新增2項ENSO資料與展示；原78項保留各自查核日）。
+目前 82 項：76 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-26（新增2項城市物價與PRTR展示；原80項保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [日本小賣物價統計：城市月價與年度地域價差](#japan-retail-price-spatial-statistics)
 
 - [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
 
@@ -89,6 +91,8 @@
 
 ### data_platform
 
+- [日本小賣物價統計：城市月價與年度地域價差](#japan-retail-price-spatial-statistics)
+
 - [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
 
 - [Sentinel-1：SAR處理版本與海洋品質註記](#copernicus-sentinel1-processing-quality)
@@ -140,6 +144,8 @@
 
 ### analysis_method
 
+- [日本小賣物價統計：城市月價與年度地域價差](#japan-retail-price-spatial-statistics)
+
 - [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
 - [GERS變更稽核：資料庫增減與真實變化分開](#overture-gers-change-audit)
@@ -185,6 +191,8 @@
 - [兩階段浮動服務區法：以路網時間分析避難與醫療容量可達性](#analysis-2sfca-network-access)
 
 ### showcase
+
+- [台灣PRTR：地點、申報量與裁處分開查詢](#taiwan-prtr-query-showcase)
 
 - [NASA ENSO展示：跨年同步比較海溫、海色與海面高度](#nasa-enso-multivariable-showcase)
 
@@ -253,6 +261,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [台灣PRTR：地點、申報量與裁處分開查詢](#taiwan-prtr-query-showcase)
 
 - [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
 
@@ -342,6 +352,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [日本小賣物價統計：城市月價與年度地域價差](#japan-retail-price-spatial-statistics)
 
 - [JMA ENSO指數：海域、基準期與初步值分開](#jma-enso-monitoring-indices)
 
@@ -797,6 +809,11 @@
 ### 2026-10-22 新增主題交叉索引
 
 - environment／weather／data-quality／metadata：[DestinE Data Exploitation Hub：聯邦目錄與處理狀態展示](#destine-data-exploitation-hub)、[CMR增量盤點：觀測時間、修訂與刪除分開追蹤](#cmr-revision-aware-harvesting)
+
+### 2026-10-26 新增主題交叉索引
+
+- urban／statistics／prices／data-quality：[日本小賣物價統計：城市月價與年度地域價差](#japan-retail-price-spatial-statistics)
+- environment／urban／pollution／data-quality：[台灣PRTR：地點、申報量與裁處分開查詢](#taiwan-prtr-query-showcase)
 
 ## 資源卡
 
@@ -1647,3 +1664,23 @@
 - 既有來源新收錄。月資料10/9更新、旬資料10/15，固定1991–2020 anomaly與滑動30年deviation分檔；不能與NOAA RONI直接混比。
 - [官方或原始來源](https://www.data.jma.go.jp/tcc/tcc/products/elnino/index/index.html)；首次收錄／查核：2026-10-25；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-25.md#jma-enso-monitoring-indices)
+
+<a id="japan-retail-price-spatial-statistics"></a>
+
+### 日本小賣物價統計：城市月價與年度地域價差
+
+- ID：japan-retail-price-spatial-statistics
+- 類型：data_platform／dataset／analysis_method；地區：Japan；主題：urban、statistics、prices、data-quality
+- 10/23發布2026-09主要品目城市零售價格。動向編適合區域內時序，地域比較另看構造編；GIS化應保存品目、規格、單位與行政區版本。
+- [官方或原始來源](https://www.stat.go.jp/data/kouri/)；首次收錄／查核：2026-10-26；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-26.md#japan-retail-price-spatial-statistics)
+
+<a id="taiwan-prtr-query-showcase"></a>
+
+### 台灣PRTR：地點、申報量與裁處分開查詢
+
+- ID：taiwan-prtr-query-showcase
+- 類型：showcase；地區：Taiwan；主題：environment、urban、pollution、data-quality
+- 既有網站新收錄。從地址／地標、污染物申報量與期間、裁處或產業園區切入；可改善既有設施圖層的查詢與來源解讀。
+- [官方或原始來源](https://prtr.moenv.gov.tw/location.html)；首次收錄／查核：2026-10-26；狀態：candidate
+- [適用情境、限制與接入判讀](../reports/2026-10-26.md#taiwan-prtr-query-showcase)
