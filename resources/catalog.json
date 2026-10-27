@@ -5735,5 +5735,147 @@
       "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅原始碼目錄，非全部後端或部署驗收",
       "notes": "Pulse已有列管設施及EMS_P_46裁處圖層；本項僅新收錄展示流程，不能當新污染資料集或已接入PRTR網站。導入來源連結低、重建跨來源關聯中；不改產品。"
     }
+  },
+  {
+    "id": "taoyuan-opendata-lifecycle-notices",
+    "title": "桃園資料開放平台：上架、更新與下架公告",
+    "primary_type": "data_platform",
+    "secondary_types": [
+      "analysis_method"
+    ],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "metadata",
+      "data-quality",
+      "water",
+      "transport"
+    ],
+    "scope": "桃園市開放資料目錄的生命週期公告；不是水位或公車觀測資料本身",
+    "summary": "10/22週報列水位即時偵測與市區公車動態下架；10/21個別水位公告內文卻帶2018日期。公告、目錄狀態與端點可用性需分開核實。",
+    "source_url": "https://opendata.tycg.gov.tw/news",
+    "published_at": null,
+    "source_updated_at": "2026-10-22",
+    "discovered_at": "2026-10-27",
+    "last_verified_at": "2026-10-27",
+    "data_details": {
+      "update_frequency": "公告不定期；近期週報彙整每週異動，不保證固定SLA",
+      "formats": [
+        "HTML"
+      ],
+      "access": "公開公告；本期只核對公告內容，未測原始水位或公車端點",
+      "api": null,
+      "license": null,
+      "license_url": null
+    },
+    "use_cases": [
+      "為資料盤點加入active／retired／replacement-unverified與證據日期",
+      "保留同名資料的穩定ID、原端點及替代來源關係"
+    ],
+    "limitations": [
+      "10/21公告內文寫2018-12-19，與發布時間不一致；不據此指定精確下架生效時間",
+      "10/22週報可證官方列為下架，不能證明所有替代服務停止",
+      "10/22更新週報另列自建水位站；不能只憑相似名稱當替代的即時資料",
+      "網站隱私頁未核實公告及各資料集再利用授權；只發布摘要與連結"
+    ],
+    "implementation_sources": [
+      "https://opendata.tycg.gov.tw/news/11bce158-5ab4-48f4-b852-98e6616274fe",
+      "https://opendata.tycg.gov.tw/news/052d77dd-cf64-487a-b58f-0fc5d9b7ce10"
+    ],
+    "evidence": [
+      {
+        "url": "https://opendata.tycg.gov.tw/news/11bce158-5ab4-48f4-b852-98e6616274fe",
+        "supports": "10/22週報列兩項下架資料名稱"
+      },
+      {
+        "url": "https://opendata.tycg.gov.tw/news/052d77dd-cf64-487a-b58f-0fc5d9b7ce10",
+        "supports": "10/21公告與內文2018日期不一致"
+      },
+      {
+        "url": "https://opendata.tycg.gov.tw/news/523c8530-e1d3-4dda-acf8-0cd3457b9f8f",
+        "supports": "同週35項更新包含自建水位站，不能自動認定為替代端點"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或部署驗收",
+      "notes": "Pulse已有水利署河川水位與IoT，未在兩份目錄確認本公告的桃園舊端點依賴；不宣稱產品受影響。公告對照難度低、穩定ID及替代鏈核實中；未改產品。"
+    }
+  },
+  {
+    "id": "gsi-map-update-footprints",
+    "title": "GSI圖幅更新目錄：發布日期、測量日期與更新範圍",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "showcase",
+      "analysis_method"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "metadata",
+      "data-quality",
+      "urban",
+      "transport"
+    ],
+    "scope": "日本電子地形圖25000及數值地圖的圖幅更新日期清單、部分更新區域GeoJSON；不是逐地物變更資料",
+    "summary": "10/21更新頁提供圖幅CSV及更新範圍。實讀君津西區域GeoJSON顯示2026-10-20發布、原典測量2024-11；不能把新發布當最新現地觀測。",
+    "source_url": "https://web1.gsi.go.jp/kibanjoho/kibanjoho41084.html",
+    "published_at": null,
+    "source_updated_at": "2026-10-21",
+    "discovered_at": "2026-10-27",
+    "last_verified_at": "2026-10-27",
+    "data_details": {
+      "update_frequency": "隨更新不定期；各圖幅日期不同",
+      "formats": [
+        "CSV",
+        "GeoJSON",
+        "HTML",
+        "PDF"
+      ],
+      "access": "公開CSV及小型區域GeoJSON；本期HTTP200實讀CSV4485列及單區域1個Polygon，未下載地圖產品",
+      "api": null,
+      "license": "GSI內容原則適用PDL1.0，須顯名、揭示加工及保留第三方例外；基本測量成果另依用途確認測量法程序",
+      "license_url": "https://web1.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+    },
+    "use_cases": [
+      "以更新覆蓋範圍建立既有日本圖層來源時效卡",
+      "按圖幅安排重新檢查，分開發布日與測量日"
+    ],
+    "limitations": [
+      "圖幅提供日不等於該日地物現況，更新區域不是所有地物均有變動",
+      "電子地形圖與數值地圖更新日期為不同欄位，不宜合併成單一latest",
+      "本次僅驗證一個GeoJSON及CSV欄位；未完成全國geometry有效性、座標系或實際產品比對",
+      "GSI宗教符號來源為Vector，不能直接把本清單日期指定給該衍生圖層"
+    ],
+    "implementation_sources": [
+      "https://dkgd.gsi.go.jp/djbm/updatetile/data/list/list.csv",
+      "https://web1.gsi.go.jp/common/000281286.geojson"
+    ],
+    "evidence": [
+      {
+        "url": "https://web1.gsi.go.jp/kibanjoho/kibanjoho41084.html",
+        "supports": "10/21更新頁、圖幅日期與發布不等於現況的官方註記"
+      },
+      {
+        "url": "https://web1.gsi.go.jp/common/000281286.geojson",
+        "supports": "實讀一個Polygon；更新日2026-10-20、原典數值照片CKT-2024-14與2024-11測量期間"
+      },
+      {
+        "url": "https://dkgd.gsi.go.jp/djbm/updatetile/data/list/list.csv",
+        "supports": "實讀4485列；含二次網格碼及兩種產品的更新日期"
+      },
+      {
+        "url": "https://web1.gsi.go.jp/LAW/2930-index.html",
+        "supports": "基本測量成果與其他內容的使用程序區別"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或部署驗收",
+      "notes": "Pulse已有GSI宗教符號與日本災害背景，未確認本更新目錄已接入。導入中：產品族對照、和曆日期解析與更新區域索引；不把CSV日期套用所有GSI來源。"
+    }
   }
 ]
