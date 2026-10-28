@@ -1,8 +1,8 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-27 日報](../reports/2026-10-27.md) · [2026-10-26 日報](../reports/2026-10-26.md) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-28 日報](../reports/2026-10-28.md) · [2026-10-27 日報](../reports/2026-10-27.md) · [2026-10-26 日報](../reports/2026-10-26.md) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 84 項：78 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-27（新增2項來源生命週期與圖幅更新目錄；原82項保留各自查核日）。
+目前 85 項：79 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-28（新增1項環境部公告、更新GSJ服務狀態；原83項保留各自查核日）。
 
 ## 依類型
 
@@ -92,6 +92,8 @@
 - [台灣水污染源許可與排放申報](#taiwan-water-discharge-permits-declarations)
 
 ### data_platform
+
+- [環境部資料平台：維護窗口與來源可用性](#taiwan-moenv-service-notices)
 
 - [桃園資料開放平台：上架、更新與下架公告](#taoyuan-opendata-lifecycle-notices)
 
@@ -271,6 +273,8 @@
 ## 依地區
 
 ### Taiwan
+
+- [環境部資料平台：維護窗口與來源可用性](#taiwan-moenv-service-notices)
 
 - [桃園資料開放平台：上架、更新與下架公告](#taoyuan-opendata-lifecycle-notices)
 
@@ -834,6 +838,11 @@
 - metadata／data-quality／water／transport：[桃園來源生命週期](#taoyuan-opendata-lifecycle-notices)
 - metadata／data-quality／urban／transport：[GSI圖幅更新目錄](#gsi-map-update-footprints)
 
+### 2026-10-28 更新主題交叉索引
+
+- environment／metadata／data-quality：[環境部維護公告](#taiwan-moenv-service-notices)
+- environment／hazards／geology：[GSJ服務恢復狀態](#japan-gsj-geology-50k-services)
+
 ## 資源卡
 
 ### 2026-10-12 新增主題交叉索引
@@ -1127,6 +1136,9 @@
 - [官方來源](https://gbank.gsj.jp/owscontents/index_en.html)；首次收錄：2026-10-04；最近核對：2026-10-04；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-04.md#japan-gsj-geology-50k-services)
 
+
+
+- 2026-10-28追蹤：10/27官方宣布部分資料庫恢復，但本期五萬分之一地質圖服務目錄仍為維護頁；9/14覆蓋更新不能當目前服務可用證據。 [本期證據](../reports/2026-10-28.md#japan-gsj-geology-50k-services)；最近查核：2026-10-28
 
 <a id="duckdb-spatial-metadata-inventory"></a>
 
@@ -1723,3 +1735,13 @@
 - 10/21更新頁提供圖幅CSV及更新範圍。實讀君津西區域GeoJSON顯示2026-10-20發布、原典測量2024-11；不能把新發布當最新現地觀測。
 - [官方或原始來源](https://web1.gsi.go.jp/kibanjoho/kibanjoho41084.html)；首次收錄／查核：2026-10-27；狀態：candidate
 - [適用情境、限制與接入判讀](../reports/2026-10-27.md#gsi-map-update-footprints)
+
+<a id="taiwan-moenv-service-notices"></a>
+
+### 環境部資料平台：維護窗口與來源可用性
+
+- ID：taiwan-moenv-service-notices
+- 類型：data_platform；地區：Taiwan；主題：environment、metadata、data-quality
+- 10/27公告10/28 08:30–17:00例行維護。應分開計畫維護、API回應及觀測新鮮度，不以公告推論每個來源已中斷。
+- [官方來源](https://data.moenv.gov.tw/announcement)；首次收錄／查核：2026-10-28；狀態：candidate
+- [適用情境與限制](../reports/2026-10-28.md#taiwan-moenv-service-notices)

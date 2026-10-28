@@ -1936,12 +1936,12 @@
       "geology"
     ],
     "scope": "日本已發布的1:50,000地質圖幅；2026-09-14新增青森區域14圖幅服務，非全日本完整覆蓋。",
-    "summary": "近期服務覆蓋更新：可作岩性、構造與地形對照背景；服務上架日不是野外調查日。",
+    "summary": "10/27官方宣布部分資料庫恢復，但本期五萬分之一地質圖服務目錄仍為維護頁；9/14覆蓋更新不能當目前服務可用證據。",
     "source_url": "https://gbank.gsj.jp/owscontents/index_en.html",
     "published_at": null,
-    "source_updated_at": "2026-09-14",
+    "source_updated_at": "2026-10-27",
     "discovered_at": "2026-10-04",
-    "last_verified_at": "2026-10-04",
+    "last_verified_at": "2026-10-28",
     "data_details": {
       "update_frequency": "不定期；逐圖幅查看原圖出版日",
       "formats": [
@@ -1949,7 +1949,7 @@
         "WMTS 1.0.0",
         "PNG"
       ],
-      "access": "公開服務目錄按圖幅選URL；本次未成功實測GetCapabilities或圖磚。",
+      "access": "10/28實際HTTP200取得服務目錄，但內容是維護頁；未驗證GetCapabilities或圖磚。HTTP200不代表資料服務恢復。",
       "api": "https://gbank.gsj.jp/owscontents/geologicmap50k_index_en.html",
       "license": "日本政府標準利用規約v2.0；須註明GSJ/AIST來源與加工，第三方權利另核對。",
       "license_url": "https://www.gsj.jp/en/license/index.html"
@@ -1961,7 +1961,8 @@
     "limitations": [
       "影像服務不等於可下載分析用地質多邊形",
       "不能推論地塊安全或地震發生機率",
-      "比例尺、圖幅接邊與地質年代需保留"
+      "比例尺、圖幅接邊與地質年代需保留",
+      "10/27為平台恢復公告更新日，不是圖幅資料更新日；公告恢復10類資料庫不代表WMS／WMTS全數恢復"
     ],
     "evidence": [
       {
@@ -1975,12 +1976,16 @@
       {
         "url": "https://www.gsj.jp/en/license/index.html",
         "supports": "使用及顯名條款"
+      },
+      {
+        "url": "https://www.gsj.jp/",
+        "supports": "10/22暫停、10/23計畫與10/27部分恢復10類資料庫的追記；未宣布全數恢復"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "公開master 8d4fdc06f1d335b3dbc7baed146b3c81545e0405兩份圖層目錄，未找到GSJ/geology/地質對應日本圖層；非全部資產搜尋。",
-      "notes": "難度低至中：單圖幅疊圖和圖例小試；服務可用性、網頁跨域及顯名驗收未做。"
+      "checked_scope": "mini-taiwan-pulse 正式master bcbba48ba8498aa8affc8e4349bbdfb2e92d7f9f（v2.15.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或線上驗收",
+      "notes": "未在兩份目錄確認日本GSJ五萬分之一地質圖；不推論Pulse已受影響。先恢復可用性驗證再做單圖幅疊圖，難度低至中；本期只實測目錄維護頁。"
     }
   },
   {
@@ -5876,6 +5881,62 @@
       "status": "candidate",
       "checked_scope": "mini-taiwan-pulse 正式master 1d28ab5a4c468bf0b60992814b10903fc1c78515（v2.14.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或部署驗收",
       "notes": "Pulse已有GSI宗教符號與日本災害背景，未確認本更新目錄已接入。導入中：產品族對照、和曆日期解析與更新區域索引；不把CSV日期套用所有GSI來源。"
+    }
+  },
+  {
+    "id": "taiwan-moenv-service-notices",
+    "title": "環境部資料平台：維護窗口與來源可用性",
+    "primary_type": "data_platform",
+    "secondary_types": [],
+    "regions": [
+      "Taiwan"
+    ],
+    "topics": [
+      "environment",
+      "metadata",
+      "data-quality"
+    ],
+    "scope": "環境部環境資料開放平臺的系統公告；不是新的空品或水質觀測資料集",
+    "summary": "10/27公告10/28 08:30–17:00例行維護。應分開計畫維護、API回應及觀測新鮮度，不以公告推論每個來源已中斷。",
+    "source_url": "https://data.moenv.gov.tw/announcement",
+    "published_at": null,
+    "source_updated_at": "2026-10-27",
+    "discovered_at": "2026-10-28",
+    "last_verified_at": "2026-10-28",
+    "data_details": {
+      "update_frequency": "公告不定期；不是資料觀測更新頻率",
+      "formats": [
+        "HTML"
+      ],
+      "access": "公開公告頁，本期未登入、未建立API憑證或呼叫觀測API",
+      "api": null,
+      "license": "平台列入開放清單的資料適用政府資料開放授權條款第1版；公告文字再利用範圍未另核實，本目錄僅摘要與連結",
+      "license_url": "https://data.moenv.gov.tw/data-regulations"
+    },
+    "use_cases": [
+      "為既有環境圖層加維護時間與最後有效觀測卡",
+      "將來源暫時不可用與資料下架、零值分開"
+    ],
+    "limitations": [
+      "維護時段以台灣當地時間Asia/Taipei解讀；公告沒有列逐API中斷清單",
+      "未測觀測端點，不能宣稱Pulse受影響或17:00一定恢復",
+      "AQX_P_423的9月公告已註記9/15修復，不是當前未恢復事故",
+      "來源空回應不能補成零污染值；跨資料來源需分別判讀"
+    ],
+    "evidence": [
+      {
+        "url": "https://data.moenv.gov.tw/announcement",
+        "supports": "10/27發布10/28維護窗口；9月AQX_P_423公告標已修復"
+      },
+      {
+        "url": "https://data.moenv.gov.tw/data-regulations",
+        "supports": "開放資料清單範圍與政府資料開放授權第1版"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master bcbba48ba8498aa8affc8e4349bbdfb2e92d7f9f（v2.15.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或線上驗收",
+      "notes": "Pulse已有aqiStations、aqiImagery及環境統計；本項是公告對照候選，不是新空品圖層。導入低至中：先確認實際來源依賴，再保留有效觀測、擷取時間及維護註記；未改產品。"
     }
   }
 ]
