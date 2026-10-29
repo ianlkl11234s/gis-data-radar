@@ -2345,12 +2345,12 @@
       "urban"
     ],
     "scope": "日本已整備區域的航空雷射地表高程；非全國連續1m覆蓋。1m名稱對應0.04角秒格網。",
-    "summary": "既有資料的新收錄；2026-07-31擴大1m及5m DEM供應區域。可為日本地形解讀提供資料，不把供應更新當量測日期。",
+    "summary": "10/7修正4個九州二次網格、10/8替換區域包；10/28另公告11/4下載服務維護。修正版與維護日不等於新量測日期。",
     "source_url": "https://service.gsi.go.jp/kiban/",
     "published_at": null,
-    "source_updated_at": "2026-07-31",
+    "source_updated_at": "2026-10-28",
     "discovered_at": "2026-10-06",
-    "last_verified_at": "2026-10-06",
+    "last_verified_at": "2026-10-29",
     "data_details": {
       "update_frequency": "分區不定期整備／發布；逐區量測時期不同",
       "formats": [
@@ -2370,7 +2370,9 @@
       "DEM1A高度RMS約0.3m內，格內無地面雷射點時2m內；格距不是垂直精度",
       "作成年月不是實際量測時間；跨期差分須先統一高程基準、方法與精度",
       "7/31是DEM供應更新；9/30點雲公告不可混為同一版本",
-      "未驗證二進位下載、資料品質或線上呈現"
+      "未驗證二進位下載、資料品質或線上呈現",
+      "10/7修正473173、483101、483102、483103的1m檔，10/8替換九州包；修正前下載者需核對版本，不把差值當地形變動",
+      "11/4 12:00–14:00日本時間（台北11:00–13:00）預定下載服務維護，時間可能調整；並非所有GSI圖磚必定停用"
     ],
     "implementation_sources": [
       "https://service.gsi.go.jp/kiban/app/help/",
@@ -2392,12 +2394,16 @@
       {
         "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
         "supports": "內容使用規約"
+      },
+      {
+        "url": "https://service.gsi.go.jp/kiban/app/newslist/",
+        "supports": "10/7–8 DEM修正、10/28發布11/4維護及JGD2024註記；更新日含服務公告，不代表新測量"
       }
     ],
     "integration": {
       "status": "candidate",
-      "checked_scope": "mini-taiwan-pulse 正式發布 master 65c906918aa8db5525ead4626e9249159fdec76f；讀取 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 全文、完整路徑樹及 docs/features/terrain-vector/README.md；未掃描全部檔案內容或線上驗收",
-      "notes": "台灣既有地形以NLSC20m DTM衍生坡度／坡向；指定目錄未見日本DEM1A。與已收錄GSI Maps展示案例不同。難度中：GML轉raster、CRS／高程基準／nodata與切片。"
+      "checked_scope": "mini-taiwan-pulse 正式master 301557e76b05a1f881400b5cabbf2de9b251eb87（v2.16.1）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部後端或線上驗收",
+      "notes": "Pulse已有日本GSI陰影與色別標高圖磚，沒有在兩份目錄確認DEM1A分析資料。難度中：確認下載版本、CRS／高程基準及nodata再做局部坡度；未註冊、下載或改產品。"
     }
   },
   {
@@ -5937,6 +5943,77 @@
       "status": "candidate",
       "checked_scope": "mini-taiwan-pulse 正式master bcbba48ba8498aa8affc8e4349bbdfb2e92d7f9f（v2.15.0）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts 與 package.json；僅目錄原始碼，非全部後端或線上驗收",
       "notes": "Pulse已有aqiStations、aqiImagery及環境統計；本項是公告對照候選，不是新空品圖層。導入低至中：先確認實際來源依賴，再保留有效觀測、擷取時間及維護註記；未改產品。"
+    }
+  },
+  {
+    "id": "gsi-disaster-memorial-monuments",
+    "title": "GSI災害傳承碑：歷史災害故事與地形對照",
+    "primary_type": "dataset",
+    "secondary_types": [
+      "showcase"
+    ],
+    "regions": [
+      "Japan"
+    ],
+    "topics": [
+      "hazards",
+      "history",
+      "education",
+      "data-quality"
+    ],
+    "scope": "日本已申請並公開的紀念碑點位；10/29官方列690市區町村2,499座，不是所有災害或全部紀念碑普查",
+    "summary": "10/29新增18座；可用災害分類、建立年與地形背景做故事地圖。碑點不等於災害範圍，未收錄不代表安全。",
+    "source_url": "https://www.gsi.go.jp/bousaichiri/denshouhi_datainfo.html",
+    "published_at": "2020-08-21",
+    "source_updated_at": "2026-10-29",
+    "discovered_at": "2026-10-29",
+    "last_verified_at": "2026-10-29",
+    "data_details": {
+      "update_frequency": "依地方政府申請及修正不定期追加；首頁列更新批次",
+      "formats": [
+        "GeoJSON",
+        "CSV"
+      ],
+      "access": "官方提供全國單檔；下載前有使用注意與免責同意，本期僅讀說明，未接受或下載",
+      "api": null,
+      "license": "國土地理院PDL1.0及個別限制；須顯名與加工標示。照片不隨資料下載，部分照片二次利用需權利人確認",
+      "license_url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html"
+    },
+    "use_cases": [
+      "按災害種類與建立年代探索歷史記憶",
+      "疊合既有日本陰影／標高背景與現行潛勢圖，分開歷史記錄與當前風險"
+    ],
+    "limitations": [
+      "地方申請造成覆蓋偏差，缺碑不可解讀成安全",
+      "同災害名稱可能有異寫；建立年、災害年、公開日與修正公開日不可混用",
+      "位置是圖示點位，不是受災範圍或避難路線保證",
+      "本期未下載檔案驗證2499筆、座標或逐筆限制；市區町村照片權利頁仍顯9/24版，需核對最新版本"
+    ],
+    "implementation_sources": [
+      "https://www.gsi.go.jp/bousaichiri/denshouhi_data_utilization.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.gsi.go.jp/bousaichiri/denshouhi.html",
+        "supports": "10/29新增7市區町村18座、總2499座，以及申請覆蓋限制"
+      },
+      {
+        "url": "https://www.gsi.go.jp/bousaichiri/denshouhi_datainfo.html",
+        "supports": "2020/8/21開始檔案提供，GeoJSON／CSV欄位、照片限制與取得條件"
+      },
+      {
+        "url": "https://www.gsi.go.jp/bousaichiri/denshouhi_citylist.html",
+        "supports": "照片再利用需逐地方核對，頁面所示清單版本9/24"
+      },
+      {
+        "url": "https://www.gsi.go.jp/bousaichiri/denshouhi_data_utilization.html",
+        "supports": "按災害分類與地形疊圖的官方展示方法"
+      }
+    ],
+    "integration": {
+      "status": "candidate",
+      "checked_scope": "mini-taiwan-pulse 正式master 301557e76b05a1f881400b5cabbf2de9b251eb87（v2.16.1）的 src/data/layerManifest.ts、src/components/sidebar/layerCatalog.ts；僅目錄原始碼，非全部後端或線上驗收",
+      "notes": "兩份目錄未找到傳承碑來源；已有日本地形背景可搭配。難度低至中：同意條款後驗證欄位、穩定ID及限制，再做單區故事卡；未接入產品。"
     }
   }
 ]

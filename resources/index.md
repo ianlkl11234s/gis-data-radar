@@ -1,12 +1,14 @@
 # GIS 資源索引
 
-[機器可讀清單](catalog.json) · [2026-10-28 日報](../reports/2026-10-28.md) · [2026-10-27 日報](../reports/2026-10-27.md) · [2026-10-26 日報](../reports/2026-10-26.md) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
+[機器可讀清單](catalog.json) · [2026-10-29 日報](../reports/2026-10-29.md) · [2026-10-28 日報](../reports/2026-10-28.md) · [2026-10-27 日報](../reports/2026-10-27.md) · [2026-10-26 日報](../reports/2026-10-26.md) · [2026-10-25 日報](../reports/2026-10-25.md) · [2026-10-24 日報](../reports/2026-10-24.md) · [2026-10-23 日報](../reports/2026-10-23.md) · [2026-10-22 日報](../reports/2026-10-22.md) · [2026-10-21 日報](../reports/2026-10-21.md) · [2026-10-20 日報](../reports/2026-10-20.md) · [2026-10-19 日報](../reports/2026-10-19.md) · [2026-10-18 日報](../reports/2026-10-18.md) · [2026-10-17 日報](../reports/2026-10-17.md) · [2026-10-16 日報](../reports/2026-10-16.md) · [2026-10-15 日報](../reports/2026-10-15.md) · [2026-10-14 日報](../reports/2026-10-14.md) · [2026-10-13 日報](../reports/2026-10-13.md) · [2026-10-12 日報](../reports/2026-10-12.md) · [2026-10-11 日報](../reports/2026-10-11.md) · [2026-10-10 日報](../reports/2026-10-10.md) · [2026-10-09 日報](../reports/2026-10-09.md) · [2026-10-08 日報](../reports/2026-10-08.md) · [2026-10-07 日報](../reports/2026-10-07.md) · [2026-10-06 日報](../reports/2026-10-06.md) · [2026-10-05 日報](../reports/2026-10-05.md) · [2026-10-04 日報](../reports/2026-10-04.md) · [2026-10-03 日報](../reports/2026-10-03.md) · [2026-10-02 日報](../reports/2026-10-02.md) · [2026-10-01 日報](../reports/2026-10-01.md) · [第 1 期日報與第二輪四類試跑](../reports/2026-09-30.md#trial-four-categories)
 
-目前 85 項：79 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-28（新增1項環境部公告、更新GSJ服務狀態；原83項保留各自查核日）。
+目前 86 項：80 項 candidate、6 項 integrated（僅部分資料的原始碼登錄，非本期運行驗收）；可依類型、地區與主題瀏覽。最新查核：2026-10-29（新增1項災害傳承碑、更新DEM1A；原84項保留各自查核日）。
 
 ## 依類型
 
 ### dataset
+
+- [GSI災害傳承碑：歷史災害故事與地形對照](#gsi-disaster-memorial-monuments)
 
 - [GSI圖幅更新目錄：發布日期、測量日期與更新範圍](#gsi-map-update-footprints)
 
@@ -202,6 +204,8 @@
 
 ### showcase
 
+- [GSI災害傳承碑：歷史災害故事與地形對照](#gsi-disaster-memorial-monuments)
+
 - [GSI圖幅更新目錄：發布日期、測量日期與更新範圍](#gsi-map-update-footprints)
 
 - [台灣PRTR：地點、申報量與裁處分開查詢](#taiwan-prtr-query-showcase)
@@ -368,6 +372,8 @@
 - [NASA MISR 瀏覽與資料訂製平台：調軌後資料支援](#nasa-misr-browse-customization)
 
 ### Japan
+
+- [GSI災害傳承碑：歷史災害故事與地形對照](#gsi-disaster-memorial-monuments)
 
 - [GSI圖幅更新目錄：發布日期、測量日期與更新範圍](#gsi-map-update-footprints)
 
@@ -843,6 +849,11 @@
 - environment／metadata／data-quality：[環境部維護公告](#taiwan-moenv-service-notices)
 - environment／hazards／geology：[GSJ服務恢復狀態](#japan-gsj-geology-50k-services)
 
+### 2026-10-29 更新主題交叉索引
+
+- hazards／history／education：[GSI災害傳承碑](#gsi-disaster-memorial-monuments)
+- terrain／data-quality：[DEM1A修正與維護](#japan-gsi-dem1a)
+
 ## 資源卡
 
 ### 2026-10-12 新增主題交叉索引
@@ -1191,6 +1202,9 @@
 - [適用情境、限制與接入判讀](../reports/2026-10-06.md#gdal-valid-data-footprint)
 
 <a id="japan-gsi-dem1a"></a>
+
+- 2026-10-29追蹤：[四網格修正及11/4維護](../reports/2026-10-29.md#japan-gsi-dem1a)；最近查核：2026-10-29
+
 
 ### 日本 GSI DEM1A：1m 地表高程與供應範圍
 
@@ -1745,3 +1759,13 @@
 - 10/27公告10/28 08:30–17:00例行維護。應分開計畫維護、API回應及觀測新鮮度，不以公告推論每個來源已中斷。
 - [官方來源](https://data.moenv.gov.tw/announcement)；首次收錄／查核：2026-10-28；狀態：candidate
 - [適用情境與限制](../reports/2026-10-28.md#taiwan-moenv-service-notices)
+
+<a id="gsi-disaster-memorial-monuments"></a>
+
+### GSI災害傳承碑：歷史災害故事與地形對照
+
+- ID：gsi-disaster-memorial-monuments
+- 類型：dataset／showcase；地區：Japan；主題：hazards、history、education、data-quality
+- 10/29新增18座；可用災害分類、建立年與地形背景做故事地圖。碑點不等於災害範圍，未收錄不代表安全。
+- [官方來源](https://www.gsi.go.jp/bousaichiri/denshouhi_datainfo.html)；首次收錄／查核：2026-10-29；狀態：candidate
+- [適用情境與限制](../reports/2026-10-29.md#gsi-disaster-memorial-monuments)
